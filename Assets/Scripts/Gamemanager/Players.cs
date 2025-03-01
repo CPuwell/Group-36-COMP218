@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public string playerName;
     public List<Card> hand = new List<Card>();
     bool isAlive = true; // Player Status
+    int winRound = 0; // Player Win Round
 
     public void DrawCard(Deck deck)
     {
@@ -26,5 +27,26 @@ public class Player : MonoBehaviour
             card.PlayCard(); 
             hand.Remove(card); 
         }
+    }
+
+    public int checkWin()
+    {
+        return winRound;
+    }
+
+    public void winRound()
+    {
+        winRound++;
+    }
+
+    public void randomPlayCard()
+    {
+        PlayCard(hand[randomIndex]);
+    }
+
+    public void Initialize(int index, string name)
+    {
+        PlayerIndex = index;
+        playerName = name;
     }
 }

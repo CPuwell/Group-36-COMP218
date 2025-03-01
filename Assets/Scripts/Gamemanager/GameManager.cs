@@ -10,6 +10,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
     private int currentPlayerIndex = 0; // Player Index
     private float turnTime = 30f; // Count Down Time for each turn
     private float timer; // Timer
+    private bool gameEnded = false;
+    private bool RoundEnded = false;
+    private int playerIndexCounter = 0; // Player Index Counter
 
     private void Awake()
     {
@@ -81,6 +84,41 @@ public class NewMonoBehaviourScript : MonoBehaviour
             AutoPlay(); //If time is up, auto play a card
             EndTurn(); 
         }
+    }
+
+    public void CheckRoundWinCondition()
+    {
+        if (gameEnded) return; // avoid multiple win condition check
+
+        // If only one player is alive, he wins
+        List<Player> alivePlayers = players.FindAll(players => players.IsAlive);
+        if (alivePlayers.Count == 1)
+        {
+            alivePlayers[0].WinRound();
+            return;
+        }
+
+    }
+
+    public void CheckGameWinCondition()
+    {
+        if (RoundEnded = true)
+            {
+            for (int i = 0; i < players.Count; i++) { 
+                if (players[i].checkWin = 2 || players[i].checkInsaintyWin = 3 )
+                {
+                    DeclareWinner(players[i]);
+                }
+            }
+        }
+
+    }
+
+    private void DeclareWinner(Player winner)
+    {
+        RoundEnded = true;
+        Debug.Log($"Player {winner.PlayerIndex} Wins!");
+        // 这里可以添加游戏结束 UI、动画等
     }
 }
 
