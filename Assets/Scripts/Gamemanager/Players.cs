@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     public List<Card> hand = new List<Card>();
     bool isAlive = true; // Player Status
     int winRound = 0; // Player Win Round
+    int winRoundInsane = 0; // Player Win Round Insane
+    bool isInsane = false; // Player Insane Status
 
     public void DrawCard(Deck deck)
     {
@@ -36,7 +38,13 @@ public class Player : MonoBehaviour
 
     public void winRound()
     {
-        winRound++;
+        if (isInsane)
+        {
+            winRoundInsane++;
+        } else
+        {
+            winRound++;
+        }
     }
 
     public void randomPlayCard()
@@ -49,4 +57,5 @@ public class Player : MonoBehaviour
         PlayerIndex = index;
         playerName = name;
     }
+
 }

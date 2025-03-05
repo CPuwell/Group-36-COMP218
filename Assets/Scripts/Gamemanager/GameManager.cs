@@ -70,18 +70,22 @@ public class NewMonoBehaviourScript : MonoBehaviour
     }
 
     //Automatic Play
-    public void AutoPlay()
+    public void AutoPlay(int i)
     {
-        player.RandomPlayCard();
+        players[currentPlayerIndex].RandomPlayCard();
     }
 
     //Timer for each turn
     private void Update()
     {
+        for int i = 0; i < players.Count; i++)
+        {
+            players[i].isIsane = false; //Reset Insane Status
+        }
         timer -= Time.deltaTime; 
         if (timer <= 0)
         {
-            AutoPlay(); //If time is up, auto play a card
+            AutoPlay(i); //If time is up, auto play a card
             EndTurn(); 
         }
     }
@@ -105,7 +109,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         if (RoundEnded = true)
             {
             for (int i = 0; i < players.Count; i++) { 
-                if (players[i].checkWin = 2 || players[i].checkInsaintyWin = 3 )
+                if (players[i].checkWin == 2 || players[i].checkInsaintyWin == 3 )
                 {
                     DeclareWinner(players[i]);
                 }
@@ -120,7 +124,3 @@ public class NewMonoBehaviourScript : MonoBehaviour
         Debug.Log($"Player {winner.PlayerIndex} Wins!");
         // 这里可以添加游戏结束 UI、动画等
     }
-}
-
-//后续要添加，获胜条件判定，每回合结束检查是否获胜，同时还有理智值设定的添加，先写一个insanity的script，然后结合胜利条件。
-//GameObject方面，需要有桌子的模型，卡牌的模型，timer，游戏开始界面，出牌界面，游戏结束胜利界面，还有等ai做好，ai继承player类。
