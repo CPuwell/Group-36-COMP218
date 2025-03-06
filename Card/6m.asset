@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c75a369492b4d4e85a46b6f2645f87, type: 3}
+  m_Name: 6m
+  m_EditorClassIdentifier: 
+  id: 6
+  cardName: Nyarlathotep
+  frontImage: {fileID: -8596910700492103684, guid: b95c95ff03cd9bb4c9729235bcbfc158, type: 3}
+  backImage: {fileID: 870234187787707586, guid: abbcfb06f6d1f0345a4c8ba064fec724, type: 3}
+  isInsaneCard: 1
+  saneEffect: 'When you discard Randolph Carter during your turn, choose another
+    player and trade your hand with them. '
+  insaneEffect: When you discard Nyarlathotep during your turn, collect the hands 
+    of all the other players still in the round. You may look at them. Ten  redistribute
+    one card of your choice to each player.

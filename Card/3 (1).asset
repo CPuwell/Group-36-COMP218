@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c75a369492b4d4e85a46b6f2645f87, type: 3}
+  m_Name: 3 (1)
+  m_EditorClassIdentifier: 
+  id: 3
+  cardName: Great Race of Yith
+  frontImage: {fileID: 8128729721599010535, guid: c37a18b5e47f68247a1b6346aa43887f, type: 3}
+  backImage: {fileID: 870234187787707586, guid: abbcfb06f6d1f0345a4c8ba064fec724, type: 3}
+  isInsaneCard: 0
+  saneEffect: 'When you discard Great Race of Yith during your turn, choose another
+    player. You and that player secretly compare your hands. Te player with the lower
+    number is knocked out of the round. In case of a tie, nothing happens. '
+  insaneEffect: 
