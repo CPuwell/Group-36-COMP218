@@ -16,26 +16,16 @@ public class Player : MonoBehaviour
     public void DrawCard(Deck deck)
     {
         
-        Card newCard = deck.DrawCard();
-            if (newCard != null)
-            {
-                hand.Add(newCard);
-                Debug.Log($"{currentPlayerIndex} draw a card: {newCard.cardName}");
-            }
+        Card newCard = deck.Draw();        
+        hand.Add(newCard);
+        Debug.Log($"{currentPlayerIndex} draw a card: {newCard.cardName}");            
     }
 
     public void PlayCard(Card card)
-    {
-        if (hand.Contains(card))
-        {
-            card.PlayCard(); 
-            hand.Remove(card); 
-        }
-    }
-
-    public int checkWin()
-    {
-        return winRounds;
+    {       
+        card.PlayCard(); 
+        hand.Remove(card);
+        GameManager.Instance.EndTurn();
     }
 
     public void winRound()
@@ -72,12 +62,12 @@ public class Player : MonoBehaviour
         return hand.GetCardValue();
     }
 
-    public int CheckWin()
+    public int CheckWinRounds()
     {
         return winRounds;
     }
 
-    public int CheckInsaintyWin()
+    public int CheckInsaintyWinRounds()
     {
         return winRoundsInsane;
     }
