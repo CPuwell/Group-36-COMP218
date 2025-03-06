@@ -14,6 +14,12 @@ public class NewMonoBehaviourScript : MonoBehaviour
     private bool RoundEnded = false;
     private int playerIndexCounter = 0; // Player Index Counter
     private List<Player> alivePlayers;
+    public bool isProtected = false;
+
+    public void Protect()
+    {
+        isProtected = true;
+    }
 
     private void Awake()
     {
