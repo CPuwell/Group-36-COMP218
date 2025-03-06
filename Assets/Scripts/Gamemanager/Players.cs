@@ -7,9 +7,11 @@ public class Player : MonoBehaviour
     public string playerName;
     public List<Card> hand = new List<Card>();
     bool isAlive = true; // Player Status
-    int winRound = 0; // Player Win Round
-    int winRoundInsane = 0; // Player Win Round Insane
+    private int winRounds = 0; // Player Win Round
+    private int winRoundsInsane = 0; // Player Win Round Insane
     bool isInsane = false; // Player Insane Status
+
+    private Hand hand = new Hand();
 
     public void DrawCard(Deck deck)
     {
@@ -33,17 +35,17 @@ public class Player : MonoBehaviour
 
     public int checkWin()
     {
-        return winRound;
+        return winRounds;
     }
 
     public void winRound()
     {
         if (isInsane)
         {
-            winRoundInsane++;
+            winRoundsInsane++;
         } else
         {
-            winRound++;
+            winRounds++;
         }
     }
 
@@ -58,4 +60,25 @@ public class Player : MonoBehaviour
         playerName = name;
     }
 
+    public void Reset()
+    {
+        hand.Clear();
+        isAlive = true;
+        isInsane = false;
+    }
+
+    public int GetHandValue()
+    {
+        return hand.GetCardValue();
+    }
+
+    public int CheckWin()
+    {
+        return winRounds;
+    }
+
+    public int CheckInsaintyWin()
+    {
+        return winRoundsInsane;
+    }
 }

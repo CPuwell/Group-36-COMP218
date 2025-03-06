@@ -56,14 +56,61 @@ public class NewMonoBehaviourScript : MonoBehaviour
     //Set Timer
     private void StartTurn()
     {
+        if (deck.isEmpty)
+        {
+            Debug.Log("Deck is empty");
+
+            return;
+        }
+
         timer = turnTime;
         Update();
         Debug.Log($"Now, {players[currentPlayerIndex].name} is taking turn");
     }
 
+    public void CompareCard()
+    {
+
+        List<Player> alivePlayers = players.FindAll(players => players.IsAlive);
+        Player bestPlayer = alivePlayers[0];
+        int highestValue = bestPlayer.Hand.GetCardValue();
+        List<Player> winners = new List<Player> { bestPlayer };
+
+        for (int i = 0; i < alivePlayers.Count; i++)
+        {
+            int currentValue = alivePlayers[i].GetHandValue();
+
+            if (currentValue > highestValue)
+            {
+                highestValue = currentValue;
+                bestPlayer = alivePlayers[i];
+                winners.clear();
+                winners.Add(bestPlayer);
+            }
+            else if (currentValue == highestValue)
+            {
+                winners.Add(alivePlayers[i]);
+            }
+        }
+
+        if (winners.Count == 1)
+        {
+            bestPlayer.WinRound();
+        }
+        else
+        {
+            Debug.Log("Draw");
+        }
+    }
+
+    //出完牌就调用回合结束的方法，然后先执行卡牌效果然后检查胜利条件
     //End Turn and Switch to Next Player
     public void EndTurn()
     {
+        if (gameEnded) return; // avoid multiple end turn calls
+        CheckRoundWinCondition();
+        
+        if (RoundEnded) return;
         currentPlayerIndex = (currentPlayerIndex + 1) % players.Count; 
         
         StartTurn(); 
@@ -78,10 +125,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     //Timer for each turn
     private void Update()
     {
-        for int i = 0; i < players.Count; i++)
-        {
-            players[i].isIsane = false; //Reset Insane Status
-        }
+        
         timer -= Time.deltaTime; 
         if (timer <= 0)
         {
@@ -92,16 +136,46 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     public void CheckRoundWinCondition()
     {
+
         if (gameEnded) return; // avoid multiple win condition check
+
 
         // If only one player is alive, he wins
         List<Player> alivePlayers = players.FindAll(players => players.IsAlive);
         if (alivePlayers.Count == 1)
         {
             alivePlayers[0].WinRound();
+
+            EndRound();
+            CheckGameWinCondition();
+            if (gameEnded) return;
+            StartRound();
             return;
+
         }
 
+    }
+
+    public void EndRound()
+    {
+        RoundEnded = true;
+        Debug.Log("Round Ended");
+
+    }
+
+    public void StartRound()
+    {
+        RoundEnded = false;
+        for (int i = 0; i < players.Count; i++)
+        {
+            players[i].Reset();
+        }
+        deck.Shuffle();
+        foreach (Player player in players)
+        {
+            player.DrawCard(deck);
+        }
+        Debug.Log("Round Started");
     }
 
     public void CheckGameWinCondition()
@@ -109,7 +183,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         if (RoundEnded = true)
             {
             for (int i = 0; i < players.Count; i++) { 
-                if (players[i].checkWin == 2 || players[i].checkInsaintyWin == 3 )
+                if (players[i].CheckWin == 2 || players[i].CheckInsaintyWin == 3 )
                 {
                     DeclareWinner(players[i]);
                 }
