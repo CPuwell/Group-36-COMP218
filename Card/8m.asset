@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c75a369492b4d4e85a46b6f2645f87, type: 3}
+  m_Name: 8m
+  m_EditorClassIdentifier: 
+  id: 8
+  cardName: Cthulhu
+  frontImage: {fileID: 659992971924208602, guid: 0d84ff161c16a8e48a637eeb711be963, type: 3}
+  backImage: {fileID: 870234187787707586, guid: 8dc4d127a0fa84ddf9a21b5a46b060da, type: 3}
+  isInsaneCard: 1
+  saneEffect: "If you ever discard The Necronomicon\u2014no matter how or why   (so
+    even during a Sanity Check)\u2014you lose the track of your cousin.   You are
+    immediately knocked out of the round."
+  insaneEffect: When you discard Cthulhu during your turn, if you already have 2
+    or  more Insanity cards in your discard pile, you win the game. If you do not, 
+    you lose the round.
