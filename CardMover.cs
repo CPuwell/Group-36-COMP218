@@ -9,7 +9,7 @@ public class CardMover : MonoBehaviour
 
     void Start()
     {
-        // 设置目标位置为屏幕中央（假设是 (0, 0, 0)）
+        // 设置目标位置为屏幕中央
         targetPosition = new Vector3(0, 0, 0);
     }
 
