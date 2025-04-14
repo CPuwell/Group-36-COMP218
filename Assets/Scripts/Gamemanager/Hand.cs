@@ -3,50 +3,60 @@ using UnityEngine;
 
 public class Hand
 {
-    private List<Card> cards = new List<Card>(); 
+    private List<Card> cards = new List<Card>();
+    private Card selectedCard = null;
 
-    public int CardCount => cards.Count; 
+    public int CardCount => cards.Count;
 
+    // 添加卡牌
     public void AddCard(Card card)
     {
-        cards.Add();
+        if (card != null)
+        {
+            cards.Add(card);
+            Debug.Log($"Add card: {card.cardName}");
+        }
     }
 
-    // 移除一张牌（出牌）
-    public void RemoveCard(Card card)
+    // 玩家点击卡牌时调用这个
+    public void SelectCard(Card card)
+    {
+        if (selectedCard == card)
+        {
+            PlayCard(card); // 第二次点击相同卡牌，出牌
+        }
+        else
+        {
+            selectedCard = card; // 第一次点击，选中
+            Debug.Log($"Selected: {card.cardName}");
+        }
+    }
+
+    // 出牌
+    private void PlayCard(Card card)
     {
         if (cards.Contains(card))
         {
+            card.PlayCard();  // 这里调用你卡牌的播放逻辑
             cards.Remove(card);
-            Debug.Log($"Draw: {card.CardName}");
+            selectedCard = null;
+            Debug.Log($"Played card: {card.cardName}");
         }
     }
 
-    // 获取所有手牌
     public List<Card> GetCards()
     {
-        return new List<Card>(cards); // 返回一个副本，防止外部修改原始列表
+        return new List<Card>(cards); // 返回副本
     }
 
-    // 选择一张牌进行出牌（这里暂时用第 0 张卡牌）
-    public Card ChooseCardToPlay()
-    {
-        if (cards.Count > 0)
-        {
-            return cards[0]; // 选择第一张牌出牌（可以优化成 AI 选择逻辑）
-        }
-        return null;
-    }
-
-    // 清空手牌（用于新一轮）
     public void ClearHand()
     {
         cards.Clear();
-        Debug.Log("Clear Hands");
+        selectedCard = null;
     }
 
     public int GetCardValue()
     {
-        return cards[0].value;
+        return cards.Count > 0 ? cards[0].value : 0;
     }
 }

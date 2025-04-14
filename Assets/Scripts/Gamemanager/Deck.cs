@@ -18,10 +18,7 @@ public class Deck
     {
         cards.Clear();
        
-        for (int i = 0; i < 4; i++)
-        {
-            cards.Add(new Card("Card A"));
-        }
+        
     }
 
     // Ï´ÅÆ
@@ -44,7 +41,7 @@ public class Deck
         {
             Card drawnCard = cards[0];
             cards.RemoveAt(0);
-            Debug.Log($"Draw card: {drawnCard.CardName}");
+            Debug.Log($"Draw card: {drawnCard.cardName}");
             return drawnCard;
         }
         else
@@ -60,7 +57,7 @@ public class Deck
         if (card != null)
         {
             cards.Add(card);
-            Debug.Log($"Card: {card.CardName} is back into deck");
+            Debug.Log($"Card: {card.cardName} is back into deck");
         }
     }
 }
