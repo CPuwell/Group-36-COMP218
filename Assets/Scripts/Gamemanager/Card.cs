@@ -4,15 +4,17 @@ using UnityEngine;
 public class Card
 {
     public string cardName;        // 卡牌名字
-    public int cardId;             // 卡牌编号（用于识别或加载资源）
+    public string cardId;          // 卡牌编号（支持如 "1", "1m"）
     public Sprite frontSprite;     // 正面图片
-    public Sprite backSprite;      // 背面图片（一般都一样）
-    public int value;          // 卡牌序号
+    public Sprite backSprite;      // 背面图片
+    public int value;              // 卡牌数值（用于比较大小）
 
-    public CardType cardType;      // 卡牌类型（比如攻击、防御、特殊等）
-    public string description;     // 卡牌描述或效果文本
+    public CardType cardType;      // 卡牌类型
+    public string description;     // 描述文本
 
-    public Card(string name, int id, Sprite front, Sprite back, CardType type, string desc)
+    public bool isInsane;      // 是否是疯狂牌
+
+    public Card(string name, string id, Sprite front, Sprite back, CardType type, string desc, int value, bool isInsane)
     {
         cardName = name;
         cardId = id;
@@ -20,14 +22,15 @@ public class Card
         backSprite = back;
         cardType = type;
         description = desc;
+        this.value = value;
+        this.isInsane = isInsane;
     }
 
     public void PlayCard()
     {
         Debug.Log($"{cardName} effect played.");
-        // TODO: 实现卡牌效果逻辑
+        // TODO: 触发挂载脚本的对应效果逻辑
     }
-
 }
 
 public enum CardType

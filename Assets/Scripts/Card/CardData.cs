@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewCard", menuName = "Card")]
 public class CardData : ScriptableObject
 {
-    public int id;  // ÅÆµÄ±àºÅ
+    public string id;  // ÅÆµÄ±àºÅ
     public string cardName;  // ÅÆµÄÃû³Æ
     public Sprite frontImage; // ¿¨ÅÆÕıÃæÍ¼Æ¬
     public Sprite backImage;  // ¿¨ÅÆ±³ÃæÍ¼Æ¬

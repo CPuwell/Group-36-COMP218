@@ -60,13 +60,18 @@ public class GameManager : MonoBehaviour
         if (deck.isEmpty)
         {
             Debug.Log("Deck is empty");
-
             return;
         }
 
-        timer = turnTime;   
-        Debug.Log($"Now, {players[currentPlayerIndex].name} is taking turn");
+        Player currentPlayer = players[currentPlayerIndex];
+
+        // 在回合开始时取消保护状态
+        currentPlayer.SetProtected(false);
+
+        timer = turnTime;
+        Debug.Log($"Now, {currentPlayer.playerName} is taking turn");
     }
+
 
     public void CompareCard()
     {
@@ -161,7 +166,13 @@ public class GameManager : MonoBehaviour
         RoundEnded = true;
         Debug.Log("Round Ended");
 
+        // 清除所有玩家的不死状态（疯狂保护）
+        foreach (Player player in players)
+        {
+            player.SetImmortalThisRound(false);
+        }
     }
+
 
     public void StartRound()
     {
@@ -198,5 +209,23 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Player {winner.PlayerIndex} Wins!");
         // 这里可以添加游戏结束 UI、动画等
     }
- 
+
+    //封装出可以选择的玩家列表
+    public List<Player> GetAvailableTargets(Player currentPlayer)
+    {
+        return players.FindAll(p => p != currentPlayer && p.IsAlive() && !p.IsProtected() && !p.isImmortalThisRound());
+    }
+
+    //强制给予某张牌
+    public void GiveSpecificCardToPlayer(Player target, string cardId)
+    {
+        // 你可以根据 cardId 预设构建卡牌（此处为举例）
+        Card newCard = new Card(
+            "米·戈的大脑容器", "0", null, null, CardType.Special,
+            "被强制植入疯狂容器", 0, true // 是疯狂牌
+        );
+        target.AddCard(newCard);
+        Debug.Log($"{target.playerName} 被强制获得卡牌：{newCard.cardName}");
+    }
+
 }

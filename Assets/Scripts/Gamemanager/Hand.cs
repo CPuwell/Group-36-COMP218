@@ -23,7 +23,7 @@ public class Hand
     {
         if (selectedCard == card)
         {
-            PlayCard(card); // 第二次点击相同卡牌，出牌
+            PlayCard(card); // 第二次点击相同卡牌，出牌 
         }
         else
         {
@@ -35,14 +35,22 @@ public class Hand
     // 出牌
     private void PlayCard(Card card)
     {
+        if (!CanPlayCard(card))// 判断有没有7号牌的影响
+        {
+            return;
+        }
+
         if (cards.Contains(card))
         {
-            card.PlayCard();  // 这里调用你卡牌的播放逻辑
+            card.PlayCard();
             cards.Remove(card);
             selectedCard = null;
-            Debug.Log($"Played card: {card.cardName}");
+
+            // 出牌后记录进入弃牌堆
+            GameManager.Instance.GetCurrentPlayer().RecordDiscard(card);
         }
     }
+
 
     public List<Card> GetCards()
     {
@@ -59,4 +67,30 @@ public class Hand
     {
         return cards.Count > 0 ? cards[0].value : 0;
     }
+
+    //添加限制规则来判断有7号牌时另一张可不可以打
+    public bool CanPlayCard(Card card)
+    {
+        if (cards.Count == 2 && cards.Exists(c => c.value == 7))
+        {
+            Card other = cards.Find(c => c != card);
+            if (card.value != 7 && other.value > 4)
+            {
+                Debug.Log("你不能打出这张牌，因为你持有7号牌，且另一张牌大于4。你必须打出7号牌！");
+                return false;
+            }
+        }
+        return true;
+    }   
+
+    //弃牌
+    public void Discard(Card card)
+    {
+        if (cards.Contains(card))
+        {
+            cards.Remove(card);
+            Debug.Log($"弃牌：{card.cardName}");
+        }
+    }
+
 }
