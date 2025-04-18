@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CardEffectInsane7 : MonoBehaviour, IInsaneCard
+public class CardEffectInsane7 : MonoBehaviour, InsaneCard
 {
     private Card thisCard; // 当前这张卡牌
 

@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
     //Set Timer
     private void StartTurn()
     {
-        if (deck.isEmpty)
+        if (deck.IsEmpty())
         {
             Debug.Log("Deck is empty");
             return;
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
     public void CompareCard()
     {
 
-        List<Player> alivePlayers = players.FindAll(players => players.IsAlive);
+        List<Player> alivePlayers = players.FindAll(players => players.IsAlive());
         Player bestPlayer = alivePlayers[0];
         int highestValue = bestPlayer.Hand.GetCardValue();
         List<Player> winners = new List<Player> { bestPlayer };
@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
             {
                 highestValue = currentValue;
                 bestPlayer = alivePlayers[i];
-                winners.clear();
+                winners.Clear();
                 winners.Add(bestPlayer);
             }
             else if (currentValue == highestValue)
@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
     }
 
     //Automatic Play
-    public void AutoPlay(int i)
+    public void AutoPlay()
     {
         players[currentPlayerIndex].RandomPlayCard();
     }
@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            AutoPlay(i); //If time is up, auto play a card
+            AutoPlay(); //If time is up, auto play a card
             EndTurn();
         }
     }
@@ -146,7 +146,7 @@ public class GameManager : MonoBehaviour
 
 
         // If only one player is alive, he wins
-        List<Player> alivePlayers = players.FindAll(players => players.IsAlive);
+        List<Player> alivePlayers = players.FindAll(players => players.IsAlive());
         if (alivePlayers.Count == 1)
         {
             alivePlayers[0].WinRound();
@@ -194,7 +194,7 @@ public class GameManager : MonoBehaviour
         if (RoundEnded == true)
         {
             for (int i = 0; i < players.Count; i++) {
-                if (players[i].CheckWin == 2 || players[i].CheckInsaintyWin == 3)
+                if (players[i].CheckWin() == 2 || players[i].CheckInsaintyWin() == 3)
                 {
                     DeclareWinner(players[i]);
                 }
@@ -213,7 +213,7 @@ public class GameManager : MonoBehaviour
     //封装出可以选择的玩家列表
     public List<Player> GetAvailableTargets(Player currentPlayer)
     {
-        return players.FindAll(p => p != currentPlayer && p.IsAlive() && !p.IsProtected() && !p.isImmortalThisRound());
+        return players.FindAll(p => p != currentPlayer && p.IsAlive() && !p.IsProtected() && !p.IsImmortal());
     }
 
     //强制给予某张牌
@@ -226,6 +226,22 @@ public class GameManager : MonoBehaviour
         );
         target.AddCard(newCard);
         Debug.Log($"{target.playerName} 被强制获得卡牌：{newCard.cardName}");
+    }
+
+    public Player GetCurrentPlayer()
+    {
+        return players[currentPlayerIndex];
+    }
+
+    public void PlayCard(Card card)
+    {
+        // 找到当前玩家
+        Player currentPlayer = players[currentPlayerIndex];
+        // 当前玩家打出这张牌
+        currentPlayer.PlayCard(card);
+
+        // 然后继续做你想要的逻辑，比如切换回合、检测胜负等等
+        EndTurn();
     }
 
 }

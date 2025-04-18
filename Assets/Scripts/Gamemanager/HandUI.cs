@@ -32,4 +32,9 @@ public class HandUI : MonoBehaviour
         }
     }
 
+    public void PlayCard(int index)
+    {
+        gameManager.PlayCard(currentHand[index]);
+    }
+
 }

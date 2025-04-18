@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CardEffectInsane4 : MonoBehaviour, IInsaneCard
+public class CardEffectInsane4 : MonoBehaviour, InsaneCard
 {
     public void ExecuteSaneEffect(Player currentPlayer)
     {

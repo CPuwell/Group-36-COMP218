@@ -33,7 +33,7 @@ public class Hand
     }
 
     // 出牌
-    private void PlayCard(Card card)
+    public void PlayCard(Card card)
     {
         if (!CanPlayCard(card))// 判断有没有7号牌的影响
         {

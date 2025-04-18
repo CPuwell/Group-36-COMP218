@@ -13,7 +13,10 @@ public class Player : MonoBehaviour
     bool isImmortalThisRound = false;// Effect of card insane 4
     private List<Card> discardedCards = new List<Card>();// 弃牌堆
 
-    private Hand hand = new Hand();
+    private Hand hand = new Hand(); // 仍然私有保存
+
+    public Hand Hand => hand;       // 外部通过这个只读属性访问
+
 
     public void DrawCard(Deck deck)
     {
@@ -29,15 +32,10 @@ public class Player : MonoBehaviour
 
     public void PlayCard(Card card)
     {       
-            hand.playCard(card);
+            hand.PlayCard(card);
     }
 
-    public int checkWin()
-    {
-        return winRounds;
-    }
-
-    public void winRound()
+    public void WinRound()
     {
         if (isInsane)
         {
@@ -48,7 +46,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void randomPlayCard()
+    public void RandomPlayCard()
     {
         int randomIndex = Random.Range(0, hand.CardCount);
         PlayCard(hand.GetCards()[randomIndex]);
@@ -62,7 +60,7 @@ public class Player : MonoBehaviour
 
     public void Reset()
     {
-        hand.Clear();
+        hand.ClearHand();
         isAlive = true;
         isInsane = false;
     }
@@ -167,8 +165,6 @@ public class Player : MonoBehaviour
     {
         return isImmortalThisRound;
     }
-
-    private List<Card> discardedCards = new List<Card>();
 
     public void RecordDiscard(Card card)
     {

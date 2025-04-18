@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class CardEffectInsane5 : MonoBehaviour, IInsaneCard
+public class CardEffectInsane5 : MonoBehaviour, InsaneCard
 {
     public void ExecuteSaneEffect(Player currentPlayer)
     {

@@ -60,4 +60,17 @@ public class Deck
             Debug.Log($"Card: {card.cardName} is back into deck");
         }
     }
+
+    public bool IsEmpty()
+    {
+        if (cards.Count == 0)
+        {
+            return true;
+        }
+        else
+        {
+            Debug.Log($"deck has {cards.Count} cards");
+            return false;
+        }
+    }
 }
