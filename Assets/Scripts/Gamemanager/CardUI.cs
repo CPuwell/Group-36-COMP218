@@ -12,10 +12,10 @@ public class CardUI : MonoBehaviour, IPointerClickHandler
     private Hand owningHand;           // 当前手牌（逻辑层）引用
 
     // 设置卡牌图像与数据
-    public void SetCard(Card card, Hand hand)
+    public void SetCard(Card card,Hand hand)
     {
         cardData = card;
-        owningHand = hand;
+        owningHand = hand; // 绑定手牌引用
 
         frontImage.sprite = card.frontSprite;
         backImage.sprite = card.backSprite;
