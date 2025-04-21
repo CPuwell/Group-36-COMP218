@@ -1,20 +1,104 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DeckManager : MonoBehaviour
 {
-    public GameObject cardPrefab;
-    public Transform deckZone;
-    public Sprite[] frontSprites;
-    public Sprite backSprite;
+    public GameObject cardPrefab;           // 通用Card预制体
+    public Transform deckZone;              // 牌库区域
+    public Sprite[] frontSprites;            // 0~8是普通卡，9~17是Insane卡
+    public Sprite backSprite;                // 统一的卡背
+
+    private List<GameObject> deck = new List<GameObject>(); // 当前牌堆
 
     void Start()
     {
-        for (int i = 0; i < frontSprites.Length; i++)
+        InitializeDeck();
+        ShuffleDeck();
+    }
+
+    void InitializeDeck()
+    {
+        // 清空之前的牌
+        foreach (Transform child in deckZone)
         {
-            GameObject newCard = Instantiate(cardPrefab, deckZone);
-            CardUI cardUI = newCard.GetComponent<CardUI>();
-            cardUI.SetCard(frontSprites[i], backSprite);
-            cardUI.Flip(false); // 默认背面朝上
+            Destroy(child.gameObject);
+        }
+        deck.Clear();
+
+        // 添加 Card1 五张
+        for (int i = 0; i < 5; i++)
+        {
+            CreateCard(0); // 0号sprite是Card1
+        }
+
+        // 添加 Card2 ~ Card5 各两张
+        for (int id = 1; id <= 4; id++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                CreateCard(id);
+            }
+        }
+
+        // 添加 Card6 ~ Card8 各一张
+        for (int id = 5; id <= 7; id++)
+        {
+            CreateCard(id);
+        }
+
+        // 添加 InsaneCard0 ~ InsaneCard8 各一张
+        for (int id = 8; id <= 16; id++)
+        {
+            CreateCard(id);
+        }
+    }
+
+    void CreateCard(int spriteIndex)
+    {
+        GameObject newCard = Instantiate(cardPrefab, deckZone);
+        CardUI cardUI = newCard.GetComponent<CardUI>();
+
+        if (cardUI != null)
+        {
+            cardUI.SetCard(frontSprites[spriteIndex], backSprite);
+            cardUI.Flip(false); // 初始是背面朝上
+        }
+
+        deck.Add(newCard);
+    }
+
+    void ShuffleDeck()
+    {
+        for (int i = 0; i < deck.Count; i++)
+        {
+            GameObject temp = deck[i];
+            int randomIndex = Random.Range(i, deck.Count);
+            deck[i] = deck[randomIndex];
+            deck[randomIndex] = temp;
+        }
+
+        // 重排层级
+        for (int i = 0; i < deck.Count; i++)
+        {
+            deck[i].transform.SetSiblingIndex(i);
+        }
+
+        Debug.Log("Deck shuffled!");
+    }
+
+    // 可以增加一个抽牌接口
+    public GameObject DrawCard()
+    {
+        if (deck.Count > 0)
+        {
+            GameObject drawnCard = deck[0];
+            deck.RemoveAt(0);
+            return drawnCard;
+        }
+        else
+        {
+            Debug.LogWarning("Deck is empty!");
+            return null;
         }
     }
 }

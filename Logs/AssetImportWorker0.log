@@ -15,7 +15,7 @@ D:/Learn/UoL/Y3 S2/Group Software/Project/Group-36-COMP218
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49402
+61536
 -job-worker-count
 9
 -background-job-worker-count
@@ -59,20 +59,20 @@ D:/Learn/UoL/Y3 S2/Group Software/Project/Group-36-COMP218
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [21544]  Target information:
+Player connection [36500]  Target information:
 
-Player connection [21544]  * "[IP] 10.74.14.44 [Port] 0 [Flags] 2 [Guid] 2548679826 [EditorId] 2548679826 [Version] 1048832 [Id] WindowsEditor(7,CPu) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [36500]  * "[IP] 10.74.14.44 [Port] 0 [Flags] 2 [Guid] 3769664576 [EditorId] 3769664576 [Version] 1048832 [Id] WindowsEditor(7,CPu) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [21544]  * "[IP] 192.168.206.1 [Port] 0 [Flags] 2 [Guid] 2548679826 [EditorId] 2548679826 [Version] 1048832 [Id] WindowsEditor(7,CPu) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [36500]  * "[IP] 192.168.206.1 [Port] 0 [Flags] 2 [Guid] 3769664576 [EditorId] 3769664576 [Version] 1048832 [Id] WindowsEditor(7,CPu) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [21544]  * "[IP] 192.168.114.1 [Port] 0 [Flags] 2 [Guid] 2548679826 [EditorId] 2548679826 [Version] 1048832 [Id] WindowsEditor(7,CPu) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [36500]  * "[IP] 192.168.114.1 [Port] 0 [Flags] 2 [Guid] 3769664576 [EditorId] 3769664576 [Version] 1048832 [Id] WindowsEditor(7,CPu) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [21544]  * "[IP] 26.181.90.200 [Port] 0 [Flags] 2 [Guid] 2548679826 [EditorId] 2548679826 [Version] 1048832 [Id] WindowsEditor(7,CPu) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [36500]  * "[IP] 26.181.90.200 [Port] 0 [Flags] 2 [Guid] 3769664576 [EditorId] 3769664576 [Version] 1048832 [Id] WindowsEditor(7,CPu) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [21544]  * "[IP] 10.74.2.11 [Port] 0 [Flags] 2 [Guid] 2548679826 [EditorId] 2548679826 [Version] 1048832 [Id] WindowsEditor(7,CPu) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [36500]  * "[IP] 10.74.2.11 [Port] 0 [Flags] 2 [Guid] 3769664576 [EditorId] 3769664576 [Version] 1048832 [Id] WindowsEditor(7,CPu) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [21544] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [21544] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [36500] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [36500] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 9
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -100,43 +100,43 @@ Initialize mono
 Mono path[0] = 'E:/Unity/6000.0.45f1/Editor/Data/Managed'
 Mono path[1] = 'E:/Unity/6000.0.45f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'E:/Unity/6000.0.45f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56744
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56108
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: E:/Unity/6000.0.45f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002441 seconds.
-- Loaded All Assemblies, in  0.467 seconds
+Registered in 0.002424 seconds.
+- Loaded All Assemblies, in  0.511 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.326 seconds
-Domain Reload Profiling: 793ms
-	BeginReloadAssembly (206ms)
+- Finished resetting the current domain, in  0.373 seconds
+Domain Reload Profiling: 883ms
+	BeginReloadAssembly (220ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (38ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (44ms)
-	LoadAllAssembliesAndSetupDomain (167ms)
-		LoadAssemblies (206ms)
+	RebuildCommonClasses (43ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (50ms)
+	LoadAllAssembliesAndSetupDomain (184ms)
+		LoadAssemblies (220ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (164ms)
-			TypeCache.Refresh (162ms)
-				TypeCache.ScanAssembly (148ms)
+		AnalyzeDomain (180ms)
+			TypeCache.Refresh (178ms)
+				TypeCache.ScanAssembly (163ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (326ms)
+	FinalizeReload (373ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (293ms)
+		SetupLoadedEditorAssemblies (333ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (24ms)
+			InitializePlatformSupportModulesInManaged (28ms)
 			SetLoadedEditorAssemblies (5ms)
-			BeforeProcessingInitializeOnLoad (51ms)
-			ProcessInitializeOnLoadAttributes (153ms)
-			ProcessInitializeOnLoadMethodAttributes (60ms)
+			BeforeProcessingInitializeOnLoad (59ms)
+			ProcessInitializeOnLoadAttributes (175ms)
+			ProcessInitializeOnLoadMethodAttributes (65ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -145,57 +145,57 @@ Domain Reload Profiling: 793ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.319 seconds
+- Loaded All Assemblies, in  0.351 seconds
 Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.335 seconds
-Domain Reload Profiling: 654ms
-	BeginReloadAssembly (225ms)
+- Finished resetting the current domain, in  0.359 seconds
+Domain Reload Profiling: 711ms
+	BeginReloadAssembly (242ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (29ms)
-	RebuildCommonClasses (39ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (18ms)
-	LoadAllAssembliesAndSetupDomain (25ms)
-		LoadAssemblies (167ms)
+		CreateAndSetChildDomain (28ms)
+	RebuildCommonClasses (50ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (19ms)
+	LoadAllAssembliesAndSetupDomain (26ms)
+		LoadAssemblies (182ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (18ms)
-			TypeCache.Refresh (12ms)
+		AnalyzeDomain (19ms)
+			TypeCache.Refresh (11ms)
 				TypeCache.ScanAssembly (7ms)
 			BuildScriptInfoCaches (3ms)
 			ResolveRequiredComponents (2ms)
-	FinalizeReload (335ms)
+	FinalizeReload (360ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (213ms)
+		SetupLoadedEditorAssemblies (227ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (3ms)
-			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (60ms)
-			ProcessInitializeOnLoadAttributes (116ms)
-			ProcessInitializeOnLoadMethodAttributes (29ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (62ms)
+			ProcessInitializeOnLoadAttributes (123ms)
+			ProcessInitializeOnLoadMethodAttributes (32ms)
 			AfterProcessingInitializeOnLoad (2ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (13ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
 Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 436 unused Assets / (52.8 KB). Loaded Objects now: 933.
+Unloading 437 unused Assets / (52.9 KB). Loaded Objects now: 934.
 Memory consumption went from 56.8 MB to 56.7 MB.
-Total: 3.877200 ms (FindLiveObjects: 0.068400 ms CreateObjectMapping: 0.020600 ms MarkObjects: 3.561000 ms  DeleteObjects: 0.225100 ms)
+Total: 5.089800 ms (FindLiveObjects: 0.091100 ms CreateObjectMapping: 0.034300 ms MarkObjects: 4.751300 ms  DeleteObjects: 0.211400 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 351635.495303 seconds.
-  path: Assets/Scripts/Gamemanager
-  artifactKey: Guid(f7dda73addcad8e4a8cde099c6816c8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Gamemanager using Guid(f7dda73addcad8e4a8cde099c6816c8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '76d0148767cdd5611a21842f67b7057b') in 0.0068448 seconds
+  Time since last request: 356202.832916 seconds.
+  path: Assets/Scripts/CardEffect/CardEffect1.cs
+  artifactKey: Guid(5ee6c5e7efdd0774597f8ef7813a787c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffect1.cs using Guid(5ee6c5e7efdd0774597f8ef7813a787c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a2eec899d1cf905056ce512481c88b02') in 0.007873 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
@@ -203,34 +203,8 @@ Received Prepare
 Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 435 unused Assets / (35.2 KB). Loaded Objects now: 936.
+Unloading 435 unused Assets / (15.5 KB). Loaded Objects now: 936.
 Memory consumption went from 56.2 MB to 56.2 MB.
-Total: 5.100900 ms (FindLiveObjects: 0.074500 ms CreateObjectMapping: 0.039400 ms MarkObjects: 4.847700 ms  DeleteObjects: 0.137600 ms)
+Total: 22.148800 ms (FindLiveObjects: 0.245400 ms CreateObjectMapping: 0.038000 ms MarkObjects: 20.963700 ms  DeleteObjects: 0.898900 ms)
 
 Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 9.705510 seconds.
-  path: Assets/Scripts/Gamemanager/DeckManager.cs
-  artifactKey: Guid(f4eece5c3b4b04d4782141e5ab1b415e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Gamemanager/DeckManager.cs using Guid(f4eece5c3b4b04d4782141e5ab1b415e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a7b95a08d39f160d973aa5321f0ec615') in 0.0007988 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 435 unused Assets / (48.8 KB). Loaded Objects now: 936.
-Memory consumption went from 56.2 MB to 56.1 MB.
-Total: 5.637900 ms (FindLiveObjects: 0.089200 ms CreateObjectMapping: 0.031200 ms MarkObjects: 5.369300 ms  DeleteObjects: 0.146600 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 77.569087 seconds.
-  path: Assets/Scripts/Gamemanager/DeckManager.cs
-  artifactKey: Guid(f4eece5c3b4b04d4782141e5ab1b415e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Gamemanager/DeckManager.cs using Guid(f4eece5c3b4b04d4782141e5ab1b415e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a4c9da703dac805ebfb4b50c73a7702b') in 0.0018937 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
