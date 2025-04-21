@@ -399,6 +399,7 @@
 "Assets/Scripts/Gamemanager/Card.cs"
 "Assets/Scripts/Gamemanager/CardUI.cs"
 "Assets/Scripts/Gamemanager/Deck.cs"
+"Assets/Scripts/Gamemanager/DeckManager.cs"
 "Assets/Scripts/Gamemanager/GameManager.cs"
 "Assets/Scripts/Gamemanager/Hand.cs"
 "Assets/Scripts/Gamemanager/HandManager.cs"
