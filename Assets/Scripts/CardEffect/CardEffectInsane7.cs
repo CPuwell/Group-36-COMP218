@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CardEffectInsane7 : MonoBehaviour, InsaneCard
+public class CardEffectInsane7 : MonoBehaviour, IInsaneCard
 {
     private Card thisCard; // 当前这张卡牌
 
@@ -40,7 +40,7 @@ public class CardEffectInsane7 : MonoBehaviour, InsaneCard
         if (otherCard.value > 4)
         {
             Debug.Log($"{currentPlayer.playerName} 成功触发疯狂7号牌效果，立即赢得本轮！");
-            currentPlayer.winRound(); // 累加胜利回合
+            currentPlayer.WinRound(); // 累加胜利回合
             GameManager.Instance.EndRound();
             GameManager.Instance.DeclareWinner(currentPlayer); // 立即宣布胜者（你可以将其设为 public）
         }

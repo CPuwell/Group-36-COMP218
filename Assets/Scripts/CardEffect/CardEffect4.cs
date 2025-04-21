@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CardEffect4 : MonoBehaviour
+public class CardEffect4 : MonoBehaviour, IMainEffect
 {
     public void ExecuteEffect(Player currentPlayer)
     {

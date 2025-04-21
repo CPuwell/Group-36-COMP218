@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class CardEffectInsane5 : MonoBehaviour, InsaneCard
+public class CardEffectInsane5 : MonoBehaviour, IInsaneCard
 {
     public void ExecuteSaneEffect(Player currentPlayer)
     {
@@ -11,13 +11,13 @@ public class CardEffectInsane5 : MonoBehaviour, InsaneCard
             p => p.IsAlive() && !p.IsProtected()
         );
 
-        if (targets.Count == 0)
+        if (targetPlayers.Count == 0) 
         {
             Debug.Log("没有有效目标");
             return;
         }
 
-        Player target = targets[0]; // TODO: 替换为 UI 选人
+        Player target = targetPlayers[0]; 
 
         List<Card> cards = target.GetCards();
         if (cards.Count > 0)
@@ -31,6 +31,7 @@ public class CardEffectInsane5 : MonoBehaviour, InsaneCard
         currentPlayer.GoInsane(); // 理智效果执行完后变为insane
         GameManager.Instance.EndTurn();
     }
+
 
     public void ExecuteInsaneEffect(Player currentPlayer)
     {

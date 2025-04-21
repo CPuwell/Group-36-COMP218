@@ -35,21 +35,32 @@ public class Hand
     // 出牌
     public void PlayCard(Card card)
     {
-        if (!CanPlayCard(card))// 判断有没有7号牌的影响
+        if (!CanPlayCard(card)) // 判断有没有 7 号牌的限制影响
         {
             return;
         }
 
         if (cards.Contains(card))
         {
-            card.PlayCard();
+            // 使用 CardController 调用统一出牌逻辑
+            CardController controller = card.cardObject.GetComponent<CardController>();
+            if (controller != null)
+            {
+                controller.Play();
+            }
+            else
+            {
+                Debug.LogWarning("CardController 未挂载在卡牌 GameObject 上！");
+            }
+
             cards.Remove(card);
             selectedCard = null;
 
-            // 出牌后记录进入弃牌堆
+            // 弃牌记录仍保留
             GameManager.Instance.GetCurrentPlayer().RecordDiscard(card);
         }
     }
+
 
 
     public List<Card> GetCards()

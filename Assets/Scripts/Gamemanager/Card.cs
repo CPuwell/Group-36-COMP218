@@ -14,6 +14,8 @@ public class Card
 
     public bool isInsane;      // ÊÇ·ñÊÇ·è¿ñÅÆ
 
+    public GameObject cardObject;
+
     public Card(string name, string id, Sprite front, Sprite back, CardType type, string desc, int value, bool isInsane)
     {
         cardName = name;

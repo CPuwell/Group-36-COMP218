@@ -1,43 +1,40 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class CardEffect1 : MonoBehaviour
+public class CardEffect1 : MonoBehaviour, IMainEffect
 {
     public void ExecuteEffect(Player currentPlayer)
     {
-        // »ñÈ¡ÆäËûËùÓĞÔÚ³¡Íæ¼Ò£¨ÅÅ³ı×Ô¼º + ÒÑ³ö¾Ö£©
         List<Player> targetPlayers = GameManager.Instance.GetAvailableTargets(currentPlayer);
-
 
         if (targetPlayers.Count == 0)
         {
-            Debug.Log("Ã»ÓĞÆäËûÍæ¼Ò¿É¹©Ñ¡Ôñ");
+            UIManager.Instance.ShowPopup("æ²¡æœ‰å…¶ä»–ç©å®¶å¯ä¾›é€‰æ‹©");
             return;
         }
 
-        // TODO: Ìæ»»Îª UI Ñ¡ÈËºÍÊäÈë
-        Player selectedTarget = targetPlayers[2]; // ÁÙÊ±ÏÈÑ¡Ôñ2ºÅ
-        int guessedNumber = 5; // ÁÙÊ±²Â²âÊÖÅÆÎª5
-
-        if (guessedNumber == 1)
+        // è°ƒç”¨ UI é€‰æ‹©ç©å®¶ + çŒœæ•°å­—
+        UIManager.Instance.ShowGuessEffect(targetPlayers, (selectedTarget, guessedNumber) =>
         {
-            Debug.Log("²»ÄÜ²ÂÊı×Ö 1£¬ÇëÖØĞÂÑ¡Ôñ");
-            return;
-        }
+            if (guessedNumber == 1)
+            {
+                UIManager.Instance.ShowPopup("ä¸èƒ½çŒœæ•°å­— 1ï¼Œè¯·é‡æ–°é€‰æ‹©");
+                return;
+            }
 
-        int targetValue = selectedTarget.GetHandValue();
+            int targetValue = selectedTarget.GetHandValue();
 
-        if (targetValue == guessedNumber)
-        {
-            Debug.Log($"²ÂÖĞÁË£¡{selectedTarget.playerName} µÄÊÖÅÆÊÇ {targetValue}£¬Ëû³ö¾ÖÁË£¡");
-            selectedTarget.Eliminate();
-        }
-        else
-        {
-            Debug.Log($"²Â´íÁË¡£{selectedTarget.playerName} µÄÊÖÅÆÊÇ {targetValue}£¬¼ÌĞøÓÎÏ·");
-        }
+            if (targetValue == guessedNumber)
+            {
+                UIManager.Instance.Log($"çŒœä¸­äº†ï¼{selectedTarget.playerName} çš„æ‰‹ç‰Œæ˜¯ {targetValue}ï¼Œä»–å‡ºå±€äº†ï¼");
+                selectedTarget.Eliminate();
+            }
+            else
+            {
+                UIManager.Instance.Log($"çŒœé”™äº†ã€‚{selectedTarget.playerName} çš„æ‰‹ç‰Œæ˜¯ {targetValue}ï¼Œç»§ç»­æ¸¸æˆ");
+            }
 
-        // »ØºÏ½áÊøÓÉ GameManager ¿ØÖÆ
-        GameManager.Instance.EndTurn();
+            GameManager.Instance.EndTurn();
+        });
     }
 }

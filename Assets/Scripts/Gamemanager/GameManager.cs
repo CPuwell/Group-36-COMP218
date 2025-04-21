@@ -203,7 +203,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void DeclareWinner(Player winner)
+    public void DeclareWinner(Player winner)
     {
         RoundEnded = true;
         Debug.Log($"Player {winner.PlayerIndex} Wins!");
@@ -215,6 +215,12 @@ public class GameManager : MonoBehaviour
     {
         return players.FindAll(p => p != currentPlayer && p.IsAlive() && !p.IsProtected() && !p.IsImmortal());
     }
+
+    public List<Player> GetAvailableTargetsAllowSelf(Player requester)
+    {
+        return players.FindAll(p => p.IsAlive() && !p.IsProtected() && !p.IsImmortal());
+    }
+
 
     //强制给予某张牌
     public void GiveSpecificCardToPlayer(Player target, string cardId)

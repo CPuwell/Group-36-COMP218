@@ -20,15 +20,22 @@ public class Player : MonoBehaviour
 
     public void DrawCard(Deck deck)
     {
-        
         Card newCard = deck.Draw();
-            if (newCard != null)
+        if (newCard != null)
+        {
+            hand.AddCard(newCard);
+
+            // 设置归属
+            CardController controller = newCard.cardObject.GetComponent<CardController>();
+            if (controller != null)
             {
-                hand.AddCard(newCard);
-                Debug.Log($"{PlayerIndex} draw a card: {newCard.cardName}");
-            
+                controller.SetCardOwner(this);
+            }
+
+            Debug.Log($"{PlayerIndex} 抽到了一张牌：{newCard.cardName}");
         }
     }
+
 
     public void PlayCard(Card card)
     {       
@@ -200,4 +207,20 @@ public class Player : MonoBehaviour
     {
         discardedCards.Clear();
     }
+
+    public Card GetOtherCard(Card excludedCard)
+    {
+        List<Card> cards = GetCards();
+
+        foreach (Card card in cards)
+        {
+            if (card != excludedCard)
+            {
+                return card;
+            }
+        }
+
+        return null;
+    }
+
 }

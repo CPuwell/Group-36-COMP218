@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class CardEffectInsane1 : MonoBehaviour, InsaneCard
+public class CardEffectInsane1 : MonoBehaviour, IInsaneCard
 {
     public void ExecuteSaneEffect(Player currentPlayer)
     {
@@ -9,13 +9,13 @@ public class CardEffectInsane1 : MonoBehaviour, InsaneCard
 
         List<Player> targetPlayers = GameManager.Instance.GetAvailableTargets(currentPlayer);
 
-        if (targets.Count == 0)
+        if (targetPlayers.Count == 0) 
         {
             Debug.Log("没有可以选择的玩家");
             return;
         }
 
-        Player target = targets[0]; // TODO: 替换为 UI 选人
+        Player target = targetPlayers[0]; 
         int guess = 5; // TODO: 替换为 UI 输入（不能为1）
 
         if (guess == 1)
@@ -34,10 +34,10 @@ public class CardEffectInsane1 : MonoBehaviour, InsaneCard
             Debug.Log("猜错了，没有效果");
         }
 
-        // 理智效果执行完，进入 insane 状态
         currentPlayer.GoInsane();
         GameManager.Instance.EndTurn();
     }
+
 
     public void ExecuteInsaneEffect(Player currentPlayer)
     {
@@ -45,13 +45,14 @@ public class CardEffectInsane1 : MonoBehaviour, InsaneCard
 
         List<Player> targetPlayers = GameManager.Instance.GetAvailableTargets(currentPlayer);
 
-        if (targets.Count == 0)
+        if (targetPlayers.Count == 0)
         {
             Debug.Log("没有可以选择的玩家");
             return;
         }
 
-        Player target = targets[0]; // TODO: 替换为 UI 选人
+        Player target = targetPlayers[0]; // 注意这里也要改
+
 
         int handValue = target.GetHandValue();
         if (handValue == 1)

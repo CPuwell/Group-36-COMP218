@@ -1,29 +1,29 @@
 Using pre-set license
-Built from '6000.0/release' branch; Version is '6000.0.45f1 (d91bd3d4e081) revision 14228435'; Using compiler version '193933523'; Build Type 'Release'
-OS: 'Windows 11  (10.0.26200) 64bit CoreCountrySpecific' Language: 'zh' Physical Memory: 32560 MB
+Built from '6000.0/staging' branch; Version is '6000.0.37f1 (090b7797214c) revision 592759'; Using compiler version '193933523'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26100) 64bit CoreCountrySpecific' Language: 'zh' Physical Memory: 32012 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-E:\Unity\6000.0.45f1\Editor\Unity.exe
+D:\Unity\6000.0.37f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-D:/Learn/UoL/Y3 S2/Group Software/Project/Group-36-COMP218
+D:/Github/Group-36-COMP218
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49402
+11572
 -job-worker-count
-9
+7
 -background-job-worker-count
 8
 -gc-helper-count
 1
-Successfully changed project path to: D:/Learn/UoL/Y3 S2/Group Software/Project/Group-36-COMP218
-D:/Learn/UoL/Y3 S2/Group Software/Project/Group-36-COMP218
+Successfully changed project path to: D:/Github/Group-36-COMP218
+D:/Github/Group-36-COMP218
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -59,21 +59,15 @@ D:/Learn/UoL/Y3 S2/Group Software/Project/Group-36-COMP218
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [21544]  Target information:
+Player connection [55948]  Target information:
 
-Player connection [21544]  * "[IP] 10.74.14.44 [Port] 0 [Flags] 2 [Guid] 2548679826 [EditorId] 2548679826 [Version] 1048832 [Id] WindowsEditor(7,CPu) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [55948]  * "[IP] 10.8.8.1 [Port] 0 [Flags] 2 [Guid] 3638916218 [EditorId] 3638916218 [Version] 1048832 [Id] WindowsEditor(7,jcddl) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [21544]  * "[IP] 192.168.206.1 [Port] 0 [Flags] 2 [Guid] 2548679826 [EditorId] 2548679826 [Version] 1048832 [Id] WindowsEditor(7,CPu) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [55948]  * "[IP] 10.74.2.140 [Port] 0 [Flags] 2 [Guid] 3638916218 [EditorId] 3638916218 [Version] 1048832 [Id] WindowsEditor(7,jcddl) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [21544]  * "[IP] 192.168.114.1 [Port] 0 [Flags] 2 [Guid] 2548679826 [EditorId] 2548679826 [Version] 1048832 [Id] WindowsEditor(7,CPu) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
-
-Player connection [21544]  * "[IP] 26.181.90.200 [Port] 0 [Flags] 2 [Guid] 2548679826 [EditorId] 2548679826 [Version] 1048832 [Id] WindowsEditor(7,CPu) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
-
-Player connection [21544]  * "[IP] 10.74.2.11 [Port] 0 [Flags] 2 [Guid] 2548679826 [EditorId] 2548679826 [Version] 1048832 [Id] WindowsEditor(7,CPu) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
-
-Player connection [21544] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [21544] Host joined alternative multi-casting on [225.0.0.222:34997]...
-JobSystem: Creating JobQueue using job-worker-count value 9
+Player connection [55948] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [55948] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
 [Physics::Module] Id: 0xdecafbad
@@ -86,57 +80,59 @@ Library Redirect Path: Library/
 [Physics::Module] Threading Mode: Multi-Threaded
 Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Initialize engine version: 6000.0.45f1 (d91bd3d4e081)
-[Subsystems] Discovering subsystems at path E:/Unity/6000.0.45f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/Learn/UoL/Y3 S2/Group Software/Project/Group-36-COMP218/Assets
+Initialize engine version: 6000.0.37f1 (090b7797214c)
+[Subsystems] Discovering subsystems at path D:/Unity/6000.0.37f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Github/Group-36-COMP218/Assets
 GfxDevice: creating device client; kGfxThreadingModeNonThreaded
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 3070 Laptop GPU (ID=0x24dd)
+    Renderer: NVIDIA GeForce RTX 3070 Ti Laptop GPU (ID=0x24a0)
     Vendor:   NVIDIA
-    VRAM:     8020 MB
-    Driver:   32.0.15.7270
+    VRAM:     8018 MB
+    Driver:   32.0.15.7247
 Initialize mono
-Mono path[0] = 'E:/Unity/6000.0.45f1/Editor/Data/Managed'
-Mono path[1] = 'E:/Unity/6000.0.45f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'E:/Unity/6000.0.45f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56744
+Mono path[0] = 'D:/Unity/6000.0.37f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity/6000.0.37f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/Unity/6000.0.37f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56920
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: E:/Unity/6000.0.45f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002441 seconds.
-- Loaded All Assemblies, in  0.467 seconds
+Register platform support module: D:/Unity/6000.0.37f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: D:/Unity/6000.0.37f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003516 seconds.
+- Loaded All Assemblies, in  0.498 seconds
 Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.326 seconds
-Domain Reload Profiling: 793ms
-	BeginReloadAssembly (206ms)
+- Finished resetting the current domain, in  0.421 seconds
+Domain Reload Profiling: 920ms
+	BeginReloadAssembly (202ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (38ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (44ms)
-	LoadAllAssembliesAndSetupDomain (167ms)
-		LoadAssemblies (206ms)
+	RebuildCommonClasses (42ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (50ms)
+	LoadAllAssembliesAndSetupDomain (191ms)
+		LoadAssemblies (201ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (164ms)
-			TypeCache.Refresh (162ms)
-				TypeCache.ScanAssembly (148ms)
+		AnalyzeDomain (187ms)
+			TypeCache.Refresh (185ms)
+				TypeCache.ScanAssembly (169ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (326ms)
+	FinalizeReload (422ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (293ms)
+		SetupLoadedEditorAssemblies (385ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (24ms)
-			SetLoadedEditorAssemblies (5ms)
-			BeforeProcessingInitializeOnLoad (51ms)
-			ProcessInitializeOnLoadAttributes (153ms)
-			ProcessInitializeOnLoadMethodAttributes (60ms)
+			InitializePlatformSupportModulesInManaged (32ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (71ms)
+			ProcessInitializeOnLoadAttributes (208ms)
+			ProcessInitializeOnLoadMethodAttributes (68ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -145,57 +141,66 @@ Domain Reload Profiling: 793ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.319 seconds
+- Loaded All Assemblies, in  0.431 seconds
 Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
 Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.335 seconds
-Domain Reload Profiling: 654ms
-	BeginReloadAssembly (225ms)
+- Finished resetting the current domain, in  0.457 seconds
+Domain Reload Profiling: 888ms
+	BeginReloadAssembly (289ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (10ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (29ms)
-	RebuildCommonClasses (39ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (18ms)
-	LoadAllAssembliesAndSetupDomain (25ms)
-		LoadAssemblies (167ms)
+		CreateAndSetChildDomain (50ms)
+	RebuildCommonClasses (65ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (31ms)
+		LoadAssemblies (193ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (18ms)
-			TypeCache.Refresh (12ms)
-				TypeCache.ScanAssembly (7ms)
+		AnalyzeDomain (22ms)
+			TypeCache.Refresh (15ms)
+				TypeCache.ScanAssembly (10ms)
 			BuildScriptInfoCaches (3ms)
 			ResolveRequiredComponents (2ms)
-	FinalizeReload (335ms)
+	FinalizeReload (458ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (213ms)
+		SetupLoadedEditorAssemblies (295ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (3ms)
-			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (60ms)
-			ProcessInitializeOnLoadAttributes (116ms)
-			ProcessInitializeOnLoadMethodAttributes (29ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (84ms)
+			ProcessInitializeOnLoadAttributes (157ms)
+			ProcessInitializeOnLoadMethodAttributes (40ms)
 			AfterProcessingInitializeOnLoad (2ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (13ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
 Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 436 unused Assets / (52.8 KB). Loaded Objects now: 933.
-Memory consumption went from 56.8 MB to 56.7 MB.
-Total: 3.877200 ms (FindLiveObjects: 0.068400 ms CreateObjectMapping: 0.020600 ms MarkObjects: 3.561000 ms  DeleteObjects: 0.225100 ms)
+Unloading 437 unused Assets / (106.6 KB). Loaded Objects now: 934.
+Memory consumption went from 60.2 MB to 60.1 MB.
+Total: 10.998400 ms (FindLiveObjects: 0.132800 ms CreateObjectMapping: 0.065900 ms MarkObjects: 9.983100 ms  DeleteObjects: 0.814800 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 351635.495303 seconds.
-  path: Assets/Scripts/Gamemanager
-  artifactKey: Guid(f7dda73addcad8e4a8cde099c6816c8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Gamemanager using Guid(f7dda73addcad8e4a8cde099c6816c8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '76d0148767cdd5611a21842f67b7057b') in 0.0068448 seconds
+  Time since last request: 27611.114849 seconds.
+  path: Assets/Scripts/Gamemanager/Card.cs
+  artifactKey: Guid(3544cd296546edd46a6b3ff07bd58c2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Gamemanager/Card.cs using Guid(3544cd296546edd46a6b3ff07bd58c2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9efed1543532fd66236524b118e45e0e') in 0.0235999 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 82.220722 seconds.
+  path: Assets/Scripts/Controller/CardController.cs
+  artifactKey: Guid(c04a9a9d02e93c149b5e94e9b512323a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Controller/CardController.cs using Guid(c04a9a9d02e93c149b5e94e9b512323a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '21ea60806358ec21badf09321de3813d') in 0.0009427 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
@@ -203,17 +208,199 @@ Received Prepare
 Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 435 unused Assets / (35.2 KB). Loaded Objects now: 936.
-Memory consumption went from 56.2 MB to 56.2 MB.
-Total: 5.100900 ms (FindLiveObjects: 0.074500 ms CreateObjectMapping: 0.039400 ms MarkObjects: 4.847700 ms  DeleteObjects: 0.137600 ms)
+Unloading 435 unused Assets / (38.1 KB). Loaded Objects now: 936.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 10.513700 ms (FindLiveObjects: 0.284900 ms CreateObjectMapping: 0.115500 ms MarkObjects: 9.920700 ms  DeleteObjects: 0.190800 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 ========================================================================
 Received Import Request.
-  Time since last request: 9.705510 seconds.
-  path: Assets/Scripts/Gamemanager/DeckManager.cs
-  artifactKey: Guid(f4eece5c3b4b04d4782141e5ab1b415e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Gamemanager/DeckManager.cs using Guid(f4eece5c3b4b04d4782141e5ab1b415e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a7b95a08d39f160d973aa5321f0ec615') in 0.0007988 seconds
+  Time since last request: 101.972679 seconds.
+  path: Assets/Scripts/Controller/CardController.cs
+  artifactKey: Guid(c04a9a9d02e93c149b5e94e9b512323a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Controller/CardController.cs using Guid(c04a9a9d02e93c149b5e94e9b512323a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1757116f7ff36d9cd412f48d7ca09e9b') in 0.0009405 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.608708 seconds.
+  path: Assets/Scripts/CardEffect/CardEffectInsane8.cs
+  artifactKey: Guid(ec81753be2c989e4f83017b41169a24e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffectInsane8.cs using Guid(ec81753be2c989e4f83017b41169a24e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '66f7e28fa083969b022c98aa572a87f3') in 0.0005963 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 186.324812 seconds.
+  path: Assets/Scripts/CardEffect/CardEffectInsane0.cs
+  artifactKey: Guid(0fd3d63648d162e4fa7f88c6376ce709) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffectInsane0.cs using Guid(0fd3d63648d162e4fa7f88c6376ce709) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5ec024187f746d8ed0b035d82643ce4c') in 0.0006133 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 435 unused Assets / (43.0 KB). Loaded Objects now: 936.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 6.721400 ms (FindLiveObjects: 0.121100 ms CreateObjectMapping: 0.064600 ms MarkObjects: 6.359600 ms  DeleteObjects: 0.174400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 32.618654 seconds.
+  path: Assets/Scripts/CardEffect/CardEffectInsane0.cs
+  artifactKey: Guid(0fd3d63648d162e4fa7f88c6376ce709) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffectInsane0.cs using Guid(0fd3d63648d162e4fa7f88c6376ce709) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b3e46fbc4ea3669468e2054b12cc9025') in 0.0009246 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.585363 seconds.
+  path: Assets/Scripts/CardEffect/CardEffectInsane1.cs
+  artifactKey: Guid(64af8051861da0144b347695a3ab37a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffectInsane1.cs using Guid(64af8051861da0144b347695a3ab37a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f3c2306d2029dffb61c7d2fbdb816b64') in 0.0005762 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 435 unused Assets / (47.1 KB). Loaded Objects now: 936.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 10.427700 ms (FindLiveObjects: 0.132200 ms CreateObjectMapping: 0.074200 ms MarkObjects: 10.002600 ms  DeleteObjects: 0.216700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 8.430057 seconds.
+  path: Assets/Scripts/CardEffect/CardEffectInsane1.cs
+  artifactKey: Guid(64af8051861da0144b347695a3ab37a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffectInsane1.cs using Guid(64af8051861da0144b347695a3ab37a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5cf68877c7ea41d55da07dc6db83fd56') in 0.001838 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.490775 seconds.
+  path: Assets/Scripts/CardEffect/CardEffectInsane2.cs
+  artifactKey: Guid(b1a5b6c8b24fc1d4eab87fa0f6e8890b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffectInsane2.cs using Guid(b1a5b6c8b24fc1d4eab87fa0f6e8890b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f5a6a557edc6bd2dfb9b5893d2bf486f') in 0.0005351 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 435 unused Assets / (43.0 KB). Loaded Objects now: 936.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 18.790100 ms (FindLiveObjects: 0.258800 ms CreateObjectMapping: 0.194700 ms MarkObjects: 18.065300 ms  DeleteObjects: 0.269800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 8.608543 seconds.
+  path: Assets/Scripts/CardEffect/CardEffectInsane2.cs
+  artifactKey: Guid(b1a5b6c8b24fc1d4eab87fa0f6e8890b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffectInsane2.cs using Guid(b1a5b6c8b24fc1d4eab87fa0f6e8890b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '93565117a8c3d03ccea2ce0a3ca58b12') in 0.0031319 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.574493 seconds.
+  path: Assets/Scripts/CardEffect/CardEffectInsane3.cs
+  artifactKey: Guid(e5508ca8145f5494fb9333d42028c53b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffectInsane3.cs using Guid(e5508ca8145f5494fb9333d42028c53b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '21d5763b835723fa64a4c35d13ffe8d9') in 0.000612 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 435 unused Assets / (51.7 KB). Loaded Objects now: 936.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 14.697800 ms (FindLiveObjects: 0.159900 ms CreateObjectMapping: 0.058500 ms MarkObjects: 14.275200 ms  DeleteObjects: 0.202800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 8.101403 seconds.
+  path: Assets/Scripts/CardEffect/CardEffectInsane4.cs
+  artifactKey: Guid(57425da6a11aa794187d52ddd17ae166) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffectInsane4.cs using Guid(57425da6a11aa794187d52ddd17ae166) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '943dba2c4ad2d37be50e65be29fccd78') in 0.000887 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 435 unused Assets / (54.7 KB). Loaded Objects now: 936.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 8.028800 ms (FindLiveObjects: 0.190100 ms CreateObjectMapping: 0.131900 ms MarkObjects: 7.474400 ms  DeleteObjects: 0.230800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 7.538925 seconds.
+  path: Assets/Scripts/CardEffect/CardEffectInsane4.cs
+  artifactKey: Guid(57425da6a11aa794187d52ddd17ae166) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffectInsane4.cs using Guid(57425da6a11aa794187d52ddd17ae166) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a517deffd3e24ea7f87fd127d7bc2aad') in 0.0035763 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.720568 seconds.
+  path: Assets/Scripts/CardEffect/CardEffectInsane5.cs
+  artifactKey: Guid(45e03dd949e13004882fe480a5ceb0d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffectInsane5.cs using Guid(45e03dd949e13004882fe480a5ceb0d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fc572ee1db77b5f6c1c10f374304b9d0') in 0.0004938 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 435 unused Assets / (47.0 KB). Loaded Objects now: 936.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 11.272000 ms (FindLiveObjects: 0.150500 ms CreateObjectMapping: 0.101300 ms MarkObjects: 10.814000 ms  DeleteObjects: 0.203800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 8.681370 seconds.
+  path: Assets/Scripts/CardEffect/CardEffectInsane5.cs
+  artifactKey: Guid(45e03dd949e13004882fe480a5ceb0d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffectInsane5.cs using Guid(45e03dd949e13004882fe480a5ceb0d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '599cb8e7ae9f8bef0cf9ba79b80916c0') in 0.0025052 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.800191 seconds.
+  path: Assets/Scripts/CardEffect/CardEffectInsane6.cs
+  artifactKey: Guid(216575615188e844ab461bd5a45fb2d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffectInsane6.cs using Guid(216575615188e844ab461bd5a45fb2d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3e7aa0d36c0654b411d797ef8c45ada7') in 0.0005223 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 435 unused Assets / (41.1 KB). Loaded Objects now: 936.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 7.476600 ms (FindLiveObjects: 0.314900 ms CreateObjectMapping: 0.135800 ms MarkObjects: 6.876300 ms  DeleteObjects: 0.148500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 7.283826 seconds.
+  path: Assets/Scripts/CardEffect/CardEffectInsane7.cs
+  artifactKey: Guid(f6b17bf537258184ca58d5b1054ec673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffectInsane7.cs using Guid(f6b17bf537258184ca58d5b1054ec673) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b1ffb513e18df26add5ef4fd42cf5ea7') in 0.0013404 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
@@ -222,15 +409,785 @@ Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 435 unused Assets / (48.8 KB). Loaded Objects now: 936.
-Memory consumption went from 56.2 MB to 56.1 MB.
-Total: 5.637900 ms (FindLiveObjects: 0.089200 ms CreateObjectMapping: 0.031200 ms MarkObjects: 5.369300 ms  DeleteObjects: 0.146600 ms)
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 9.745600 ms (FindLiveObjects: 0.140800 ms CreateObjectMapping: 0.089500 ms MarkObjects: 9.291900 ms  DeleteObjects: 0.222200 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 ========================================================================
 Received Import Request.
-  Time since last request: 77.569087 seconds.
-  path: Assets/Scripts/Gamemanager/DeckManager.cs
-  artifactKey: Guid(f4eece5c3b4b04d4782141e5ab1b415e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Gamemanager/DeckManager.cs using Guid(f4eece5c3b4b04d4782141e5ab1b415e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a4c9da703dac805ebfb4b50c73a7702b') in 0.0018937 seconds
+  Time since last request: 8.275077 seconds.
+  path: Assets/Scripts/CardEffect/CardEffectInsane7.cs
+  artifactKey: Guid(f6b17bf537258184ca58d5b1054ec673) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffectInsane7.cs using Guid(f6b17bf537258184ca58d5b1054ec673) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '83288e45920da4b9ce50bd84103accf1') in 0.0019427 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 435 unused Assets / (46.1 KB). Loaded Objects now: 936.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 10.827300 ms (FindLiveObjects: 0.130900 ms CreateObjectMapping: 0.064100 ms MarkObjects: 10.386400 ms  DeleteObjects: 0.243400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 9.242083 seconds.
+  path: Assets/Scripts/CardEffect/InsaneCard.cs
+  artifactKey: Guid(88f2144bc9b36c24787a565b8b1a1da8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/InsaneCard.cs using Guid(88f2144bc9b36c24787a565b8b1a1da8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c0b2faec0127fea76e611cfa8edfb47d') in 0.0007695 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 435 unused Assets / (39.1 KB). Loaded Objects now: 936.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 8.254300 ms (FindLiveObjects: 0.572300 ms CreateObjectMapping: 0.110400 ms MarkObjects: 7.279200 ms  DeleteObjects: 0.290800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 32.391549 seconds.
+  path: Assets/Scripts/CardEffect/InsaneCard.cs
+  artifactKey: Guid(88f2144bc9b36c24787a565b8b1a1da8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/InsaneCard.cs using Guid(88f2144bc9b36c24787a565b8b1a1da8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '81b709a914460c4d1a30dddac05b64fd') in 0.0013816 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 435 unused Assets / (73.7 KB). Loaded Objects now: 936.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 6.483300 ms (FindLiveObjects: 0.200600 ms CreateObjectMapping: 0.105200 ms MarkObjects: 5.954600 ms  DeleteObjects: 0.221700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 9.318605 seconds.
+  path: Assets/Scripts/CardEffect/IInsaneCard.cs
+  artifactKey: Guid(88f2144bc9b36c24787a565b8b1a1da8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/IInsaneCard.cs using Guid(88f2144bc9b36c24787a565b8b1a1da8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3fbc843ec1a185611b1ba40ab77b10a1') in 0.0008116 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 436 unused Assets / (51.7 KB). Loaded Objects now: 937.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 4.992900 ms (FindLiveObjects: 0.117800 ms CreateObjectMapping: 0.041800 ms MarkObjects: 4.645900 ms  DeleteObjects: 0.185800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 435 unused Assets / (41.7 KB). Loaded Objects now: 936.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 5.177800 ms (FindLiveObjects: 0.120500 ms CreateObjectMapping: 0.028000 ms MarkObjects: 4.895900 ms  DeleteObjects: 0.132000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 436 unused Assets / (37.9 KB). Loaded Objects now: 937.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 6.698900 ms (FindLiveObjects: 0.142500 ms CreateObjectMapping: 0.032200 ms MarkObjects: 6.356700 ms  DeleteObjects: 0.166100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 935.455298 seconds.
+  path: Assets/Scripts/CardEffect/CardEffect1.cs
+  artifactKey: Guid(5ee6c5e7efdd0774597f8ef7813a787c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffect1.cs using Guid(5ee6c5e7efdd0774597f8ef7813a787c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f29c75bb27c038dbb7f51b3da815d527') in 0.001127 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (33.0 KB). Loaded Objects now: 938.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 6.009500 ms (FindLiveObjects: 0.138200 ms CreateObjectMapping: 0.033400 ms MarkObjects: 5.682100 ms  DeleteObjects: 0.154300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (35.2 KB). Loaded Objects now: 938.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 7.065200 ms (FindLiveObjects: 0.122100 ms CreateObjectMapping: 0.024600 ms MarkObjects: 6.728500 ms  DeleteObjects: 0.188700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 106.410076 seconds.
+  path: Assets/Scripts/CardEffect/IMainEffect.cs
+  artifactKey: Guid(7bd394fef8deb034f8e2cc8e2f5bd633) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/IMainEffect.cs using Guid(7bd394fef8deb034f8e2cc8e2f5bd633) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6c601fb72f120fc1cb3cf0c98b334462') in 0.0015661 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (53.6 KB). Loaded Objects now: 938.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 11.209900 ms (FindLiveObjects: 0.161500 ms CreateObjectMapping: 0.066500 ms MarkObjects: 10.778400 ms  DeleteObjects: 0.202100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 19.677100 seconds.
+  path: Assets/Scripts/CardEffect/IMainEffect.cs
+  artifactKey: Guid(7bd394fef8deb034f8e2cc8e2f5bd633) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/IMainEffect.cs using Guid(7bd394fef8deb034f8e2cc8e2f5bd633) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '589f19378d184729eace3d3cd6e46711') in 0.0019229 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (54.9 KB). Loaded Objects now: 938.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 9.827900 ms (FindLiveObjects: 0.136700 ms CreateObjectMapping: 0.063700 ms MarkObjects: 9.219600 ms  DeleteObjects: 0.405700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 309.361203 seconds.
+  path: Assets/Scripts/CardEffect/CardEffect1.cs
+  artifactKey: Guid(5ee6c5e7efdd0774597f8ef7813a787c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffect1.cs using Guid(5ee6c5e7efdd0774597f8ef7813a787c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9e3434157ef7397d9538f8feee88998f') in 0.0011014 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.369502 seconds.
+  path: Assets/Scripts/CardEffect/CardEffect2.cs
+  artifactKey: Guid(e7890d9533f28ce428b3015653e78760) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffect2.cs using Guid(e7890d9533f28ce428b3015653e78760) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0b9bd3168ece5eb05c50bbfaedc1fcae') in 0.0007247 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (45.7 KB). Loaded Objects now: 938.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 6.410400 ms (FindLiveObjects: 0.146400 ms CreateObjectMapping: 0.082100 ms MarkObjects: 6.000500 ms  DeleteObjects: 0.179900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 172.814216 seconds.
+  path: Assets/Scripts/CardEffect/CardEffect2.cs
+  artifactKey: Guid(e7890d9533f28ce428b3015653e78760) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffect2.cs using Guid(e7890d9533f28ce428b3015653e78760) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '61751c5244ae963014e82222a8f6db08') in 0.0014721 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.667957 seconds.
+  path: Assets/Scripts/CardEffect/CardEffect3.cs
+  artifactKey: Guid(bcd77219e3d01944592b852dd4f3fee0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffect3.cs using Guid(bcd77219e3d01944592b852dd4f3fee0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '74a08d3f78e50fa24eaffcef8ac1fa15') in 0.0004939 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (49.7 KB). Loaded Objects now: 938.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 8.530400 ms (FindLiveObjects: 0.134800 ms CreateObjectMapping: 0.068500 ms MarkObjects: 8.115200 ms  DeleteObjects: 0.210800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 35.035035 seconds.
+  path: Assets/Scripts/CardEffect/CardEffect3.cs
+  artifactKey: Guid(bcd77219e3d01944592b852dd4f3fee0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffect3.cs using Guid(bcd77219e3d01944592b852dd4f3fee0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3e440eab06e1dc326f042a0ba99a96d5') in 0.001264 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.895067 seconds.
+  path: Assets/Scripts/CardEffect/CardEffect4.cs
+  artifactKey: Guid(a81618a5e78017b4a90d6c5a0bf70f07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffect4.cs using Guid(a81618a5e78017b4a90d6c5a0bf70f07) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f89d2932d07b4434aa1fac1318b3bbd5') in 0.0004919 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (49.0 KB). Loaded Objects now: 938.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 6.878300 ms (FindLiveObjects: 0.157200 ms CreateObjectMapping: 0.082400 ms MarkObjects: 6.442600 ms  DeleteObjects: 0.194700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 106.231345 seconds.
+  path: Assets/Scripts/CardEffect/CardEffect4.cs
+  artifactKey: Guid(a81618a5e78017b4a90d6c5a0bf70f07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffect4.cs using Guid(a81618a5e78017b4a90d6c5a0bf70f07) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f38a049f8488137837ca4ba5a831f186') in 0.0011216 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.190885 seconds.
+  path: Assets/Scripts/CardEffect/CardEffect5.cs
+  artifactKey: Guid(4cca1e05f62d4d9499aeb136a7143633) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffect5.cs using Guid(4cca1e05f62d4d9499aeb136a7143633) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ae0445400077cecc492fa8fe230d7e03') in 0.0005608 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (40.0 KB). Loaded Objects now: 938.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 6.961200 ms (FindLiveObjects: 0.483700 ms CreateObjectMapping: 0.085100 ms MarkObjects: 6.147900 ms  DeleteObjects: 0.242800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 15.633808 seconds.
+  path: Assets/Scripts/CardEffect/CardEffect5.cs
+  artifactKey: Guid(4cca1e05f62d4d9499aeb136a7143633) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffect5.cs using Guid(4cca1e05f62d4d9499aeb136a7143633) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cd6f292cb38eb364dc27d841ad1e50dd') in 0.0015561 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.785356 seconds.
+  path: Assets/Scripts/CardEffect/CardEffect6.cs
+  artifactKey: Guid(22e60ea13f19a9a4f8df7f5e7134c248) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffect6.cs using Guid(22e60ea13f19a9a4f8df7f5e7134c248) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ee068b53222def3854f9641b0eb12031') in 0.0004887 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (42.9 KB). Loaded Objects now: 938.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 8.770700 ms (FindLiveObjects: 0.129800 ms CreateObjectMapping: 0.225100 ms MarkObjects: 8.167400 ms  DeleteObjects: 0.246100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 106.586947 seconds.
+  path: Assets/Scripts/CardEffect/CardEffect6.cs
+  artifactKey: Guid(22e60ea13f19a9a4f8df7f5e7134c248) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffect6.cs using Guid(22e60ea13f19a9a4f8df7f5e7134c248) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '23d61ca159ea5254df2a747eb6f2ed47') in 0.0013329 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.527667 seconds.
+  path: Assets/Scripts/CardEffect/CardEffect7.cs
+  artifactKey: Guid(e402e7d1a354e364bbd6a3bad35192c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffect7.cs using Guid(e402e7d1a354e364bbd6a3bad35192c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd348c57894e963aba0c2468bb66b8aee') in 0.0004347 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (54.6 KB). Loaded Objects now: 938.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 8.017700 ms (FindLiveObjects: 0.120100 ms CreateObjectMapping: 0.060100 ms MarkObjects: 7.615300 ms  DeleteObjects: 0.220800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 33.848122 seconds.
+  path: Assets/Scripts/CardEffect/CardEffect7.cs
+  artifactKey: Guid(e402e7d1a354e364bbd6a3bad35192c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffect7.cs using Guid(e402e7d1a354e364bbd6a3bad35192c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '42afe8a6c52fd42e8ed6663969298c8d') in 0.0008418 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.093036 seconds.
+  path: Assets/Scripts/CardEffect/CardEffect8.cs
+  artifactKey: Guid(fe3245e6d6baf0f4dbf177ce1897fb34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffect8.cs using Guid(fe3245e6d6baf0f4dbf177ce1897fb34) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8973d3cee880030a1b82fc2ea01cc95c') in 0.0004265 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (42.8 KB). Loaded Objects now: 938.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 10.583900 ms (FindLiveObjects: 0.402500 ms CreateObjectMapping: 0.113400 ms MarkObjects: 9.766000 ms  DeleteObjects: 0.300500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 88.949819 seconds.
+  path: Assets/Scripts/CardEffect/CardEffect8.cs
+  artifactKey: Guid(fe3245e6d6baf0f4dbf177ce1897fb34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffect8.cs using Guid(fe3245e6d6baf0f4dbf177ce1897fb34) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8fdd316ac77f9f67fffd5bd95ffdb0fd') in 0.0021024 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (32.3 KB). Loaded Objects now: 938.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 7.230400 ms (FindLiveObjects: 0.139700 ms CreateObjectMapping: 0.055600 ms MarkObjects: 6.865800 ms  DeleteObjects: 0.168000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 438 unused Assets / (29.2 KB). Loaded Objects now: 939.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 7.265700 ms (FindLiveObjects: 0.129300 ms CreateObjectMapping: 0.032700 ms MarkObjects: 6.982800 ms  DeleteObjects: 0.119500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 438 unused Assets / (37.3 KB). Loaded Objects now: 939.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 5.794000 ms (FindLiveObjects: 0.116200 ms CreateObjectMapping: 0.041600 ms MarkObjects: 5.481100 ms  DeleteObjects: 0.153800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 838.816270 seconds.
+  path: Assets/Scripts/Controller/NewMonoBehaviourScript.cs
+  artifactKey: Guid(54951fcc8d0ebcd4aac10f6b1bdda1b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Controller/NewMonoBehaviourScript.cs using Guid(54951fcc8d0ebcd4aac10f6b1bdda1b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f8d18e85ffc7f767a30b4e4fede1dd72') in 0.0012078 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 438 unused Assets / (37.9 KB). Loaded Objects now: 939.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 6.076800 ms (FindLiveObjects: 0.120900 ms CreateObjectMapping: 0.026500 ms MarkObjects: 5.741100 ms  DeleteObjects: 0.173800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 27.343098 seconds.
+  path: Assets/Scripts/Controller/UIController.cs
+  artifactKey: Guid(54951fcc8d0ebcd4aac10f6b1bdda1b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Controller/UIController.cs using Guid(54951fcc8d0ebcd4aac10f6b1bdda1b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0968b21fa709a106aed3ded03246bd82') in 0.0007686 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 27.415240 seconds.
+  path: Assets/Scripts/Controller/CardController.cs
+  artifactKey: Guid(c04a9a9d02e93c149b5e94e9b512323a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Controller/CardController.cs using Guid(c04a9a9d02e93c149b5e94e9b512323a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '596e85ae96311432041ab8e99b04a9b9') in 0.0005824 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.900287 seconds.
+  path: Assets/Scripts/Gamemanager/Hand.cs
+  artifactKey: Guid(102ba132b2fd8474daa4ec5742770210) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Gamemanager/Hand.cs using Guid(102ba132b2fd8474daa4ec5742770210) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '38a50bfa9426a39df4a47bc1cd650e43') in 0.0005388 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 25.672459 seconds.
+  path: Assets/Scripts/Gamemanager/Players.cs
+  artifactKey: Guid(58628f085c536634b8b361701b0fd70a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Gamemanager/Players.cs using Guid(58628f085c536634b8b361701b0fd70a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b1f15d2ad311a160fe4f2746dc55a0cd') in 0.0005154 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 438 unused Assets / (40.0 KB). Loaded Objects now: 939.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 6.073600 ms (FindLiveObjects: 0.178900 ms CreateObjectMapping: 0.066800 ms MarkObjects: 5.636400 ms  DeleteObjects: 0.189000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 129.814931 seconds.
+  path: Assets/Scripts/Gamemanager/Players.cs
+  artifactKey: Guid(58628f085c536634b8b361701b0fd70a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Gamemanager/Players.cs using Guid(58628f085c536634b8b361701b0fd70a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a77c806444a255950beabe7314e2e57e') in 0.0007781 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (33.0 KB). Loaded Objects now: 938.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 5.802700 ms (FindLiveObjects: 0.136200 ms CreateObjectMapping: 0.029200 ms MarkObjects: 5.507600 ms  DeleteObjects: 0.128500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 73.996639 seconds.
+  path: Assets/Scripts/CardEffect/CardEffect9.cs
+  artifactKey: Guid(33911895701f94645b55145902c9dc8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffect9.cs using Guid(33911895701f94645b55145902c9dc8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a34f0c0e3868cb80e67045211a6039dc') in 0.0007556 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 436 unused Assets / (44.9 KB). Loaded Objects now: 937.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 8.325200 ms (FindLiveObjects: 0.140900 ms CreateObjectMapping: 0.026300 ms MarkObjects: 7.989200 ms  DeleteObjects: 0.167700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 436 unused Assets / (44.7 KB). Loaded Objects now: 937.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 8.797100 ms (FindLiveObjects: 0.152900 ms CreateObjectMapping: 0.114500 ms MarkObjects: 8.284600 ms  DeleteObjects: 0.243600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 436 unused Assets / (31.8 KB). Loaded Objects now: 937.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 6.834800 ms (FindLiveObjects: 0.138700 ms CreateObjectMapping: 0.087200 ms MarkObjects: 6.383300 ms  DeleteObjects: 0.224000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 420.811237 seconds.
+  path: Assets/Scripts/CardEffect/CardEffectInsane2.cs
+  artifactKey: Guid(b1a5b6c8b24fc1d4eab87fa0f6e8890b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffectInsane2.cs using Guid(b1a5b6c8b24fc1d4eab87fa0f6e8890b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b75c9beb23569a3104e6229e14a332a9') in 0.0012017 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 436 unused Assets / (46.9 KB). Loaded Objects now: 937.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 8.496400 ms (FindLiveObjects: 0.122500 ms CreateObjectMapping: 0.042600 ms MarkObjects: 8.106900 ms  DeleteObjects: 0.222700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 31.028924 seconds.
+  path: Assets/Scripts/CardEffect/CardEffectInsane3.cs
+  artifactKey: Guid(e5508ca8145f5494fb9333d42028c53b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffectInsane3.cs using Guid(e5508ca8145f5494fb9333d42028c53b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '050ce0e3826db1e31a2fdb6c7d97210a') in 0.0011423 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 436 unused Assets / (39.0 KB). Loaded Objects now: 937.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 7.615900 ms (FindLiveObjects: 0.148500 ms CreateObjectMapping: 0.114900 ms MarkObjects: 7.175300 ms  DeleteObjects: 0.175300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 119.698261 seconds.
+  path: Assets/Scripts/CardEffect/CardEffectInsane1.cs
+  artifactKey: Guid(64af8051861da0144b347695a3ab37a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffectInsane1.cs using Guid(64af8051861da0144b347695a3ab37a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e1dc4c9adf1981c86e6de63a69d4793f') in 0.0008227 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 436 unused Assets / (37.2 KB). Loaded Objects now: 937.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 11.417800 ms (FindLiveObjects: 0.357600 ms CreateObjectMapping: 0.223300 ms MarkObjects: 10.567700 ms  DeleteObjects: 0.264800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 14.821316 seconds.
+  path: Assets/Scripts/CardEffect/CardEffectInsane2.cs
+  artifactKey: Guid(b1a5b6c8b24fc1d4eab87fa0f6e8890b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/CardEffect/CardEffectInsane2.cs using Guid(b1a5b6c8b24fc1d4eab87fa0f6e8890b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fd370b38a2e0d87d74ee1490ce97b932') in 0.0008652 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 436 unused Assets / (38.1 KB). Loaded Objects now: 937.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 6.052500 ms (FindLiveObjects: 0.133000 ms CreateObjectMapping: 0.055200 ms MarkObjects: 5.725500 ms  DeleteObjects: 0.137600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 436 unused Assets / (42.9 KB). Loaded Objects now: 937.
+Memory consumption went from 59.6 MB to 59.6 MB.
+Total: 6.913700 ms (FindLiveObjects: 0.152300 ms CreateObjectMapping: 0.077700 ms MarkObjects: 6.382700 ms  DeleteObjects: 0.298300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 436 unused Assets / (38.1 KB). Loaded Objects now: 937.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 7.287000 ms (FindLiveObjects: 0.193500 ms CreateObjectMapping: 0.094800 ms MarkObjects: 6.796100 ms  DeleteObjects: 0.200800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 436 unused Assets / (44.0 KB). Loaded Objects now: 937.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 9.718000 ms (FindLiveObjects: 0.133700 ms CreateObjectMapping: 0.057500 ms MarkObjects: 8.555900 ms  DeleteObjects: 0.969200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 436 unused Assets / (40.4 KB). Loaded Objects now: 937.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 10.687900 ms (FindLiveObjects: 0.129100 ms CreateObjectMapping: 0.035700 ms MarkObjects: 10.280100 ms  DeleteObjects: 0.241500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (27.3 KB). Loaded Objects now: 938.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 5.771400 ms (FindLiveObjects: 0.190000 ms CreateObjectMapping: 0.033800 ms MarkObjects: 5.438100 ms  DeleteObjects: 0.108400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 336.906061 seconds.
+  path: Assets/Scripts/Controller/UIManager.cs
+  artifactKey: Guid(8531b3b55deef5240af77181a443dd74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Controller/UIManager.cs using Guid(8531b3b55deef5240af77181a443dd74) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'db1a50a008cdfe7e8a10f5e06108ad5b') in 0.0020424 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (42.1 KB). Loaded Objects now: 938.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 12.945000 ms (FindLiveObjects: 0.128500 ms CreateObjectMapping: 0.084300 ms MarkObjects: 12.521100 ms  DeleteObjects: 0.209600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 67.519757 seconds.
+  path: Assets/Scripts/Controller/UIManager.cs
+  artifactKey: Guid(8531b3b55deef5240af77181a443dd74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Controller/UIManager.cs using Guid(8531b3b55deef5240af77181a443dd74) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '425b89389481a3dd7ed095fc8d8f84b0') in 0.0011907 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (42.0 KB). Loaded Objects now: 938.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 11.117500 ms (FindLiveObjects: 0.121600 ms CreateObjectMapping: 0.057500 ms MarkObjects: 10.737600 ms  DeleteObjects: 0.199200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 178.369649 seconds.
+  path: Assets/Scripts/Controller/UIManager.cs
+  artifactKey: Guid(8531b3b55deef5240af77181a443dd74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Controller/UIManager.cs using Guid(8531b3b55deef5240af77181a443dd74) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '87e8e05c1c0a2bf6cc3f35bd6ab466fa') in 0.0009824 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 198.848550 seconds.
+  path: Assets/Scripts/Gamemanager/GameManager.cs
+  artifactKey: Guid(d9ed1bc17514a1445a7a3b03ac0b592a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Gamemanager/GameManager.cs using Guid(d9ed1bc17514a1445a7a3b03ac0b592a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '14997fd787fbbab0fbb58f15685b1d03') in 0.0005652 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (49.7 KB). Loaded Objects now: 938.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 7.896800 ms (FindLiveObjects: 0.142100 ms CreateObjectMapping: 0.056100 ms MarkObjects: 7.495000 ms  DeleteObjects: 0.202200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 27.305519 seconds.
+  path: Assets/Scripts/Gamemanager/GameManager.cs
+  artifactKey: Guid(d9ed1bc17514a1445a7a3b03ac0b592a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Gamemanager/GameManager.cs using Guid(d9ed1bc17514a1445a7a3b03ac0b592a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f5e2fb62cf5ed81d8a8e184bf708032f') in 0.0012598 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (37.3 KB). Loaded Objects now: 938.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 12.583500 ms (FindLiveObjects: 0.228400 ms CreateObjectMapping: 0.103200 ms MarkObjects: 12.077400 ms  DeleteObjects: 0.172900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (47.0 KB). Loaded Objects now: 938.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 7.239600 ms (FindLiveObjects: 0.116400 ms CreateObjectMapping: 0.061400 ms MarkObjects: 6.845300 ms  DeleteObjects: 0.214700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (27.7 KB). Loaded Objects now: 938.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 13.242000 ms (FindLiveObjects: 0.291900 ms CreateObjectMapping: 0.148500 ms MarkObjects: 12.557300 ms  DeleteObjects: 0.242700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (37.2 KB). Loaded Objects now: 938.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 7.163700 ms (FindLiveObjects: 0.144300 ms CreateObjectMapping: 0.035700 ms MarkObjects: 6.806500 ms  DeleteObjects: 0.175700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 1105.495628 seconds.
+  path: Assets/Scripts/Gamemanager/Players.cs
+  artifactKey: Guid(58628f085c536634b8b361701b0fd70a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Gamemanager/Players.cs using Guid(58628f085c536634b8b361701b0fd70a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a04df10ff14ccb32fe65d2294b3c1a73') in 0.0019795 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (39.1 KB). Loaded Objects now: 938.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 14.880800 ms (FindLiveObjects: 0.159100 ms CreateObjectMapping: 0.076600 ms MarkObjects: 14.470100 ms  DeleteObjects: 0.174000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 163.330879 seconds.
+  path: Assets/Scripts/Controller/UIManager.cs
+  artifactKey: Guid(8531b3b55deef5240af77181a443dd74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Controller/UIManager.cs using Guid(8531b3b55deef5240af77181a443dd74) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '360c99cc2f50e1b64a7119a4eed554b9') in 0.0011014 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (31.4 KB). Loaded Objects now: 938.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 6.594400 ms (FindLiveObjects: 0.125100 ms CreateObjectMapping: 0.040500 ms MarkObjects: 6.240400 ms  DeleteObjects: 0.187000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 437 unused Assets / (38.1 KB). Loaded Objects now: 938.
+Memory consumption went from 59.7 MB to 59.6 MB.
+Total: 11.971700 ms (FindLiveObjects: 0.140300 ms CreateObjectMapping: 0.092100 ms MarkObjects: 11.261300 ms  DeleteObjects: 0.475000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 684.858440 seconds.
+  path: Assets/Scripts/Controller/UIManager.cs
+  artifactKey: Guid(8531b3b55deef5240af77181a443dd74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Controller/UIManager.cs using Guid(8531b3b55deef5240af77181a443dd74) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '68570500cfdab4287d6fad0788eb4900') in 0.002327 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
