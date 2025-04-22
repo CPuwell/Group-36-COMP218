@@ -11,12 +11,12 @@ public class Card
 
     public CardType cardType;      // 卡牌类型
     public string description;     // 描述文本
+    public bool isInsane;          // 是否是疯狂牌
 
-    public bool isInsane;      // 是否是疯狂牌
+    public GameObject cardObject;  // 对应的实例化 GameObject（运行时赋值）
+    public GameObject effectPrefab; // 卡牌效果预制体（可拖入不同脚本 prefab）
 
-    public GameObject cardObject;
-
-    public Card(string name, string id, Sprite front, Sprite back, CardType type, string desc, int value, bool isInsane)
+    public Card(string name, string id, Sprite front, Sprite back, CardType type, string desc, int value, bool isInsane, GameObject effectPrefab = null)
     {
         cardName = name;
         cardId = id;
@@ -26,12 +26,22 @@ public class Card
         description = desc;
         this.value = value;
         this.isInsane = isInsane;
+        this.effectPrefab = effectPrefab;
     }
 
     public void PlayCard()
     {
         Debug.Log($"{cardName} effect played.");
-        // TODO: 触发挂载脚本的对应效果逻辑
+
+        // 触发特效 prefab（如果有）
+        if (effectPrefab != null)
+        {
+            GameObject.Instantiate(effectPrefab);
+        }
+
+        // 你也可以考虑通过接口调用对应逻辑：
+        // var script = effectPrefab.GetComponent<ICardEffect>();
+        // script?.Execute();
     }
 }
 

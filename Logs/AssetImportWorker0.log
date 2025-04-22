@@ -1,29 +1,29 @@
 Using pre-set license
-Built from 'trunk' branch; Version is '6000.0.3f1 (019aa96b6ed9) revision 105129'; Using compiler version '193933522'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22631) 64bit CoreCountrySpecific' Language: 'zh' Physical Memory: 32278 MB
+Built from '6000.0/release' branch; Version is '6000.0.45f1 (d91bd3d4e081) revision 14228435'; Using compiler version '193933523'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) 64bit CoreCountrySpecific' Language: 'zh' Physical Memory: 32560 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\6000.0.3f1\Editor\Unity.exe
+E:\Unity\6000.0.45f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-D:/CPU/COMP219/Group-36-COMP218
+D:/Learn/UoL/Y3 S2/Group Software/Project/Group-36-COMP218
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-6266
+64781
 -job-worker-count
-8
+9
 -background-job-worker-count
 8
--asset-garbage-collectors
+-gc-helper-count
 1
-Successfully changed project path to: D:/CPU/COMP219/Group-36-COMP218
-D:/CPU/COMP219/Group-36-COMP218
+Successfully changed project path to: D:/Learn/UoL/Y3 S2/Group Software/Project/Group-36-COMP218
+D:/Learn/UoL/Y3 S2/Group Software/Project/Group-36-COMP218
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -59,70 +59,84 @@ D:/CPU/COMP219/Group-36-COMP218
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [3432]  Target information:
+Player connection [44936]  Target information:
 
-Player connection [3432]  * "[IP] 26.143.80.117 [Port] 0 [Flags] 2 [Guid] 540283835 [EditorId] 540283835 [Version] 1048832 [Id] WindowsEditor(7,HUAWEI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [44936]  * "[IP] 10.74.14.44 [Port] 0 [Flags] 2 [Guid] 3866390134 [EditorId] 3866390134 [Version] 1048832 [Id] WindowsEditor(7,CPu) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [3432]  * "[IP] 10.74.5.129 [Port] 0 [Flags] 2 [Guid] 540283835 [EditorId] 540283835 [Version] 1048832 [Id] WindowsEditor(7,HUAWEI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [44936]  * "[IP] 192.168.206.1 [Port] 0 [Flags] 2 [Guid] 3866390134 [EditorId] 3866390134 [Version] 1048832 [Id] WindowsEditor(7,CPu) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [3432] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [3432] Host joined alternative multi-casting on [225.0.0.222:34997]...
-JobSystem: Creating JobQueue using job-worker-count value 8
+Player connection [44936]  * "[IP] 192.168.114.1 [Port] 0 [Flags] 2 [Guid] 3866390134 [EditorId] 3866390134 [Version] 1048832 [Id] WindowsEditor(7,CPu) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [44936]  * "[IP] 26.181.90.200 [Port] 0 [Flags] 2 [Guid] 3866390134 [EditorId] 3866390134 [Version] 1048832 [Id] WindowsEditor(7,CPu) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [44936]  * "[IP] 10.74.2.11 [Port] 0 [Flags] 2 [Guid] 3866390134 [EditorId] 3866390134 [Version] 1048832 [Id] WindowsEditor(7,CPu) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [44936] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [44936] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 9
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
 Library Redirect Path: Library/
-[PhysX] Initialized MultithreadedTaskDispatcher with 9 workers.
-Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 12.10 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Initialize engine version: 6000.0.3f1 (019aa96b6ed9)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.3f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/CPU/COMP219/Group-36-COMP218/Assets
+Initialize engine version: 6000.0.45f1 (d91bd3d4e081)
+[Subsystems] Discovering subsystems at path E:/Unity/6000.0.45f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Learn/UoL/Y3 S2/Group Software/Project/Group-36-COMP218/Assets
 GfxDevice: creating device client; kGfxThreadingModeNonThreaded
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: Intel(R) Arc(TM) Graphics (ID=0x7d55)
-    Vendor:   Intel
-    VRAM:     16139 MB
-    Driver:   31.0.101.5522
+    Renderer: NVIDIA GeForce RTX 3070 Laptop GPU (ID=0x24dd)
+    Vendor:   NVIDIA
+    VRAM:     8020 MB
+    Driver:   32.0.15.7270
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.3f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.3f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56172
+Mono path[0] = 'E:/Unity/6000.0.45f1/Editor/Data/Managed'
+Mono path[1] = 'E:/Unity/6000.0.45f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'E:/Unity/6000.0.45f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56432
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003176 seconds.
-- Loaded All Assemblies, in  0.394 seconds
+Register platform support module: E:/Unity/6000.0.45f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002721 seconds.
+- Loaded All Assemblies, in  0.496 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.443 seconds
-Domain Reload Profiling: 834ms
-	BeginReloadAssembly (137ms)
+- Finished resetting the current domain, in  0.369 seconds
+Domain Reload Profiling: 864ms
+	BeginReloadAssembly (219ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (37ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (57ms)
-	LoadAllAssembliesAndSetupDomain (148ms)
-		LoadAssemblies (134ms)
+	RebuildCommonClasses (45ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (50ms)
+	LoadAllAssembliesAndSetupDomain (168ms)
+		LoadAssemblies (219ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (145ms)
-			TypeCache.Refresh (143ms)
-				TypeCache.ScanAssembly (130ms)
+		AnalyzeDomain (164ms)
+			TypeCache.Refresh (162ms)
+				TypeCache.ScanAssembly (148ms)
 			BuildScriptInfoCaches (0ms)
-			ResolveRequiredComponents (0ms)
-	FinalizeReload (444ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (369ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (391ms)
+		SetupLoadedEditorAssemblies (329ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (22ms)
+			InitializePlatformSupportModulesInManaged (24ms)
 			SetLoadedEditorAssemblies (5ms)
-			BeforeProcessingInitializeOnLoad (7ms)
-			ProcessInitializeOnLoadAttributes (195ms)
-			ProcessInitializeOnLoadMethodAttributes (162ms)
+			BeforeProcessingInitializeOnLoad (59ms)
+			ProcessInitializeOnLoadAttributes (176ms)
+			ProcessInitializeOnLoadMethodAttributes (65ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -131,313 +145,167 @@ Domain Reload Profiling: 834ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.513 seconds
-Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.746 seconds
+Refreshing native plugins compatible for Editor in 7.30 ms, found 2 plugins.
 Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 9.11 ms, found 2 plugins.
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.577 seconds
-Domain Reload Profiling: 1089ms
-	BeginReloadAssembly (418ms)
+- Finished resetting the current domain, in  0.884 seconds
+Domain Reload Profiling: 1630ms
+	BeginReloadAssembly (216ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (35ms)
-	RebuildCommonClasses (37ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (23ms)
-	LoadAllAssembliesAndSetupDomain (24ms)
-		LoadAssemblies (112ms)
+		CreateAndSetChildDomain (32ms)
+	RebuildCommonClasses (46ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (41ms)
+	LoadAllAssembliesAndSetupDomain (430ms)
+		LoadAssemblies (433ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (17ms)
-			TypeCache.Refresh (10ms)
-				TypeCache.ScanAssembly (5ms)
-			BuildScriptInfoCaches (2ms)
-			ResolveRequiredComponents (2ms)
-	FinalizeReload (578ms)
+		AnalyzeDomain (142ms)
+			TypeCache.Refresh (106ms)
+				TypeCache.ScanAssembly (88ms)
+			BuildScriptInfoCaches (31ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (884ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (344ms)
+		SetupLoadedEditorAssemblies (767ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (3ms)
-			SetLoadedEditorAssemblies (6ms)
-			BeforeProcessingInitializeOnLoad (26ms)
-			ProcessInitializeOnLoadAttributes (147ms)
-			ProcessInitializeOnLoadMethodAttributes (157ms)
-			AfterProcessingInitializeOnLoad (5ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (86ms)
+			ProcessInitializeOnLoadAttributes (506ms)
+			ProcessInitializeOnLoadMethodAttributes (166ms)
+			AfterProcessingInitializeOnLoad (2ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (9ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+		AwakeInstancesAfterBackupRestoration (18ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 11.89 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 374 unused Assets / (108.6 KB). Loaded Objects now: 970.
-Memory consumption went from 81.4 MB to 81.3 MB.
-Total: 5.031200 ms (FindLiveObjects: 0.068900 ms CreateObjectMapping: 0.015800 ms MarkObjects: 4.689100 ms  DeleteObjects: 0.255800 ms)
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2786 unused Assets / (0.9 MB). Loaded Objects now: 3248.
+Memory consumption went from 78.1 MB to 77.1 MB.
+Total: 13.506000 ms (FindLiveObjects: 0.270800 ms CreateObjectMapping: 0.187100 ms MarkObjects: 12.149500 ms  DeleteObjects: 0.896600 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 3971202.945675 seconds.
+  Time since last request: 421823.646993 seconds.
   path: Assets/UniversalRenderPipelineGlobalSettings.asset
   artifactKey: Guid(93b439a37f63240aca3dd4e01d978a9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UniversalRenderPipelineGlobalSettings.asset using Guid(93b439a37f63240aca3dd4e01d978a9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 9 workers.
- -> (artifact id: '2d4d39d246d92926f2b86e21c6d7b1a0') in 0.0081853 seconds
+Start importing Assets/UniversalRenderPipelineGlobalSettings.asset using Guid(93b439a37f63240aca3dd4e01d978a9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2d4d39d246d92926f2b86e21c6d7b1a0') in 0.0100644 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000017 seconds.
+  Time since last request: 0.000018 seconds.
   path: Assets/DefaultVolumeProfile.asset
   artifactKey: Guid(3f9215ea0144899419cfbc0957140d3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/DefaultVolumeProfile.asset using Guid(3f9215ea0144899419cfbc0957140d3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 9 workers.
- -> (artifact id: '505c8550f1731465552d94117775b415') in 0.0010437 seconds
+Start importing Assets/DefaultVolumeProfile.asset using Guid(3f9215ea0144899419cfbc0957140d3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '505c8550f1731465552d94117775b415') in 0.0014038 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
-  Time since last request: 15.965084 seconds.
+  Time since last request: 5.120092 seconds.
+  path: Assets/Scripts/Card
+  artifactKey: Guid(222e4c15de8c37d4e958f728c8fb1f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Card using Guid(222e4c15de8c37d4e958f728c8fb1f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '17432f86fdb59160c024cc2f493d84c9') in 0.0007033 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.955116 seconds.
   path: Assets/Scripts/Gamemanager
   artifactKey: Guid(f7dda73addcad8e4a8cde099c6816c8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Gamemanager using Guid(f7dda73addcad8e4a8cde099c6816c8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 9 workers.
- -> (artifact id: '444161aaa4eec62594becb8f174d3cdb') in 0.0015264 seconds
+Start importing Assets/Scripts/Gamemanager using Guid(f7dda73addcad8e4a8cde099c6816c8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '76d0148767cdd5611a21842f67b7057b') in 0.0006544 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 293.869923 seconds.
-  path: Assets/Scripts/Card/CardData.cs
-  artifactKey: Guid(54c75a369492b4d4e85a46b6f2645f87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Card/CardData.cs using Guid(54c75a369492b4d4e85a46b6f2645f87) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 9 workers.
- -> (artifact id: '2a95d171d4dc8052b6f4155ada776528') in 0.0006694 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 372 unused Assets / (15.5 KB). Loaded Objects now: 973.
-Memory consumption went from 79.5 MB to 79.5 MB.
-Total: 10.196400 ms (FindLiveObjects: 0.168600 ms CreateObjectMapping: 0.037800 ms MarkObjects: 9.777200 ms  DeleteObjects: 0.210400 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 315.084204 seconds.
-  path: Assets/Scripts/Gamemanager/DeckManager.cs
-  artifactKey: Guid(f4eece5c3b4b04d4782141e5ab1b415e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Gamemanager/DeckManager.cs using Guid(f4eece5c3b4b04d4782141e5ab1b415e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 9 workers.
- -> (artifact id: 'c6cb0f163ce74213f442728462c7bb7c') in 0.001552 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 372 unused Assets / (15.5 KB). Loaded Objects now: 973.
-Memory consumption went from 79.5 MB to 79.4 MB.
-Total: 9.411900 ms (FindLiveObjects: 0.202100 ms CreateObjectMapping: 0.022500 ms MarkObjects: 9.021600 ms  DeleteObjects: 0.164000 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 372 unused Assets / (15.5 KB). Loaded Objects now: 973.
-Memory consumption went from 79.5 MB to 79.4 MB.
-Total: 13.067500 ms (FindLiveObjects: 0.220800 ms CreateObjectMapping: 0.133600 ms MarkObjects: 12.580800 ms  DeleteObjects: 0.129800 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 181.744048 seconds.
-  path: Assets/Scripts/Gamemanager/DeckManager.cs
-  artifactKey: Guid(f4eece5c3b4b04d4782141e5ab1b415e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Gamemanager/DeckManager.cs using Guid(f4eece5c3b4b04d4782141e5ab1b415e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 9 workers.
- -> (artifact id: 'ecf84c51027f57812d600d217e6d5084') in 0.0014319 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 85.057184 seconds.
-  path: Assets/Scripts/Gamemanager/CardUI.cs
-  artifactKey: Guid(9c887ccaf71897e4ab6e3c336b3ce977) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Gamemanager/CardUI.cs using Guid(9c887ccaf71897e4ab6e3c336b3ce977) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 9 workers.
- -> (artifact id: '72ea248a9514298f1425c118c7954940') in 0.0015762 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 372 unused Assets / (19.6 KB). Loaded Objects now: 973.
-Memory consumption went from 79.5 MB to 79.4 MB.
-Total: 9.744800 ms (FindLiveObjects: 0.302600 ms CreateObjectMapping: 0.272800 ms MarkObjects: 8.944100 ms  DeleteObjects: 0.223200 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 565.111276 seconds.
-  path: Assets/Scripts/Card/CardData.cs
-  artifactKey: Guid(54c75a369492b4d4e85a46b6f2645f87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Card/CardData.cs using Guid(54c75a369492b4d4e85a46b6f2645f87) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 9 workers.
- -> (artifact id: '0674f36680d7a70bf3a5726c34ecfeac') in 0.001479 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 372 unused Assets / (27.4 KB). Loaded Objects now: 973.
-Memory consumption went from 79.5 MB to 79.4 MB.
-Total: 9.844300 ms (FindLiveObjects: 0.175000 ms CreateObjectMapping: 0.040300 ms MarkObjects: 9.437300 ms  DeleteObjects: 0.189900 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 372 unused Assets / (15.5 KB). Loaded Objects now: 973.
-Memory consumption went from 79.5 MB to 79.4 MB.
-Total: 321.879800 ms (FindLiveObjects: 0.154100 ms CreateObjectMapping: 0.031500 ms MarkObjects: 321.484700 ms  DeleteObjects: 0.205900 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 372 unused Assets / (15.5 KB). Loaded Objects now: 973.
-Memory consumption went from 79.5 MB to 79.4 MB.
-Total: 25.843600 ms (FindLiveObjects: 0.246500 ms CreateObjectMapping: 0.019200 ms MarkObjects: 25.449700 ms  DeleteObjects: 0.121500 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 372 unused Assets / (15.5 KB). Loaded Objects now: 973.
-Memory consumption went from 79.5 MB to 79.4 MB.
-Total: 6.349900 ms (FindLiveObjects: 0.127100 ms CreateObjectMapping: 0.020800 ms MarkObjects: 6.106600 ms  DeleteObjects: 0.093800 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 1603.004654 seconds.
-  path: Assets/Scripts/Gamemanager/Hand.cs
-  artifactKey: Guid(102ba132b2fd8474daa4ec5742770210) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Gamemanager/Hand.cs using Guid(102ba132b2fd8474daa4ec5742770210) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 9 workers.
- -> (artifact id: 'a3ccddbca1ed921d2ad170f8ae10098c') in 0.0018953 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 372 unused Assets / (15.5 KB). Loaded Objects now: 973.
-Memory consumption went from 79.5 MB to 79.4 MB.
-Total: 8.962400 ms (FindLiveObjects: 0.168400 ms CreateObjectMapping: 0.166000 ms MarkObjects: 8.425800 ms  DeleteObjects: 0.200300 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 149.759093 seconds.
-  path: Assets/Scripts/Gamemanager/Hand.cs
-  artifactKey: Guid(102ba132b2fd8474daa4ec5742770210) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Gamemanager/Hand.cs using Guid(102ba132b2fd8474daa4ec5742770210) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 9 workers.
- -> (artifact id: 'f75b84b2948ea6afaef27c3cce9c8560') in 0.0009687 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.526703 seconds.
+  Time since last request: 0.720565 seconds.
   path: Assets/Scripts/Gamemanager/Card.cs
   artifactKey: Guid(3544cd296546edd46a6b3ff07bd58c2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Gamemanager/Card.cs using Guid(3544cd296546edd46a6b3ff07bd58c2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 9 workers.
- -> (artifact id: '767e27833681f1f0e4bc0a51cb86bf81') in 0.049112 seconds
+Start importing Assets/Scripts/Gamemanager/Card.cs using Guid(3544cd296546edd46a6b3ff07bd58c2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9edc6bc434d5dff27b8cecf9c8019a10') in 0.0005791 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Prepare
-Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 14.58 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 372 unused Assets / (15.5 KB). Loaded Objects now: 973.
-Memory consumption went from 79.5 MB to 79.4 MB.
-Total: 17.476600 ms (FindLiveObjects: 0.139200 ms CreateObjectMapping: 0.014200 ms MarkObjects: 17.182600 ms  DeleteObjects: 0.137100 ms)
+Unloading 2751 unused Assets / (0.7 MB). Loaded Objects now: 3251.
+Memory consumption went from 76.5 MB to 75.8 MB.
+Total: 18.997700 ms (FindLiveObjects: 0.351400 ms CreateObjectMapping: 0.388200 ms MarkObjects: 16.985200 ms  DeleteObjects: 1.271100 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 ========================================================================
 Received Import Request.
-  Time since last request: 326.452905 seconds.
+  Time since last request: 113.107928 seconds.
   path: Assets/Scripts/Gamemanager/Card.cs
   artifactKey: Guid(3544cd296546edd46a6b3ff07bd58c2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Gamemanager/Card.cs using Guid(3544cd296546edd46a6b3ff07bd58c2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 9 workers.
- -> (artifact id: '767e27833681f1f0e4bc0a51cb86bf81') in 0.0012599 seconds
+Start importing Assets/Scripts/Gamemanager/Card.cs using Guid(3544cd296546edd46a6b3ff07bd58c2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '838ee38cc1bd0e230d9a3bf0aa2e79c2') in 0.0018049 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Prepare
-Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 16.48 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 372 unused Assets / (29.4 KB). Loaded Objects now: 973.
-Memory consumption went from 79.5 MB to 79.4 MB.
-Total: 5.329500 ms (FindLiveObjects: 0.181300 ms CreateObjectMapping: 0.039100 ms MarkObjects: 4.887200 ms  DeleteObjects: 0.219500 ms)
+Unloading 2751 unused Assets / (0.9 MB). Loaded Objects now: 3251.
+Memory consumption went from 76.5 MB to 75.6 MB.
+Total: 19.962000 ms (FindLiveObjects: 0.362500 ms CreateObjectMapping: 0.442900 ms MarkObjects: 17.866800 ms  DeleteObjects: 1.287600 ms)
 
 Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 120.714287 seconds.
-  path: Assets/Scripts/Gamemanager/Card.cs
-  artifactKey: Guid(3544cd296546edd46a6b3ff07bd58c2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Gamemanager/Card.cs using Guid(3544cd296546edd46a6b3ff07bd58c2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 9 workers.
- -> (artifact id: '767e27833681f1f0e4bc0a51cb86bf81') in 0.0013564 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
 ========================================================================
 Received Prepare
-Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  1.414 seconds
+Refreshing native plugins compatible for Editor in 7.97 ms, found 2 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.933 seconds
+Domain Reload Profiling: 2346ms
+	BeginReloadAssembly (550ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (13ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (98ms)
+	RebuildCommonClasses (79ms)
+	RebuildNativeTypeToScriptingClass (31ms)
+	initialDomainReloadingComplete (59ms)
+	LoadAllAssembliesAndSetupDomain (694ms)
+		LoadAssemblies (867ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (205ms)
+			TypeCache.Refresh (16ms)
+				TypeCache.ScanAssembly (1ms)
+			BuildScriptInfoCaches (178ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (934ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (791ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (98ms)
+			ProcessInitializeOnLoadAttributes (507ms)
+			ProcessInitializeOnLoadMethodAttributes (176ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 10.08 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 372 unused Assets / (15.5 KB). Loaded Objects now: 973.
-Memory consumption went from 79.5 MB to 79.4 MB.
-Total: 7.047400 ms (FindLiveObjects: 0.064900 ms CreateObjectMapping: 0.014000 ms MarkObjects: 6.714300 ms  DeleteObjects: 0.252100 ms)
+Unloading 2784 unused Assets / (0.6 MB). Loaded Objects now: 3251.
+Memory consumption went from 77.6 MB to 77.0 MB.
+Total: 10.523900 ms (FindLiveObjects: 0.247800 ms CreateObjectMapping: 0.234700 ms MarkObjects: 9.302600 ms  DeleteObjects: 0.737200 ms)
 
 Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 26.474059 seconds.
-  path: Assets/Scripts/Gamemanager/Card.cs
-  artifactKey: Guid(3544cd296546edd46a6b3ff07bd58c2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Gamemanager/Card.cs using Guid(3544cd296546edd46a6b3ff07bd58c2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 9 workers.
- -> (artifact id: '767e27833681f1f0e4bc0a51cb86bf81') in 0.0013002 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 372 unused Assets / (15.5 KB). Loaded Objects now: 973.
-Memory consumption went from 79.5 MB to 79.4 MB.
-Total: 20.047300 ms (FindLiveObjects: 0.063600 ms CreateObjectMapping: 0.014200 ms MarkObjects: 18.234100 ms  DeleteObjects: 1.733000 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-========================================================================
-Received Import Request.
-  Time since last request: 15.919090 seconds.
-  path: Assets/Scripts/Gamemanager/Card.cs
-  artifactKey: Guid(3544cd296546edd46a6b3ff07bd58c2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Gamemanager/Card.cs using Guid(3544cd296546edd46a6b3ff07bd58c2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 9 workers.
- -> (artifact id: '767e27833681f1f0e4bc0a51cb86bf81') in 0.0066545 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-

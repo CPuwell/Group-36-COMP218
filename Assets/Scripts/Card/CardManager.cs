@@ -6,7 +6,7 @@ public class CardManager : MonoBehaviour
 {
     public GameObject canvasPrefab; // 预制体：CardCanvas（包含 CardPanel）
     public Transform cardParent; // 存放所有卡牌的父物体
-    public List<CardData> allCards; // 存储所有卡牌数据
+    public List<Card> allCards; // 存储所有卡牌数据
 
     void Start()
     {
@@ -15,7 +15,7 @@ public class CardManager : MonoBehaviour
 
     void GenerateCards()
     {
-        foreach (CardData cardData in allCards) // 遍历所有卡牌数据
+        foreach (Card cardData in allCards) // 遍历所有卡牌数据
         {
             // 1?? 直接复制 CanvasPrefab，保持所有组件的属性
             GameObject newCanvas = Instantiate(canvasPrefab, cardParent);
@@ -50,8 +50,8 @@ public class CardManager : MonoBehaviour
             }
 
             // 4?? 设置卡牌图片（仅更新 Sprite，不修改其他属性）
-            frontImage.sprite = cardData.frontImage;
-            backImage.sprite = cardData.backImage;
+            frontImage.sprite = cardData.frontSprite;
+            backImage.sprite = cardData.backSprite;
 
             // ? **BoxCollider 的大小、位置、旋转完全复制 CanvasPrefab 的设定**
             BoxCollider collider = cardPanel.gameObject.GetComponent<BoxCollider>();
