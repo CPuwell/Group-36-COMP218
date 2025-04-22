@@ -29,7 +29,8 @@ public class DeckManager : MonoBehaviour
         // 添加 Card1 五张
         for (int i = 0; i < 5; i++)
         {
-            CreateCard(allCardData[0]); // 0号sprite是Card1
+            Card c = CreateCardData("Card1", "1", 1, frontSprites[0], false);
+            CreateCard(c);
         }
 
         // 添加 Card2 ~ Card5 各两张
@@ -37,20 +38,23 @@ public class DeckManager : MonoBehaviour
         {
             for (int j = 0; j < 2; j++)
             {
-                CreateCard(allCardData[id]);
+                Card c = CreateCardData($"Card{id + 1}", $"{id + 1}", id + 1, frontSprites[id], false);
+                CreateCard(c);
             }
         }
 
         // 添加 Card6 ~ Card8 各一张
         for (int id = 5; id <= 7; id++)
         {
-            CreateCard(allCardData[id]);
+            Card c = CreateCardData($"Card{id + 1}", $"{id + 1}", id + 1, frontSprites[id], false);
+            CreateCard(c);
         }
 
         // 添加 InsaneCard0 ~ InsaneCard8 各一张
         for (int id = 8; id <= 16; id++)
         {
-            CreateCard(allCardData[id]);
+            Card c = CreateCardData($"InsaneCard{id - 7}", $"{id - 7}m", id + 1, frontSprites[id], true);
+            CreateCard(c);
         }
     }
 
@@ -113,4 +117,24 @@ public class DeckManager : MonoBehaviour
             return null;
         }
     }
+    Card CreateCardData(string name, string id, int value, Sprite front, bool isInsane)
+    {
+        // 加载特效 prefab（从 Resources/Effects 文件夹中）
+        GameObject effect = Resources.Load<GameObject>($"Effects/CardEffect{id+1}");
+
+        Card card = new Card(
+            name,
+            id,
+            front,
+            backSprite,
+            CardType.Special,
+            "描述", // 你可以拓展描述逻辑
+            value,
+            isInsane,
+            effect
+        );
+
+        return card;
+    }
+
 }

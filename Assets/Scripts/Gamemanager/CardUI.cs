@@ -34,6 +34,7 @@ public class CardUI : MonoBehaviour, IPointerClickHandler
     // 点击事件处理（双击出牌）
     public void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log($"Clicked on card: {cardData.cardName}");
         owningHand.SelectCard(cardData);
     }
 

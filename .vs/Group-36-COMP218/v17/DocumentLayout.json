@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\CPU\\COMP219\\Group-36-COMP218\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\cpu\\comp219\\group-36-comp218\\assets\\scripts\\gamemanager\\deckmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager\\deckmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\cpu\\comp219\\group-36-comp218\\assets\\scripts\\cardeffect\\cardeffect1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardeffect\\cardeffect1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\cpu\\comp219\\group-36-comp218\\assets\\scripts\\gamemanager\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\cpu\\comp219\\group-36-comp218\\assets\\scripts\\gamemanager\\cardui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager\\cardui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CardEffect1.cs",
+              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\CardEffect\\CardEffect1.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CardEffect\\CardEffect1.cs",
+              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\CardEffect\\CardEffect1.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CardEffect\\CardEffect1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T21:56:37.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Card.cs",
+              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\Card.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\Card.cs",
+              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\Card.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Gamemanager\\Card.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAA4wCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T21:50:37.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DeckManager.cs",
+              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\DeckManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\DeckManager.cs",
+              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\DeckManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Gamemanager\\DeckManager.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAQwHsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T21:49:15.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CardUI.cs",
+              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\CardUI.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\CardUI.cs",
+              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\CardUI.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Gamemanager\\CardUI.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAwCUAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T21:16:38.774Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
