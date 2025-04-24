@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public Transform discardZone; // Discard Zone
+
     public List<Player> players; // Player List
     public Deck deck; // Card Deck
     private int currentPlayerIndex = 0; // Player Index
@@ -13,6 +15,7 @@ public class GameManager : MonoBehaviour
     private bool gameEnded = false;
     private bool RoundEnded = false;
     private int playerIndexCounter = 0; // Player Index Counter
+    private bool gameStarted = false; // Game Start Flag
 
 
     private void Awake()
@@ -31,10 +34,14 @@ public class GameManager : MonoBehaviour
     {
         GameObject playerObj = new GameObject(playerName);
         Player newPlayer = playerObj.AddComponent<Player>();
+        
 
         newPlayer.Initialize(playerIndexCounter, playerName);
+        
         players.Add(newPlayer);
+        
         playerIndexCounter++;
+
 
         Debug.Log($"Add player: {playerName}, Index: {newPlayer.PlayerIndex}");
     }
@@ -42,21 +49,24 @@ public class GameManager : MonoBehaviour
     // Initialize the game
     public void StartGame()
     {
-        deck = new Deck();
+        deck = FindFirstObjectByType<DeckManager>().logicDeck;
         deck.Shuffle();
 
         foreach (Player player in players)
         {
             player.DrawCard(deck);
+            Debug.Log($"Player {player.playerName} has drawn a card.");
         }
 
         currentPlayerIndex = 0;
+        gameStarted = true;
         StartTurn();
     }
 
     //Set Timer
     private void StartTurn()
     {
+
         if (deck.IsEmpty())
         {
             Debug.Log("Deck is empty");
@@ -65,12 +75,22 @@ public class GameManager : MonoBehaviour
 
         Player currentPlayer = players[currentPlayerIndex];
 
-        // 在回合开始时取消保护状态
-        currentPlayer.SetProtected(false);
+        Debug.Log($"[回合开始] {currentPlayer.playerName} 当前手牌数量：{currentPlayer.GetCards().Count}");
 
+        if (!currentPlayer.IsAlive())
+        {
+            EndTurn(); // 自动跳过死亡玩家
+            return;
+        }
+
+        
+
+        currentPlayer.SetProtected(false);
+        currentPlayer.DrawCard(deck);
         timer = turnTime;
         Debug.Log($"Now, {currentPlayer.playerName} is taking turn");
     }
+
 
 
     public void CompareCard()
@@ -130,6 +150,7 @@ public class GameManager : MonoBehaviour
     //Timer for each turn
     private void Update()
     {
+        if (!gameStarted || gameEnded) return; // Avoid running the timer before the game starts
 
         timer -= Time.deltaTime;
         if (timer <= 0)
@@ -246,8 +267,54 @@ public class GameManager : MonoBehaviour
         // 当前玩家打出这张牌
         currentPlayer.PlayCard(card);
 
-        // 然后继续做你想要的逻辑，比如切换回合、检测胜负等等
+        ShowCardInDiscardZone(card);  
         EndTurn();
+    }
+
+    public void ShowCardInDiscardZone(Card card)
+    {
+        foreach (Transform child in discardZone)
+        {
+            Destroy(child.gameObject);
+        }
+
+        GameObject cardObject = Instantiate(card.cardObject, discardZone);
+        cardObject.transform.localPosition = Vector3.zero;
+        cardObject.transform.localScale = Vector3.one;
+
+        CardUI cardUI = cardObject.GetComponent<CardUI>();
+        if (cardUI != null)
+        {
+            cardUI.Flip(true); // 翻面
+        }
+        else
+        {
+            Debug.LogError("CardUI component not found on the card prefab.");
+        }
+
+        var button = cardObject.GetComponent<UnityEngine.UI.Button>();
+        if (button != null)
+        {
+            button.interactable = false; // 禁用按钮
+        }
+        else
+        {
+            Debug.LogError("Button component not found on the card prefab.");
+        }
+    }
+
+    public void ResetGame()
+    {
+        gameEnded = true;
+        gameStarted = false;
+        currentPlayerIndex = 0;
+        playerIndexCounter = 0;
+        RoundEnded = false;
+        foreach (Player player in players)
+        {
+            Destroy(player.gameObject);
+        }
+        players.Clear();
     }
 
 }

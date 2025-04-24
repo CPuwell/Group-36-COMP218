@@ -73,4 +73,13 @@ public class Deck
             return false;
         }
     }
+
+    public void AddCard(Card card)
+    {
+        if (card != null)
+        {
+            cards.Add(card);
+            Debug.Log($"Card: {card.cardName} added to deck");
+        }
+    }
 }
