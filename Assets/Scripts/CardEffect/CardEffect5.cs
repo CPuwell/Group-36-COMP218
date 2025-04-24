@@ -5,7 +5,7 @@ public class CardEffect5 : MonoBehaviour, IMainEffect
 {
     public void ExecuteEffect(Player currentPlayer)
     {
-        // 获取所有可以被选中的玩家（包括自己）
+        // 包括自己，且活着、未受保护
         List<Player> targetPlayers = GameManager.Instance.players.FindAll(
             p => p.IsAlive() && !p.IsProtected()
         );
@@ -18,8 +18,8 @@ public class CardEffect5 : MonoBehaviour, IMainEffect
             return;
         }
 
-        // 使用 UIManager 弹出选择界面
-        UIManager.Instance.ShowPlayerSelection(targetPlayers, selectedTarget =>
+        // 使用“允许自己”的选人面板
+        UIManager.Instance.ShowPlayerSelectionAllowSelf(targetPlayers, selectedTarget =>
         {
             Card oldCard = selectedTarget.RemoveCard();
 

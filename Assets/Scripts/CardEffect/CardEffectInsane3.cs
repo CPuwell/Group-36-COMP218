@@ -10,59 +10,66 @@ public class CardEffectInsane3 : MonoBehaviour, IInsaneCard
         List<Player> targets = GameManager.Instance.GetAvailableTargets(currentPlayer);
         if (targets.Count == 0)
         {
-            Debug.Log("没有可以对决的目标玩家");
+            UIManager.Instance.ShowPopup("没有可以对决的目标玩家");
             return;
         }
 
-        Player target = targets[0]; // TODO：替换为 UI 选人
-
-        int currentValue = currentPlayer.GetHandValue();
-        int targetValue = target.GetHandValue();
-
-        Debug.Log($"{currentPlayer.playerName} 的手牌数值：{currentValue}");
-        Debug.Log($"{target.playerName} 的手牌数值：{targetValue}");
-
-        if (currentValue > targetValue)
+        // 使用 UI 选人
+        UIManager.Instance.ShowPlayerSelectionSimple(targets, selectedTarget =>
         {
-            target.Eliminate();
-            Debug.Log($"{target.playerName} 出局（点数低）");
-        }
-        else if (currentValue < targetValue)
-        {
-            currentPlayer.Eliminate();
-            Debug.Log($"{currentPlayer.playerName} 出局（点数低）");
-        }
-        else
-        {
-            Debug.Log("点数相同，无人出局");
-        }
+            int currentValue = currentPlayer.GetHandValue();
+            int targetValue = selectedTarget.GetHandValue();
 
-        currentPlayer.GoInsane(); // 理智效果执行后进入insane状态
-        GameManager.Instance.EndTurn();
+            UIManager.Instance.Log($"{currentPlayer.playerName} 的手牌数值：{currentValue}");
+            UIManager.Instance.Log($"{selectedTarget.playerName} 的手牌数值：{targetValue}");
+
+            if (currentValue > targetValue)
+            {
+                selectedTarget.Eliminate();
+                UIManager.Instance.ShowPopup($"{selectedTarget.playerName} 出局（点数低）");
+            }
+            else if (currentValue < targetValue)
+            {
+                currentPlayer.Eliminate();
+                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} 出局（点数低）");
+            }
+            else
+            {
+                UIManager.Instance.ShowPopup("点数相同，无人出局");
+            }
+
+            currentPlayer.GoInsane(); // 理智后变疯
+            GameManager.Instance.EndTurn();
+        });
     }
 
     public void ExecuteInsaneEffect(Player currentPlayer)
     {
-        Debug.Log("【疯狂效果】若目标玩家尚未疯狂，则直接出局");
+        Debug.Log("【疯狂效果】若目标未疯狂 → 淘汰；否则提示免疫");
 
         List<Player> targets = GameManager.Instance.GetAvailableTargets(currentPlayer);
         if (targets.Count == 0)
         {
-            Debug.Log("没有可以指定的目标玩家");
+            UIManager.Instance.ShowPopup("没有可以指定的目标玩家");
             return;
         }
 
-        Player target = targets[0]; // TODO：替换为 UI 选人
+        UIManager.Instance.ShowPlayerSelectionSimple(targets, selectedTarget =>
+        {
+            var uiNotice = Object.FindFirstObjectByType<UIEliminationResult>(); // 推荐写法
 
-        if (!target.IsInsane())
-        {
-            target.Eliminate();
-            Debug.Log($"{target.playerName} 仍处于理智状态，被疯狂效果淘汰！");
-        }
-        else
-        {
-            Debug.Log($"{target.playerName} 已经是疯狂状态，没有效果");
-        }
-        GameManager.Instance.EndTurn();
+            if (!selectedTarget.IsInsane())
+            {
+                selectedTarget.Eliminate();
+                uiNotice?.Show("This player is not in a crazy state and has been defeated and eliminated by you!");
+            }
+            else
+            {
+                uiNotice?.Show("The player has gone crazy and is immune to this attack.");
+            }
+
+            GameManager.Instance.EndTurn();
+        });
     }
+
 }
