@@ -13,11 +13,28 @@ public class CardEffect2 : MonoBehaviour, IMainEffect
             return;
         }
 
-        // 调用 UI 流程
-        UIManager.Instance.ShowCardReveal(targetPlayers, (revealedPlayer) =>
+        // 选择一名玩家
+        UIManager.Instance.ShowPlayerSelectionSimple(targetPlayers, selectedPlayer =>
         {
-            UIManager.Instance.Log($"{currentPlayer.playerName} 查看了 {revealedPlayer.playerName} 的手牌");
-            GameManager.Instance.EndTurn();
+            UIManager.Instance.Log($"{currentPlayer.playerName} 查看了 {selectedPlayer.playerName} 的手牌");
+
+            List<Card> cards = selectedPlayer.GetCards();
+
+            if (cards.Count > 0)
+            {
+                Card card = cards[0];
+
+                // 展示卡牌图像
+                UIManager.Instance.ShowCardReveal(card, selectedPlayer.playerName, () =>
+                {
+                    GameManager.Instance.EndTurn(); // 展示后结束回合
+                });
+            }
+            else
+            {
+                UIManager.Instance.ShowPopup($"{selectedPlayer.playerName} 没有手牌");
+                GameManager.Instance.EndTurn();
+            }
         });
     }
 }

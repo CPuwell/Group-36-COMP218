@@ -13,8 +13,8 @@ public class CardEffect6 : MonoBehaviour, IMainEffect
             return;
         }
 
-        // 使用 UI 选择目标玩家进行交换
-        UIManager.Instance.ShowCardSwapSelection(targetPlayers, targetPlayer =>
+        // 使用统一的简化选择界面
+        UIManager.Instance.ShowPlayerSelectionSimple(targetPlayers, targetPlayer =>
         {
             Card myCard = currentPlayer.RemoveCard();
             Card theirCard = targetPlayer.RemoveCard();

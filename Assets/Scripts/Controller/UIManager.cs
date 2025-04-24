@@ -8,20 +8,35 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
-    // UI 引用字段（需要你在 Inspector 里绑定）
+    public UIDiscardSelector discardSelectorPanel;
+
+    [Header("通用弹窗")]
     public GameObject popupPanel;
     public TextMeshProUGUI popupText;
     public Button popupCloseButton;
-    public GameObject playerSelectionPanel;
-    public Transform playerButtonContainer;
-    public GameObject playerButtonPrefab;
+    [Header("猜牌 UI（用于1号牌）")]
+    public UIGuess guessPanel;
 
-    public void Awake()
+    [Header("玩家选择 UI（用于2、3、6号牌）")]
+    public UIPlayerSelect playerSelectPanel;
+
+    [Header("展示卡牌 UI（用于展示目标手牌）")]
+    public UICardReveal cardRevealPanel;
+
+    [Header("Mi-Go 0号牌 UI")]
+    public UIMIGO miGoPanel;
+
+    [Header("日志输出（可选）")]
+    public TextMeshProUGUI logTextArea;
+ 
+
+
+    private void Awake()
     {
         Instance = this;
     }
 
-    // 通用弹窗
+    // ========== 通用弹窗 ==========
     public void ShowPopup(string message)
     {
         popupPanel.SetActive(true);
@@ -34,8 +49,20 @@ public class UIManager : MonoBehaviour
         });
     }
 
-    // 选择一个玩家
-    public void ShowPlayerSelection(List<Player> players, Action<Player> onSelected)
+    // ========== 猜牌（用于1号牌）==========
+    public void ShowGuessEffect(List<Player> targets, Action<Player, int> onGuessConfirmed)
+    {
+        if (targets == null || targets.Count == 0)
+        {
+            ShowPopup("没有其他玩家可供猜牌");
+            return;
+        }
+
+        guessPanel.Show(targets, onGuessConfirmed);
+    }
+
+    // ========== 简单玩家选择（用于2、3、6号牌）==========
+    public void ShowPlayerSelectionSimple(List<Player> players, Action<Player> onSelected)
     {
         if (players == null || players.Count == 0)
         {
@@ -43,75 +70,54 @@ public class UIManager : MonoBehaviour
             return;
         }
 
-        playerSelectionPanel.SetActive(true);
+        playerSelectPanel.Show(players, onSelected);
+    }
 
-        foreach (Transform child in playerButtonContainer)
-            Destroy(child.gameObject);
+    // ========== 展示卡牌（用于2号牌 ShowCard）==========
+    public void ShowCardReveal(Card card, string ownerName, Action onClosed = null)
+    {
+        cardRevealPanel.Show(card, ownerName, onClosed);
+    }
 
-        foreach (Player p in players)
+    // ========== 日志输出 ==========
+    public void Log(string message)
+    {
+        Debug.Log("[UI] " + message);
+
+        if (logTextArea != null)
         {
-            GameObject btnObj = Instantiate(playerButtonPrefab, playerButtonContainer);
-            btnObj.GetComponentInChildren<TextMeshProUGUI>().text = p.playerName;
-            btnObj.GetComponent<Button>().onClick.AddListener(() =>
-            {
-                onSelected?.Invoke(p);
-                playerSelectionPanel.SetActive(false);
-            });
+            logTextArea.text += message + "\n";
         }
     }
 
-    // 1:弹出选择玩家 + 猜数字组合界面
-    public void ShowGuessEffect(List<Player> targets, Action<Player, int> onGuessConfirmed)
+    // ========== 通用关闭 ==========
+    public void HideAllPanels()
     {
-        ShowPlayerSelection(targets, selectedPlayer =>
+        popupPanel?.SetActive(false);
+        guessPanel?.gameObject.SetActive(false);
+        playerSelectPanel?.gameObject.SetActive(false);
+        cardRevealPanel?.gameObject.SetActive(false);
+    }
+    
+ 
+    // 5号牌
+    public void ShowPlayerSelectionAllowSelf(List<Player> players, Action<Player> onSelected)
+    {
+        playerSelectPanel.Show(players, onSelected, true);
+    }
+
+    public void ShowDiscardSelector(Card card1, Card card2, Action<Card> onChosen)
+    {
+        discardSelectorPanel.Show(card1, card2, onChosen);
+    }
+
+    public void ShowMiGoBrainReveal(Player target, System.Action onClosed = null)
+    {
+        if (miGoPanel != null)
         {
-            List<int> guessableNumbers = new List<int>();
-            for (int i = 2; i <= 8; i++) guessableNumbers.Add(i);
-
-            ShowNumberSelection(guessableNumbers, guessedNumber =>
-            {
-                onGuessConfirmed?.Invoke(selectedPlayer, guessedNumber);
-            });
-        });
+            miGoPanel.Show(target, onClosed);
+        }
     }
 
-    // 2: 查看手牌
-    public void ShowCardReveal(List<Player> targets, Action<Player> onRevealed)
-    {
-        ShowPlayerSelection(targets, selectedPlayer =>
-        {
-            List<Card> cards = selectedPlayer.GetCards();
-
-            if (cards.Count > 0)
-                ShowPopup($"{selectedPlayer.playerName} 的手牌是：{cards[0].cardName}");
-            else
-                ShowPopup($"{selectedPlayer.playerName} 没有手牌");
-
-            onRevealed?.Invoke(selectedPlayer);
-        });
-    }
-
-    // 3: 比较手牌
-    public void ShowDuelTargetSelection(List<Player> targets, Action<Player> onTargetSelected)
-    {
-        ShowPlayerSelection(targets, onTargetSelected);
-    }
-
-    // 4: 交换卡牌
-    public void ShowCardSwapSelection(List<Player> targets, Action<Player> onTargetSelected)
-    {
-        ShowPlayerSelection(targets, onTargetSelected);
-    }
-
-    // 5: 选数字（你可能已写过）
-    public void ShowNumberSelection(List<int> numbers, Action<int> onNumberSelected)
-    {
-        // 这里你可以自己定义你用的数字选择 UI
-    }
-
-    public void Log(string message)
-    {
-        Debug.Log($"[UI] {message}");
-    }
 
 }
