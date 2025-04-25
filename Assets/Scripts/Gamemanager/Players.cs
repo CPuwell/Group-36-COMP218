@@ -112,11 +112,11 @@ public class Player : MonoBehaviour
         if (isInsane)
         {
             winRoundsInsane++;
-            Debug.Log($"{playerName} 赢得了疯狂回合！当前疯狂回合数：{winRoundsInsane}");
+            Debug.Log($"{playerName} 赢得了疯狂回合！当前疯狂获胜回合数：{winRoundsInsane}");
         } else
         {
             winRounds++;
-            Debug.Log($"{playerName} 赢得了回合！当前回合数：{winRounds}");
+            Debug.Log($"{playerName} 赢得了回合！当前理智获胜回合数：{winRounds}");
         }
     }
 
@@ -164,7 +164,7 @@ public class Player : MonoBehaviour
         {
             return;
         }
-
+        Debug.Log($"{playerName} 被淘汰了！");
         isAlive = false;
     }
 
@@ -291,5 +291,33 @@ public class Player : MonoBehaviour
 
         return null;
     }
+
+    public bool RevealAndDiscardTopCards(Deck deck)
+    {
+        List<Card> topCards = deck.PeekTopCards(CountInsaneDiscards());
+
+        bool foundInsane = false;
+
+        foreach (Card card in topCards)
+        {
+            if (card == null) continue;
+
+            if (card.isInsane)
+            {
+                foundInsane = true; // 发现疯狂牌
+            }
+
+            // 用标准弃牌逻辑，把牌放到弃牌堆
+            RecordDiscard(card);
+        }
+
+        // 把这些牌正式从牌堆中移除
+        deck.RemoveTopCards(topCards.Count);
+
+        return foundInsane;
+    }
+
+
+
 
 }

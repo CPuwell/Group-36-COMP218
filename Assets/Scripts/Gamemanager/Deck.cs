@@ -82,4 +82,22 @@ public class Deck
             Debug.Log($"Card: {card.cardName} added to deck");
         }
     }
+    // 偷看前几张牌
+    public List<Card> PeekTopCards(int count)
+    {
+        List<Card> topCards = new List<Card>();
+        for (int i = 0; i < Mathf.Min(count, cards.Count); i++)
+        {
+            topCards.Add(cards[i]);
+        }
+        return topCards;
+    }
+
+    // 移除前几张牌（真正抽走）
+    public void RemoveTopCards(int count)
+    {
+        cards.RemoveRange(0, Mathf.Min(count, cards.Count));
+    }
+
+
 }

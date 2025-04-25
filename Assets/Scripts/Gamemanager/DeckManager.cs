@@ -18,12 +18,18 @@ public class DeckManager : MonoBehaviour
         ShuffleDeck();
     }
 
-    void InitializeDeck()
+    public void InitializeDeck()
     {
+        logicDeck = new Deck(); // 重新 new 一个新的 Deck
+
         // 清空之前的牌
         foreach (Transform child in deckZone)
         {
             Destroy(child.gameObject);
+        }
+        foreach (GameObject card in deck)
+        {
+            Destroy(card);
         }
         deck.Clear();
 
