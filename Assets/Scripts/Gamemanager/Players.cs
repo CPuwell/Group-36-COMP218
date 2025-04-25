@@ -3,9 +3,12 @@ using System.Collections.Generic;
 
 public class Player : MonoBehaviour
 {
+    public Transform[] cardSlots = new Transform[2]; // 牌槽
+    public HandUI handUI;
     public int PlayerIndex { get; private set; }  
     public string playerName;
     bool isAlive = true; // Player Status
+    public bool isHuman = false; // Player Type
     private int winRounds = 0; // Player Win Round
     private int winRoundsInsane = 0; // Player Win Round Insane
     bool isInsane = false; // Player Insane Status
@@ -17,29 +20,85 @@ public class Player : MonoBehaviour
 
     public Hand Hand => hand;       // 外部通过这个只读属性访问
 
-
+    public bool IsHuman()
+    {
+        return isHuman;
+    }
     public void DrawCard(Deck deck)
     {
         Card newCard = deck.Draw();
-        if (newCard != null)
+        if (newCard == null)
         {
-            hand.AddCard(newCard);
+            Debug.LogWarning($"{playerName} 抽牌失败：deck 空");
+            return;
+        }
 
-            // 设置归属
-            CardController controller = newCard.cardObject.GetComponent<CardController>();
-            if (controller != null)
-            {
-                controller.SetCardOwner(this);
+        hand.AddCard(newCard);
+        Debug.Log($"{PlayerIndex} 抽到了一张牌：{newCard.cardName}");
+
+        // 设置归属
+        CardController controller = newCard.cardObject.GetComponent<CardController>();
+        if (controller != null)
+        {
+            controller.SetCardOwner(this);
+        }
+
+        //  AI 玩家提早 return，绝不执行 UI
+        if (!isHuman)
+        {
+            Debug.Log($"{playerName} 是 AI，跳过 UI 显示");
+            return;
+        }
+
+        //  人类玩家才执行以下 UI 操作
+        //for (int i = 0; i < cardSlots.Length; i++)
+        //{
+        //    if (cardSlots[i] == null)
+        //    {
+        //        Debug.LogError($"[{playerName}] cardSlots[{i}] is null！");
+        //        Debug.Log($"{playerName} isHuman = {isHuman}");
+
+        //        continue;
+        //    }
+
+        //    if (cardSlots[i].childCount == 0)
+        //    {
+        //        newCard.cardObject.transform.SetParent(cardSlots[i]);
+        //        newCard.cardObject.transform.localPosition = Vector3.zero;
+        //        newCard.cardObject.transform.localScale = Vector3.one;
+
+        //        CardUI cardUI = newCard.cardObject.GetComponent<CardUI>();
+        //        if (cardUI != null)
+        //        {
+        //            cardUI.SetCard(newCard, this.hand); // 添加这一行
+        //            cardUI.Flip(false); // 初始盖住
+        //        }
+
+
+        //        break;
+        //    }
+        //}
+
+        if (handUI != null)
+        {
+            if (isHuman) { 
+                handUI.UpdateHandUI(hand.GetCards());
             }
-
-            Debug.Log($"{PlayerIndex} 抽到了一张牌：{newCard.cardName}");
         }
     }
 
 
+
+
+
     public void PlayCard(Card card)
     {       
-            hand.PlayCard(card);
+        hand.PlayCard(card);
+        Debug.Log($"{playerName} 出牌：{card.cardName}");
+        if (handUI != null)
+        {
+            handUI.UpdateHandUI(hand.GetCards());
+        }
     }
 
     public void WinRound()
@@ -47,17 +106,21 @@ public class Player : MonoBehaviour
         if (isInsane)
         {
             winRoundsInsane++;
+            Debug.Log($"{playerName} 赢得了疯狂回合！当前疯狂回合数：{winRoundsInsane}");
         } else
         {
             winRounds++;
+            Debug.Log($"{playerName} 赢得了回合！当前回合数：{winRounds}");
         }
     }
 
     public void RandomPlayCard()
     {
+
         int randomIndex = Random.Range(0, hand.CardCount);
         PlayCard(hand.GetCards()[randomIndex]);
     }
+
 
     public void Initialize(int index, string name)
     {

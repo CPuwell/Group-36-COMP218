@@ -14,6 +14,7 @@ public class CardUI : MonoBehaviour, IPointerClickHandler
     // 设置卡牌图像与数据
     public void SetCard(Card card,Hand hand)
     {
+        Debug.Log($"设置卡牌：{card.cardName}");
         cardData = card;
         owningHand = hand; // 绑定手牌引用
 
@@ -34,9 +35,18 @@ public class CardUI : MonoBehaviour, IPointerClickHandler
     // 点击事件处理（双击出牌）
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log($"Clicked on card: {cardData.cardName}");
-        owningHand.SelectCard(cardData);
+        Debug.Log($"Clicked on card: {(cardData != null ? cardData.cardName : "null")}");
+
+        if (owningHand != null && cardData != null)
+        {
+            owningHand.SelectCard(cardData); // 只在不为 null 时调用
+        }
+        else
+        {
+            Debug.LogWarning("CardUI 点击时 owningHand 或 cardData 为 null！");
+        }
     }
+
 
     //elegate 事件：当卡牌被选中时调用
     public void SetSelected(bool selected)

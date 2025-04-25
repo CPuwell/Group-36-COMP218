@@ -11,6 +11,7 @@ public class DeckManager : MonoBehaviour
     private List<GameObject> deck = new List<GameObject>(); // 当前牌堆
     public List<Card> allCardData; // 卡牌数据
 
+    public Deck logicDeck = new Deck(); // 逻辑牌堆
     void Start()
     {
         InitializeDeck();
@@ -60,9 +61,10 @@ public class DeckManager : MonoBehaviour
 
     void CreateCard(Card cardData)
     {
+
         // 1. 创建一张卡牌GameObject
         GameObject newCard = Instantiate(cardPrefab, deckZone); // cardPrefab 是你提前做好的卡片预制体，deckZone是牌堆区域
-
+        cardData.cardObject = newCard; // 这里把新建的 GameObject 赋值给 Card 的 cardObject 属性
         // 2. 找到这张牌的CardUI组件
         CardUI cardUI = newCard.GetComponent<CardUI>();
 
@@ -79,6 +81,7 @@ public class DeckManager : MonoBehaviour
 
         // 4. 将创建的牌加入deck中
         deck.Add(newCard);
+        logicDeck.AddCard(cardData); // 将卡牌数据加入逻辑牌堆
     }
 
 
