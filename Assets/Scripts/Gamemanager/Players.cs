@@ -51,37 +51,43 @@ public class Player : MonoBehaviour
         }
 
         //  人类玩家才执行以下 UI 操作
-        //for (int i = 0; i < cardSlots.Length; i++)
-        //{
-        //    if (cardSlots[i] == null)
-        //    {
-        //        Debug.LogError($"[{playerName}] cardSlots[{i}] is null！");
-        //        Debug.Log($"{playerName} isHuman = {isHuman}");
+        for (int i = 0; i < cardSlots.Length; i++)
+        {
+            
+                Debug.Log($"cardSlot[{i}] = {cardSlots[i]}"); //  打印绑定
+               
 
-        //        continue;
-        //    }
+            if (cardSlots[i] == null)
+            {
+                Debug.LogError($"[{playerName}] cardSlots[{i}] is null！");
+                continue;
+            }
 
-        //    if (cardSlots[i].childCount == 0)
-        //    {
-        //        newCard.cardObject.transform.SetParent(cardSlots[i]);
-        //        newCard.cardObject.transform.localPosition = Vector3.zero;
-        //        newCard.cardObject.transform.localScale = Vector3.one;
+            if (cardSlots[i].childCount == 0)
+            {
+                newCard.cardObject.transform.SetParent(cardSlots[i], false);
+                newCard.cardObject.transform.localPosition = Vector3.zero;
+                newCard.cardObject.transform.localScale = Vector3.one;
 
-        //        CardUI cardUI = newCard.cardObject.GetComponent<CardUI>();
-        //        if (cardUI != null)
-        //        {
-        //            cardUI.SetCard(newCard, this.hand); // 添加这一行
-        //            cardUI.Flip(false); // 初始盖住
-        //        }
+                CardUI cardUI = newCard.cardObject.GetComponent<CardUI>();
+                if (cardUI != null)
+                {
+                    cardUI.SetCard(newCard, this.hand);
+                    cardUI.Flip(false);
+                }
 
+                break;
+            }
+        }
 
-        //        break;
-        //    }
-        //}
 
         if (handUI != null)
         {
+            Debug.Log($"{playerName} 是人类，更新手牌 UI");
+
+
             if (isHuman) { 
+                Debug.Log($"{playerName} 是人类，更新手牌 UI");
                 handUI.UpdateHandUI(hand.GetCards());
             }
         }

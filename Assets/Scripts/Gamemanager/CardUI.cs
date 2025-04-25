@@ -17,6 +17,7 @@ public class CardUI : MonoBehaviour, IPointerClickHandler
         Debug.Log($"设置卡牌：{card.cardName}");
         cardData = card;
         owningHand = hand; // 绑定手牌引用
+        
 
         frontImage.sprite = card.frontSprite;
         backImage.sprite = card.backSprite;
