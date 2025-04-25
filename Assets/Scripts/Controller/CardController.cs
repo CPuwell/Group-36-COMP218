@@ -63,7 +63,6 @@ public class CardController : MonoBehaviour
         if (insaneEffect == null)
         {
             Debug.LogWarning($"疯狂卡牌 {cardData.cardName} 没有挂载 IInsaneCard 效果脚本！");
-            EndTurnIfNeeded();
             return;
         }
 
