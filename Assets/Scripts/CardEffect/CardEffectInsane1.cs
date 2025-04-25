@@ -5,83 +5,81 @@ public class CardEffectInsane1 : MonoBehaviour, IInsaneCard
 {
     public void ExecuteSaneEffect(Player currentPlayer)
     {
-        Debug.Log("执行【理智】效果：猜牌，猜中则目标出局，不能猜1");
+        Debug.Log("【理智效果】选择玩家并猜牌（不能猜1），猜中出局");
 
         List<Player> targetPlayers = GameManager.Instance.GetAvailableTargets(currentPlayer);
-
-        if (targetPlayers.Count == 0) 
-        {
-            Debug.Log("没有可以选择的玩家");
-            return;
-        }
-
-        Player target = targetPlayers[0]; 
-        int guess = 5; // TODO: 替换为 UI 输入（不能为1）
-
-        if (guess == 1)
-        {
-            Debug.Log("不能猜1号牌！");
-            return;
-        }
-
-        if (target.GetHandValue() == guess)
-        {
-            target.Eliminate();
-            Debug.Log($"猜中！{target.playerName} 出局");
-        }
-        else
-        {
-            Debug.Log("猜错了，没有效果");
-        }
-
-        currentPlayer.GoInsane();
-        GameManager.Instance.EndTurn();
-    }
-
-
-    public void ExecuteInsaneEffect(Player currentPlayer)
-    {
-        Debug.Log("执行【疯狂】效果：先检测对方是否是1号牌，否则再猜一次");
-
-        List<Player> targetPlayers = GameManager.Instance.GetAvailableTargets(currentPlayer);
-
         if (targetPlayers.Count == 0)
         {
-            Debug.Log("没有可以选择的玩家");
+            UIManager.Instance.ShowPopup("没有其他玩家可以猜牌");
             return;
         }
 
-        Player target = targetPlayers[0]; // 注意这里也要改
-
-
-        int handValue = target.GetHandValue();
-        if (handValue == 1)
+        // 弹出猜牌 UI
+        UIManager.Instance.ShowGuessEffect(targetPlayers, (selectedTarget, guessedNumber) =>
         {
-            target.Eliminate();
-            Debug.Log($"{target.playerName} 手牌是1号，直接出局！");
-        }
-        else
-        {
-            Debug.Log($"{target.playerName} 不是1号牌，可以再猜一次");
-
-            int guess = 6; // TODO: 替换为 UI 输入（不能为1）
-
-            if (guess == 1)
+            if (guessedNumber == 1)
             {
-                Debug.Log("不能猜1号牌！");
+                UIManager.Instance.ShowPopup("不能猜 1，请重新选择");
                 return;
             }
 
-            if (handValue == guess)
+            int targetValue = selectedTarget.GetHandValue();
+            if (targetValue == guessedNumber)
             {
-                target.Eliminate();
-                Debug.Log($"猜中！{target.playerName} 出局");
+                selectedTarget.Eliminate();
+                UIManager.Instance.ShowPopup($"猜中！{selectedTarget.playerName} 出局！");
             }
             else
             {
-                Debug.Log("再次猜错了，没有效果");
+                UIManager.Instance.ShowPopup($"猜错了。{selectedTarget.playerName} 的手牌是 {targetValue}");
             }
-        }
-        GameManager.Instance.EndTurn();
+
+            currentPlayer.GoInsane();
+            GameManager.Instance.EndTurn();
+        });
     }
+
+    public void ExecuteInsaneEffect(Player currentPlayer)
+    {
+        Debug.Log("【疯狂效果】选一名玩家，若其手牌为1直接淘汰，否则猜一次");
+
+        List<Player> targets = GameManager.Instance.GetAvailableTargets(currentPlayer);
+        if (targets.Count == 0)
+        {
+            UIManager.Instance.ShowPopup("没有可供选择的玩家");
+            return;
+        }
+
+        UIManager.Instance.ShowGuessEffect(targets, (selectedTarget, guessedNumber) =>
+        {
+            int realValue = selectedTarget.GetHandValue();
+
+            if (realValue == 1)
+            {
+                selectedTarget.Eliminate();
+                UIManager.Instance.ShowPopup($"{selectedTarget.playerName} 手牌是 1，直接出局！");
+            }
+            else
+            {
+                if (guessedNumber == 1)
+                {
+                    UIManager.Instance.ShowPopup("不能猜 1，请重新选择");
+                    return;
+                }
+
+                if (guessedNumber == realValue)
+                {
+                    selectedTarget.Eliminate();
+                    UIManager.Instance.ShowPopup($"猜中了！{selectedTarget.playerName} 出局！");
+                }
+                else
+                {
+                    UIManager.Instance.ShowPopup($"猜错了。{selectedTarget.playerName} 的手牌是 {realValue}");
+                }
+            }
+
+            GameManager.Instance.EndTurn();
+        });
+    }
+
 }

@@ -5,16 +5,16 @@ public class CardEffect3 : MonoBehaviour, IMainEffect
 {
     public void ExecuteEffect(Player currentPlayer)
     {
-        List<Player> targetPlayers = GameManager.Instance.GetAvailableTargets(currentPlayer);
+        List<Player> targets = GameManager.Instance.GetAvailableTargets(currentPlayer);
 
-        if (targetPlayers.Count == 0)
+        if (targets.Count == 0)
         {
             UIManager.Instance.ShowPopup("没有其他玩家可以选择");
             return;
         }
 
-        // UI 选择目标 → 比较数值 → 判定输赢
-        UIManager.Instance.ShowDuelTargetSelection(targetPlayers, selectedTarget =>
+        // 使用统一的目标选择方法
+        UIManager.Instance.ShowPlayerSelectionSimple(targets, selectedTarget =>
         {
             int currentValue = currentPlayer.GetHandValue();
             int targetValue = selectedTarget.GetHandValue();
@@ -41,4 +41,3 @@ public class CardEffect3 : MonoBehaviour, IMainEffect
         });
     }
 }
-    
