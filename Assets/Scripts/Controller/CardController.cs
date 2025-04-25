@@ -50,7 +50,7 @@ public class CardController : MonoBehaviour
         else
         {
             Debug.LogWarning($"普通卡牌 {cardData.cardName} 没有挂载 IMainEffect 效果脚本！");
-            EndTurnIfNeeded();
+
         }
     }
 
@@ -72,8 +72,7 @@ public class CardController : MonoBehaviour
         {
             Debug.Log($"{owner.playerName} 是理智状态，只能使用理智效果");
             insaneEffect.ExecuteSaneEffect(owner);
-            owner.GoInsane(); // 状态转为疯狂
-            EndTurnIfNeeded();
+           
         }
         else
         {
@@ -85,13 +84,13 @@ public class CardController : MonoBehaviour
                 {
                     Debug.Log("选择执行 理智效果");
                     insaneEffect.ExecuteSaneEffect(owner);
-                    EndTurnIfNeeded();
+                    
                 },
                 onInsane: () =>
                 {
                     Debug.Log("选择执行 疯狂效果");
                     insaneEffect.ExecuteInsaneEffect(owner);
-                    EndTurnIfNeeded();
+                    
                 }
             );
         }
