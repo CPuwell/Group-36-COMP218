@@ -56,12 +56,12 @@ public class Hand
             {
                 controller.Play();
             }
-
+            GameManager.Instance.ShowCardInDiscardZone(card); // 显示在弃牌区;
             cards.Remove(card);
             selectedCard = null;
 
             Debug.Log($"出牌：{card.cardName}");
-
+            
             // 通知 GameManager 记录弃牌
             GameManager.Instance.GetCurrentPlayer().RecordDiscard(card);
         }
