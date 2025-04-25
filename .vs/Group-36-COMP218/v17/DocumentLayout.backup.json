@@ -3,11 +3,23 @@
   "WorkspaceRootPath": "D:\\Github\\Group-36-COMP218\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\github\\group-36-comp218\\assets\\scripts\\ui\\uiinsanechoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\github\\group-36-comp218\\assets\\scripts\\cardeffect\\cardeffect6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardeffect\\cardeffect6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\Github\\Group-36-COMP218\\assets\\scripts\\cardeffect\\cardeffect1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardeffect\\cardeffect1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\Github\\Group-36-COMP218\\assets\\scripts\\controller\\cardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\cardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\Github\\Group-36-COMP218\\assets\\scripts\\ui\\uiinsanechoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\uiinsanechoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\github\\group-36-comp218\\assets\\scripts\\gamemanager\\players.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\Github\\Group-36-COMP218\\assets\\scripts\\gamemanager\\players.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager\\players.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -50,14 +62,6 @@
       "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager\\hand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\Github\\Group-36-COMP218\\assets\\scripts\\cardeffect\\cardeffect6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardeffect\\cardeffect6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\Github\\Group-36-COMP218\\assets\\scripts\\controller\\cardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\cardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\Github\\Group-36-COMP218\\assets\\scripts\\gamemanager\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -69,61 +73,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UIInsaneChoice.cs",
-              "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\UI\\UIInsaneChoice.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIInsaneChoice.cs",
-              "ToolTip": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\UI\\UIInsaneChoice.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI\\UIInsaneChoice.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T21:38:31.403Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CardEffectInsane2.cs",
-              "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\CardEffect\\CardEffectInsane2.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\CardEffect\\CardEffectInsane2.cs",
-              "ToolTip": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\CardEffect\\CardEffectInsane2.cs",
-              "RelativeToolTip": "Assets\\Scripts\\CardEffect\\CardEffectInsane2.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T21:02:48.923Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "HandManager.cs",
-              "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\HandManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\HandManager.cs",
-              "ToolTip": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\HandManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Gamemanager\\HandManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T20:08:50.147Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Players.cs",
-              "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\Players.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\Players.cs",
-              "ToolTip": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\Players.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Gamemanager\\Players.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAqwHAAAAAJAAAAAAAAAA==",
+              "Title": "CardEffect1.cs",
+              "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\CardEffect\\CardEffect1.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CardEffect\\CardEffect1.cs",
+              "ToolTip": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\CardEffect\\CardEffect1.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CardEffect\\CardEffect1.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAIwBYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T20:29:51.615Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T21:53:11.578Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "GameManager.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\GameManager.cs",
@@ -135,7 +101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "CardUI.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\CardUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\CardUI.cs",
@@ -147,7 +113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "HandUI.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\HandUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\HandUI.cs",
@@ -159,7 +125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "DeckManager.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\DeckManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\DeckManager.cs",
@@ -171,7 +137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "StartGameButtonUI.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\StartGameButtonUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\StartGameButtonUI.cs",
@@ -183,7 +149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "Deck.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\Deck.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\Deck.cs",
@@ -195,7 +161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "Hand.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\Hand.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\Hand.cs",
@@ -207,7 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "AutoSetup.cs",
               "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\AutoSetup.cs",
               "RelativeDocumentMoniker": "..\\..\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\AutoSetup.cs",
@@ -218,31 +184,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 0,
               "Title": "CardEffect6.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\CardEffect\\CardEffect6.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CardEffect\\CardEffect6.cs",
               "ToolTip": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\CardEffect\\CardEffect6.cs",
               "RelativeToolTip": "Assets\\Scripts\\CardEffect\\CardEffect6.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAuwCgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAuwB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T21:09:52.336Z"
+              "WhenOpened": "2025-04-24T21:09:52.336Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 4,
+              "Title": "Players.cs",
+              "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\Players.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\Players.cs",
+              "ToolTip": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\Players.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Gamemanager\\Players.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAqwHAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T20:29:51.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "CardController.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Controller\\CardController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Controller\\CardController.cs",
               "ToolTip": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Controller\\CardController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Controller\\CardController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAowEoAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAswEAAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-24T20:34:43.942Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 12,
+              "Title": "HandManager.cs",
+              "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\HandManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\HandManager.cs",
+              "ToolTip": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\HandManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Gamemanager\\HandManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T20:08:50.147Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CardEffectInsane2.cs",
+              "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\CardEffect\\CardEffectInsane2.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CardEffect\\CardEffectInsane2.cs",
+              "ToolTip": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\CardEffect\\CardEffectInsane2.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CardEffect\\CardEffectInsane2.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T21:02:48.923Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UIInsaneChoice.cs",
+              "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\UI\\UIInsaneChoice.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIInsaneChoice.cs",
+              "ToolTip": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\UI\\UIInsaneChoice.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\UIInsaneChoice.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T21:38:31.403Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "Card.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\Card.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\Card.cs",

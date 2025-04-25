@@ -29,10 +29,6 @@ public class CardEffect6 : MonoBehaviour, IMainEffect
             currentPlayer.AddCard(theirCard);
             targetPlayer.AddCard(myCard);
 
-            UIManager.Instance.Log($"{currentPlayer.playerName} 与 {targetPlayer.playerName} 交换了手牌");
-            UIManager.Instance.Log($"{currentPlayer.playerName} 现在持有：{theirCard.cardName}");
-            UIManager.Instance.Log($"{targetPlayer.playerName} 现在持有：{myCard.cardName}");
-
             UIManager.Instance.ShowPopup($"{currentPlayer.playerName} 与 {targetPlayer.playerName} 成功交换了手牌！");
             GameManager.Instance.EndTurn();
         });
