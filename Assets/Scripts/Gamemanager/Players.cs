@@ -125,6 +125,7 @@ public class Player : MonoBehaviour
 
         int randomIndex = Random.Range(0, hand.CardCount);
         PlayCard(hand.GetCards()[randomIndex]);
+        
     }
 
 

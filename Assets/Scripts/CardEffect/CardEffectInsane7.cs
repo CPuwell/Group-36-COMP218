@@ -35,7 +35,7 @@ public class CardEffectInsane7 : MonoBehaviour, IInsaneCard
         {
             Debug.Log($"{currentPlayer.playerName} 成功触发疯狂7号牌效果，立即赢得本轮！");
             currentPlayer.WinRound();
-            GameManager.Instance.EndRound();
+            GameManager.Instance.DeclareWinner(currentPlayer);
 
             // 弹出提示并宣布胜利
             UIManager.Instance.ShowPopup("你另一张牌数值大于 4，疯狂效果触发！你赢得了本轮游戏！");
