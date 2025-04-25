@@ -10,12 +10,13 @@ public class GameManager : MonoBehaviour
     public List<Player> players; // Player List
     public Deck deck; // Card Deck
     private int currentPlayerIndex = 0; // Player Index
-    private float turnTime = 30f; // Count Down Time for each turn
+    private float turnTime = 1f; // Count Down Time for each turn
     private float timer; // Timer
     private bool gameEnded = false;
     private bool RoundEnded = false;
     private int playerIndexCounter = 0; // Player Index Counter
     private bool gameStarted = false; // Game Start Flag
+    private DeckManager deckManager; // Deck Manager
 
 
     private void Awake()
@@ -28,6 +29,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        deckManager = FindFirstObjectByType<DeckManager>();
+
     }
 
     public void AddPlayer(string playerName)
@@ -49,7 +52,8 @@ public class GameManager : MonoBehaviour
     // Initialize the game
     public void StartGame()
     {
-        deck = FindFirstObjectByType<DeckManager>().logicDeck;
+        deckManager = FindFirstObjectByType<DeckManager>(); // 确保找到 DeckManager
+        deck = deckManager.logicDeck;
         deck.Shuffle();
 
         foreach (Player player in players)
@@ -63,19 +67,26 @@ public class GameManager : MonoBehaviour
         StartTurn();
     }
 
+
     //Set Timer
     private void StartTurn()
     {
+        
 
-        if (deck.IsEmpty())
-        {
-            Debug.Log("Deck is empty");
-            return;
-        }
+        
 
         Player currentPlayer = players[currentPlayerIndex];
-
+        currentPlayer.SetProtected(false);
+        
         Debug.Log($"[回合开始] {currentPlayer.playerName} 当前手牌数量：{currentPlayer.GetCards().Count}");
+        if (gameEnded) return; // avoid multiple start turn calls
+        if (players[currentPlayerIndex].IsInsane())
+        {
+                players[currentPlayerIndex].RevealAndDiscardTopCards(deck);
+        }
+
+        CheckRoundWinCondition();
+        CheckDeck();
 
         if (!currentPlayer.IsAlive())
         {
@@ -85,7 +96,7 @@ public class GameManager : MonoBehaviour
 
         
 
-        currentPlayer.SetProtected(false);
+        
         currentPlayer.DrawCard(deck);
         timer = turnTime;
         Debug.Log($"Now, {currentPlayer.playerName} is taking turn");
@@ -121,10 +132,13 @@ public class GameManager : MonoBehaviour
         if (winners.Count == 1)
         {
             bestPlayer.WinRound();
+            EndRound();
+            if (gameEnded) return;
+            StartRound();
         }
         else
         {
-            Debug.Log("Draw");
+            Debug.Log("Game Draw");
         }
     }
 
@@ -132,9 +146,10 @@ public class GameManager : MonoBehaviour
     //End Turn and Switch to Next Player
     public void EndTurn()
     {
+        Debug.Log($"[回合结束] {players[currentPlayerIndex].playerName} 的回合结束");
         if (gameEnded) return; // avoid multiple end turn calls
         CheckRoundWinCondition();
-
+        CheckDeck();
         if (RoundEnded) return;
         currentPlayerIndex = (currentPlayerIndex + 1) % players.Count;
 
@@ -202,7 +217,10 @@ public class GameManager : MonoBehaviour
         {
             players[i].Reset();
         }
+        deckManager.InitializeDeck();
+        deck = deckManager.logicDeck; // 非常重要，重新同步deck引用
         deck.Shuffle();
+
         foreach (Player player in players)
         {
             player.DrawCard(deck);
@@ -315,6 +333,16 @@ public class GameManager : MonoBehaviour
             Destroy(player.gameObject);
         }
         players.Clear();
+    }
+
+    public void CheckDeck()
+    {
+        if (deck.IsEmpty())
+        {
+            Debug.Log("Deck is empty now compare card value");
+            CompareCard();
+            EndRound();
+        }
     }
 
 }

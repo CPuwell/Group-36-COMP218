@@ -32,6 +32,13 @@ public class Hand
 
     public void PlayCard(Card card)
     {
+        if (card == null || card.cardObject == null)
+        {
+            Debug.LogWarning("试图出一张已经被销毁的卡！");
+            return;
+        }
+
+
         if (!CanPlayCard(card))
             return;
 

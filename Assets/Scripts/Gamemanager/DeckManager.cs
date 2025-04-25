@@ -9,7 +9,7 @@ public class DeckManager : MonoBehaviour
     public Sprite backSprite;                // 统一的卡背
 
     private List<GameObject> deck = new List<GameObject>(); // 当前牌堆
-    public List<Card> allCardData; // 卡牌数据
+    
 
     public Deck logicDeck = new Deck(); // 逻辑牌堆
     void Start()
@@ -18,12 +18,18 @@ public class DeckManager : MonoBehaviour
         ShuffleDeck();
     }
 
-    void InitializeDeck()
+    public void InitializeDeck()
     {
+        logicDeck = new Deck(); // 重新 new 一个新的 Deck
+
         // 清空之前的牌
         foreach (Transform child in deckZone)
         {
             Destroy(child.gameObject);
+        }
+        foreach (GameObject card in deck)
+        {
+            Destroy(card);
         }
         deck.Clear();
 
@@ -57,6 +63,8 @@ public class DeckManager : MonoBehaviour
             Card c = CreateCardData($"InsaneCard{id - 7}", $"{id - 7}m", id + 1, frontSprites[id], true);
             CreateCard(c);
         }
+
+        Debug.Log($"牌堆初始化完成，共有 {deck.Count} 张牌。");
     }
 
     void CreateCard(Card cardData)
