@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     private List<Card> discardedCards = new List<Card>();// 弃牌堆
 
     private Hand hand = new Hand(); // 仍然私有保存
+    
 
     public Hand Hand => hand;       // 外部通过这个只读属性访问
 
@@ -78,6 +79,8 @@ public class Player : MonoBehaviour
 
                 break;
             }
+
+            GameManager.RefreshDeckZone();
         }
 
 
@@ -318,6 +321,7 @@ public class Player : MonoBehaviour
         return foundInsane;
     }
 
+    
 
 
 

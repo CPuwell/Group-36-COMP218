@@ -25,6 +25,7 @@ public class DeckManager : MonoBehaviour
         // 清空之前的牌
         foreach (Transform child in deckZone)
         {
+            if (child.gameObject.name == "DeckTopCardImage") continue; //  保留DeckTopCardImage
             Destroy(child.gameObject);
         }
         foreach (GameObject card in deck)
@@ -127,6 +128,7 @@ public class DeckManager : MonoBehaviour
             Debug.LogWarning("Deck is empty!");
             return null;
         }
+
     }
     Card CreateCardData(string name, string id, int value, Sprite front, bool isInsane)
     {

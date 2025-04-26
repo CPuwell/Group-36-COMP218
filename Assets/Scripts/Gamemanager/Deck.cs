@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Deck
 {
     private List<Card> cards = new List<Card>(); 
-    private System.Random random = new System.Random(); 
+    private System.Random random = new System.Random();
+    
 
     public bool HasCards => cards.Count > 0; 
 
@@ -49,6 +49,9 @@ public class Deck
             Debug.Log("deck is empty");
             return null;
         }
+
+        
+
     }
 
     // 将一张牌放回牌堆（可以用于某些特殊卡牌效果）

@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class GameManager : MonoBehaviour
     private int playerIndexCounter = 0; // Player Index Counter
     private bool gameStarted = false; // Game Start Flag
     private DeckManager deckManager; // Deck Manager
+    public Image deckTopCardImage; // 在 Inspector 中手动拖入
 
 
     private void Awake()
@@ -98,6 +101,7 @@ public class GameManager : MonoBehaviour
 
         
         currentPlayer.DrawCard(deck);
+        UpdateDeckZoneDisplay();
         timer = turnTime;
         Debug.Log($"Now, {currentPlayer.playerName} is taking turn");
     }
@@ -389,5 +393,28 @@ public class GameManager : MonoBehaviour
             //EndRound();
         }
     }
+
+    public void UpdateDeckZoneDisplay()
+    {
+        if (deckTopCardImage == null) return;
+
+        if (deck.IsEmpty())
+        {
+            deckTopCardImage.gameObject.SetActive(false); // 隐藏
+        }
+        else
+        {
+            deckTopCardImage.gameObject.SetActive(true);  // 显示
+        }
+    }
+
+    public static void RefreshDeckZone()
+    {
+        if (Instance != null)
+        {
+            Instance.UpdateDeckZoneDisplay();
+        }
+    }
+
 
 }

@@ -27,6 +27,7 @@ public class CardEffectInsane5 : MonoBehaviour, IInsaneCard
             }
 
             selectedTarget.DrawCard(GameManager.Instance.deck);
+
             UIManager.Instance.ShowPopup($"{selectedTarget.playerName} 弃牌并抽了一张新牌");
 
             currentPlayer.GoInsane(); // 理智效果后进入疯狂状态
