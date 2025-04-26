@@ -9,20 +9,20 @@ public class Card
     public Sprite backSprite;      // 背面图片
     public int value;              // 卡牌数值（用于比较大小）
 
-    public CardType cardType;      // 卡牌类型
+
     public string description;     // 描述文本
     public bool isInsane;          // 是否是疯狂牌
 
     public GameObject cardObject;  // 对应的实例化 GameObject（运行时赋值）
     public GameObject effectPrefab; // 卡牌效果预制体（可拖入不同脚本 prefab）
 
-    public Card(string name, string id, Sprite front, Sprite back, CardType type, string desc, int value, bool isInsane, GameObject effectPrefab = null)
+    public Card(string name, string id, Sprite front, Sprite back, string desc, int value, bool isInsane, GameObject effectPrefab = null)
     {
         cardName = name;
         cardId = id;
         frontSprite = front;
         backSprite = back;
-        cardType = type;
+        
         description = desc;
         this.value = value;
         this.isInsane = isInsane;
@@ -35,6 +35,7 @@ public class Card
 
         if (effectPrefab != null)
         {
+            Debug.Log($"Instantiating effect prefab for {cardName}.");
             GameObject effectInstance = GameObject.Instantiate(effectPrefab);
 
             // 尝试获取常见的UI效果类型，并调用Show
@@ -65,14 +66,10 @@ public class Card
                 Debug.LogWarning($"未知卡牌效果Prefab，未能识别脚本类型！");
             }
         }
+        else
+        {
+            Debug.LogWarning($"卡牌 {cardName} 没有挂载效果Prefab！");
+        }
     }
 
-}
-
-public enum CardType
-{
-    Attack,
-    Defense,
-    Special,
-    Neutral
 }

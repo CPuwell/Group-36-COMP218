@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2017338969271429975}
   - component: {fileID: 2383302645977690121}
+  - component: {fileID: 6925207647520226955}
   m_Layer: 0
   m_Name: CardEffect2
   m_TagString: Untagged
@@ -44,3 +45,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7890d9533f28ce428b3015653e78760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6925207647520226955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2519115295519450391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04a9a9d02e93c149b5e94e9b512323a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardData:
+    cardName: Cats of Ulthar
+    cardId: 2
+    frontSprite: {fileID: 117678639708584995, guid: 03c272d059f17c140a0a1ebdd67fdde2, type: 3}
+    backSprite: {fileID: 870234187787707586, guid: abbcfb06f6d1f0345a4c8ba064fec724, type: 3}
+    value: 2
+    description: Card2
+    isInsane: 0
+    cardObject: {fileID: 0}
+    effectPrefab: {fileID: 2519115295519450391}

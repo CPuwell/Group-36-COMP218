@@ -16,13 +16,18 @@ public class Player : MonoBehaviour
     bool isImmortalThisRound = false;// Effect of card insane 4
     private List<Card> discardedCards = new List<Card>();
 
-    private Hand hand = new Hand(); 
+    private Hand hand;
 
-   
 
-    public Hand Hand => hand;       
 
-    
+
+    public Hand Hand => hand;
+
+    private void Awake()
+    {
+        hand = new Hand(handUI); // 把 handUI 传进去！！
+    }
+
     public bool IsHuman()
     {
         return isHuman;
@@ -50,7 +55,7 @@ public class Player : MonoBehaviour
        
         if (!isHuman)
         {
-            Debug.Log($"{playerName} is AI don't need to consider UI");
+            
             return;
         }
 

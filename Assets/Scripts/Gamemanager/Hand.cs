@@ -72,6 +72,12 @@ public class Hand
             
             // 通知 GameManager 记录弃牌
             GameManager.Instance.GetCurrentPlayer().RecordDiscard(card);
+            if (handUI != null)
+            {
+                handUI.UpdateHandUI(cards); // 更新手牌 UI
+            }
+
+            GameManager.Instance.EndTurn();
             
         }
     }

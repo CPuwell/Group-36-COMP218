@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8286935858099714956}
   - component: {fileID: 6648401940819684637}
+  - component: {fileID: 6340437214018616699}
   m_Layer: 0
   m_Name: CardEffect9
   m_TagString: Untagged
@@ -44,3 +45,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd3d63648d162e4fa7f88c6376ce709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6340437214018616699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392774751371313664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04a9a9d02e93c149b5e94e9b512323a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardData:
+    cardName: Mi-Go Braincase
+    cardId: 0m
+    frontSprite: {fileID: 4097929898065966470, guid: 48f309331f9bed14f8b631d3f2240975, type: 3}
+    backSprite: {fileID: 870234187787707586, guid: abbcfb06f6d1f0345a4c8ba064fec724, type: 3}
+    value: 0
+    description: Insane Card 0
+    isInsane: 1
+    cardObject: {fileID: 0}
+    effectPrefab: {fileID: 392774751371313664}

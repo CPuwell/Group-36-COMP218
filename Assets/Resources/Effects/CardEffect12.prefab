@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9139342798336849978}
   - component: {fileID: 2764937994429305622}
+  - component: {fileID: 6507237256384778215}
   m_Layer: 0
   m_Name: CardEffect12
   m_TagString: Untagged
@@ -44,3 +45,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5508ca8145f5494fb9333d42028c53b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6507237256384778215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895561937004278104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04a9a9d02e93c149b5e94e9b512323a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardData:
+    cardName: Hound of Tindalos
+    cardId: 3m
+    frontSprite: {fileID: 3663803494162082709, guid: 974d9d63124a57e47a9f3b8114688d3c, type: 3}
+    backSprite: {fileID: 870234187787707586, guid: abbcfb06f6d1f0345a4c8ba064fec724, type: 3}
+    value: 3
+    description: Insane Card 3
+    isInsane: 1
+    cardObject: {fileID: 0}
+    effectPrefab: {fileID: 1895561937004278104}

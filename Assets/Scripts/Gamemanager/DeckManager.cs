@@ -133,14 +133,14 @@ public class DeckManager : MonoBehaviour
     Card CreateCardData(string name, string id, int value, Sprite front, bool isInsane)
     {
         // 加载特效 prefab（从 Resources/Effects 文件夹中）
-        GameObject effect = Resources.Load<GameObject>($"Effects/CardEffect{id+1}");
+        GameObject effect = Resources.Load<GameObject>($"Effects/CardEffect{value}");
 
         Card card = new Card(
             name,
             id,
             front,
             backSprite,
-            CardType.Special,
+            
             "描述", // 你可以拓展描述逻辑
             value,
             isInsane,

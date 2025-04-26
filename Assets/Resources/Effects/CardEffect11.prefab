@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7844690323886873506}
   - component: {fileID: 5872150863192836505}
+  - component: {fileID: 6726782135380343472}
   m_Layer: 0
   m_Name: CardEffect11
   m_TagString: Untagged
@@ -44,3 +45,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a5b6c8b24fc1d4eab87fa0f6e8890b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6726782135380343472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118242474062083665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04a9a9d02e93c149b5e94e9b512323a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardData:
+    cardName: Golden Mead
+    cardId: 2m
+    frontSprite: {fileID: 7424713051636229677, guid: 17fcce57567e11947a24d4bc787deb3e, type: 3}
+    backSprite: {fileID: 870234187787707586, guid: abbcfb06f6d1f0345a4c8ba064fec724, type: 3}
+    value: 2
+    description: Insane Card 2
+    isInsane: 1
+    cardObject: {fileID: 0}
+    effectPrefab: {fileID: 2118242474062083665}

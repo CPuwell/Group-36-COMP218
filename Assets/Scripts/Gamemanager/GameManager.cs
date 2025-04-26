@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public List<Player> players; // Player List
     public Deck deck; // Card Deck
     private int currentPlayerIndex = 0; // Player Index
-    private float turnTime = 10f; // Count Down Time for each turn
+    private float turnTime = 60f; // Count Down Time for each turn
     private float timer; // Timer
     private bool gameEnded = false;
     private bool RoundEnded = false;
@@ -80,6 +80,10 @@ public class GameManager : MonoBehaviour
         currentPlayerIndex = 0;
         gameStarted = true;
         StartTurn();
+    }
+    public int GetNextPlayerIndex()
+    {
+        return playerIndexCounter++;
     }
 
     //Set Timer
@@ -317,7 +321,7 @@ public class GameManager : MonoBehaviour
     {
         // 你可以根据 cardId 预设构建卡牌（此处为举例）
         Card newCard = new Card(
-            "米·戈的大脑容器", "0", null, null, CardType.Special,
+            "米·戈的大脑容器", "0", null, null,
             "被强制植入疯狂容器", 0, true // 是疯狂牌
         );
         target.AddCard(newCard);

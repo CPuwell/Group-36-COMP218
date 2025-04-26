@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2584091367181250789}
   - component: {fileID: 7542791326494262273}
+  - component: {fileID: 7480235947757173912}
   m_Layer: 0
   m_Name: CardEffect13
   m_TagString: Untagged
@@ -44,3 +45,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57425da6a11aa794187d52ddd17ae166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7480235947757173912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55722434926394479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04a9a9d02e93c149b5e94e9b512323a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardData:
+    cardName: Liber Ivonis
+    cardId: 4m
+    frontSprite: {fileID: -2400500239732880961, guid: 39421d569f1102e489f46214531744a5, type: 3}
+    backSprite: {fileID: 870234187787707586, guid: abbcfb06f6d1f0345a4c8ba064fec724, type: 3}
+    value: 4
+    description: Insane Card 4
+    isInsane: 1
+    cardObject: {fileID: 0}
+    effectPrefab: {fileID: 55722434926394479}

@@ -17,6 +17,9 @@ public class StartGameUI : MonoBehaviour
 
         //  添加人类玩家（场景中已有对象）
         humanPlayer.isHuman = true;
+
+        humanPlayer.Initialize(gameManager.GetNextPlayerIndex(), "Player");
+
         gameManager.players.Add(humanPlayer);
 
         //  添加 5 个 AI 玩家

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2439500230052823243}
   - component: {fileID: 7682576633349623105}
+  - component: {fileID: 2269785727574588821}
   m_Layer: 0
   m_Name: CardEffect15
   m_TagString: Untagged
@@ -44,3 +45,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 216575615188e844ab461bd5a45fb2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2269785727574588821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6647022867988089366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04a9a9d02e93c149b5e94e9b512323a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardData:
+    cardName: Nyarlathotep
+    cardId: 6m
+    frontSprite: {fileID: -8596910700492103684, guid: b95c95ff03cd9bb4c9729235bcbfc158, type: 3}
+    backSprite: {fileID: 870234187787707586, guid: abbcfb06f6d1f0345a4c8ba064fec724, type: 3}
+    value: 6
+    description: Insane Card 6
+    isInsane: 1
+    cardObject: {fileID: 0}
+    effectPrefab: {fileID: 6647022867988089366}

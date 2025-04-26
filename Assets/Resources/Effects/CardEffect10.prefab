@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3959630191948826964}
   - component: {fileID: 7686821135595572231}
+  - component: {fileID: 6689238211328434618}
   m_Layer: 0
   m_Name: CardEffect10
   m_TagString: Untagged
@@ -44,3 +45,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64af8051861da0144b347695a3ab37a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6689238211328434618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741745983247813019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04a9a9d02e93c149b5e94e9b512323a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardData:
+    cardName: Deep Ones
+    cardId: 1m
+    frontSprite: {fileID: 7209366973659709518, guid: ba78569fcf661f74c9df754fab255679, type: 3}
+    backSprite: {fileID: 870234187787707586, guid: abbcfb06f6d1f0345a4c8ba064fec724, type: 3}
+    value: 1
+    description: Insane Card 1
+    isInsane: 1
+    cardObject: {fileID: 0}
+    effectPrefab: {fileID: 741745983247813019}
