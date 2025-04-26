@@ -9,7 +9,16 @@ public class CardEffect6 : MonoBehaviour, IMainEffect
 
         if (targetPlayers.Count == 0)
         {
-            UIManager.Instance.ShowPopup("没有可以交换的玩家");
+            UIManager.Instance.ShowPopup("无法选择");
+
+            // 获取要弃掉的卡
+            Card cardToDiscard = currentPlayer.GetSelectedCard(); 
+            if (cardToDiscard != null)
+            {
+                currentPlayer.DiscardCard(cardToDiscard);
+            }
+
+            GameManager.Instance.EndTurn();
             return;
         }
 

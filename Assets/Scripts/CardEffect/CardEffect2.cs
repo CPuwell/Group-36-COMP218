@@ -10,6 +10,15 @@ public class CardEffect2 : MonoBehaviour, IMainEffect
         if (targetPlayers.Count == 0)
         {
             UIManager.Instance.ShowPopup("没有其他玩家可供查看");
+
+            // 获取要弃掉的卡
+            Card cardToDiscard = currentPlayer.GetSelectedCard(); // 假设你封装这个方法
+            if (cardToDiscard != null)
+            {
+                currentPlayer.DiscardCard(cardToDiscard);
+            }
+
+            GameManager.Instance.EndTurn();
             return;
         }
 

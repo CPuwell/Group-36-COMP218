@@ -8,9 +8,19 @@ public class CardEffectInsane2 : MonoBehaviour, IInsaneCard
         Debug.Log("【理智效果】查看一名玩家的手牌");
 
         List<Player> targets = GameManager.Instance.GetAvailableTargets(currentPlayer);
+
         if (targets.Count == 0)
         {
-            UIManager.Instance.ShowPopup("没有可以查看的玩家");
+            UIManager.Instance.ShowPopup("没有其他玩家可供查看");
+
+            // 获取要弃掉的卡
+            Card cardToDiscard = currentPlayer.GetSelectedCard(); 
+            if (cardToDiscard != null)
+            {
+                currentPlayer.DiscardCard(cardToDiscard);
+            }
+            currentPlayer.GoInsane();
+            GameManager.Instance.EndTurn();
             return;
         }
 
@@ -41,7 +51,15 @@ public class CardEffectInsane2 : MonoBehaviour, IInsaneCard
         List<Player> targets = GameManager.Instance.GetAvailableTargets(currentPlayer);
         if (targets.Count == 0)
         {
-            UIManager.Instance.ShowPopup("没有可查看的目标玩家");
+            UIManager.Instance.ShowPopup("没有其他玩家可供查看");
+
+            // 获取要弃掉的卡
+            Card cardToDiscard = currentPlayer.GetSelectedCard();
+            if (cardToDiscard != null)
+            {
+                currentPlayer.DiscardCard(cardToDiscard);
+            }
+            GameManager.Instance.EndTurn();
             return;
         }
 

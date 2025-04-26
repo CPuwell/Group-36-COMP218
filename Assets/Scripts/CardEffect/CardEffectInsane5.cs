@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using static UnityEngine.GraphicsBuffer;
 
 public class CardEffectInsane5 : MonoBehaviour, IInsaneCard
 {
@@ -7,18 +8,24 @@ public class CardEffectInsane5 : MonoBehaviour, IInsaneCard
     {
         Debug.Log("【理智效果】目标弃牌并抽一张");
 
-        List<Player> targets = GameManager.Instance.players.FindAll(
-            p => p.IsAlive() && !p.IsProtected()
-        );
+        List<Player> targetPlayers = GameManager.Instance.GetAvailableTargetsAllowSelf(currentPlayer);
 
-        if (targets.Count == 0)
+        if (targetPlayers.Count == 0)
         {
-            UIManager.Instance.ShowPopup("没有有效目标");
+            UIManager.Instance.ShowPopup("无法选择玩家");
+
+            // 获取要弃掉的卡
+            Card cardToDiscard = currentPlayer.GetSelectedCard();
+            if (cardToDiscard != null)
+            {
+                currentPlayer.DiscardCard(cardToDiscard);
+            }
+            currentPlayer.GoInsane();
             GameManager.Instance.EndTurn();
             return;
         }
 
-        UIManager.Instance.ShowPlayerSelectionSimple(targets, selectedTarget =>
+        UIManager.Instance.ShowPlayerSelectionSimple(targetPlayers, selectedTarget =>
         {
             Card oldCard = selectedTarget.RemoveCard();
             if (oldCard != null)
@@ -41,7 +48,15 @@ public class CardEffectInsane5 : MonoBehaviour, IInsaneCard
         List<Player> targets = GameManager.Instance.GetAvailableTargets(currentPlayer);
         if (targets.Count == 0)
         {
-            UIManager.Instance.ShowPopup("没有有效目标");
+            UIManager.Instance.ShowPopup("无法选择玩家");
+
+            // 获取要弃掉的卡
+            Card cardToDiscard = currentPlayer.GetSelectedCard();
+            if (cardToDiscard != null)
+            {
+                currentPlayer.DiscardCard(cardToDiscard);
+            }
+            GameManager.Instance.EndTurn();
             return;
         }
 

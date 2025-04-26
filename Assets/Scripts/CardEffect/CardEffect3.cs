@@ -9,7 +9,16 @@ public class CardEffect3 : MonoBehaviour, IMainEffect
 
         if (targets.Count == 0)
         {
-            UIManager.Instance.ShowPopup("没有其他玩家可以选择");
+            UIManager.Instance.ShowPopup("无法选择");
+
+            // 获取要弃掉的卡
+            Card cardToDiscard = currentPlayer.GetSelectedCard(); // 假设你封装这个方法
+            if (cardToDiscard != null)
+            {
+                currentPlayer.DiscardCard(cardToDiscard);
+            }
+
+            GameManager.Instance.EndTurn();
             return;
         }
 

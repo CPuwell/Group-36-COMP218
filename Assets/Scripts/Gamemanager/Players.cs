@@ -318,6 +318,10 @@ public class Player : MonoBehaviour
         return foundInsane;
     }
 
+    public Card GetSelectedCard()
+    {
+        return hand.GetSelectedCard();
+    }
 
 
 

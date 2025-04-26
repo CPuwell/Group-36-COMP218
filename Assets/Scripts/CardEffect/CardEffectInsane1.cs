@@ -10,7 +10,17 @@ public class CardEffectInsane1 : MonoBehaviour, IInsaneCard
         List<Player> targetPlayers = GameManager.Instance.GetAvailableTargets(currentPlayer);
         if (targetPlayers.Count == 0)
         {
-            UIManager.Instance.ShowPopup("没有其他玩家可以猜牌");
+            UIManager.Instance.ShowPopup("没有其他玩家可供查看");
+
+            // 获取要弃掉的卡
+            Card cardToDiscard = currentPlayer.GetSelectedCard();
+            if (cardToDiscard != null)
+            {
+                currentPlayer.DiscardCard(cardToDiscard);
+            }
+            currentPlayer.GoInsane();
+            GameManager.Instance.EndTurn();
+
             return;
         }
 
@@ -46,7 +56,16 @@ public class CardEffectInsane1 : MonoBehaviour, IInsaneCard
         List<Player> targets = GameManager.Instance.GetAvailableTargets(currentPlayer);
         if (targets.Count == 0)
         {
-            UIManager.Instance.ShowPopup("没有可供选择的玩家");
+            UIManager.Instance.ShowPopup("没有其他玩家可供查看");
+
+            // 获取要弃掉的卡
+            Card cardToDiscard = currentPlayer.GetSelectedCard();
+            if (cardToDiscard != null)
+            {
+                currentPlayer.DiscardCard(cardToDiscard);
+            }
+
+            GameManager.Instance.EndTurn();
             return;
         }
 

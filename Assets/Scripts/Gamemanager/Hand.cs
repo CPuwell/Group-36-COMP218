@@ -30,6 +30,12 @@ public class Hand
         }
     }
 
+    public Card GetSelectedCard()
+    {
+        return selectedCard;
+    }
+
+
     public void PlayCard(Card card)
     {
         if (card == null || card.cardObject == null)
