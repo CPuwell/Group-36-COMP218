@@ -5,7 +5,7 @@ public class Hand
 {
     private List<Card> cards = new List<Card>();
     private Card selectedCard = null;
-    public HandUI handUI;
+    private HandUI handUI;
     public int CardCount => cards.Count;
 
     public void AddCard(Card card)
@@ -15,6 +15,10 @@ public class Hand
             cards.Add(card);
             Debug.Log($"添加手牌: {card.cardName}");
         }
+    }
+    public Hand(HandUI handUI = null)
+    {
+        this.handUI = handUI;
     }
 
     public void SelectCard(Card card)
@@ -68,8 +72,7 @@ public class Hand
             
             // 通知 GameManager 记录弃牌
             GameManager.Instance.GetCurrentPlayer().RecordDiscard(card);
-
-            handUI.UpdateHandUI(GetCards());
+            
         }
     }
 

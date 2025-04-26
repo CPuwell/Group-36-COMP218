@@ -4,10 +4,7 @@ public class HandManager : MonoBehaviour
 {
     public Hand hand = new Hand();
     public HandUI handUI;
-    private void Start()
-    {
-        hand.handUI = handUI; // ÔÚStartÀï²¹³ä¸³Öµ£¡
-    }
+    
     public void AddCard(Card card)
     {
         hand.AddCard(card);

@@ -18,15 +18,18 @@ public class Player : MonoBehaviour
 
     private Hand hand = new Hand(); 
 
+   
 
     public Hand Hand => hand;       
 
+    
     public bool IsHuman()
     {
         return isHuman;
     }
     public void DrawCard(Deck deck)
     {
+        
         Card newCard = deck.Draw();
         if (newCard == null)
         {
