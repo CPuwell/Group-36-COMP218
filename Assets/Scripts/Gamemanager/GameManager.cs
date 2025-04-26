@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class GameManager : MonoBehaviour
     public List<Player> players; // Player List
     public Deck deck; // Card Deck
     private int currentPlayerIndex = 0; // Player Index
-    private float turnTime = 1f; // Count Down Time for each turn
+    private float turnTime = 10f; // Count Down Time for each turn
     private float timer; // Timer
     private bool gameEnded = false;
     private bool RoundEnded = false;
@@ -58,7 +59,18 @@ public class GameManager : MonoBehaviour
         deckManager = FindFirstObjectByType<DeckManager>(); // 确保找到 DeckManager
         deck = deckManager.logicDeck;
         deck.Shuffle();
+        StartCoroutine(LoadUISceneAndStartGame());
+       
+    }
+    private IEnumerator LoadUISceneAndStartGame()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("UI", LoadSceneMode.Additive);
+        while (!asyncLoad.isDone)
+        {
+            yield return null; // 等待下一帧继续检查
+        }
 
+        // 确保UI场景已经加载完，再继续发牌
         foreach (Player player in players)
         {
             player.DrawCard(deck);
@@ -70,13 +82,12 @@ public class GameManager : MonoBehaviour
         StartTurn();
     }
 
-
     //Set Timer
     private void StartTurn()
     {
         
+        if (!gameStarted) return; // Avoid starting turn before game starts
 
-        
 
         Player currentPlayer = players[currentPlayerIndex];
         currentPlayer.SetProtected(false);

@@ -14,12 +14,12 @@ public class Player : MonoBehaviour
     bool isInsane = false; // Player Insane Status
     bool isProtected = false; // Effect of card 4
     bool isImmortalThisRound = false;// Effect of card insane 4
-    private List<Card> discardedCards = new List<Card>();// ���ƶ�
+    private List<Card> discardedCards = new List<Card>();
 
-    private Hand hand = new Hand(); // ��Ȼ˽�б���
+    private Hand hand = new Hand(); 
 
 
-    public Hand Hand => hand;       // �ⲿͨ�����ֻ�����Է���
+    public Hand Hand => hand;       
 
     public bool IsHuman()
     {
@@ -30,37 +30,37 @@ public class Player : MonoBehaviour
         Card newCard = deck.Draw();
         if (newCard == null)
         {
-            Debug.LogWarning($"{playerName} ����ʧ�ܣ�deck ��");
+            Debug.LogWarning($"{playerName} can't draw because deck is empty");
             return;
         }
 
         hand.AddCard(newCard);
-        Debug.Log($"{PlayerIndex} �鵽��һ���ƣ�{newCard.cardName}");
+        Debug.Log($"{PlayerIndex} draw card:{newCard.cardName}");
 
-        // ���ù���
+        
         CardController controller = newCard.cardObject.GetComponent<CardController>();
         if (controller != null)
         {
             controller.SetCardOwner(this);
         }
 
-        //  AI ������� return������ִ�� UI
+       
         if (!isHuman)
         {
-            Debug.Log($"{playerName} �� AI������ UI ��ʾ");
+            Debug.Log($"{playerName} is AI don't need to consider UI");
             return;
         }
 
-        //  ������Ҳ�ִ������ UI ����
+        
         for (int i = 0; i < cardSlots.Length; i++)
         {
             
-                Debug.Log($"cardSlot[{i}] = {cardSlots[i]}"); //  ��ӡ��
+                Debug.Log($"cardSlot[{i}] = {cardSlots[i]}"); 
                
 
             if (cardSlots[i] == null)
             {
-                Debug.LogError($"[{playerName}] cardSlots[{i}] is null��");
+                Debug.LogError($"[{playerName}] cardSlots[{i}] is null");
                 continue;
             }
 
@@ -86,11 +86,10 @@ public class Player : MonoBehaviour
 
         if (handUI != null)
         {
-            Debug.Log($"{playerName} �����࣬�������� UI");
-
+            
 
             if (isHuman) { 
-                Debug.Log($"{playerName} �����࣬�������� UI");
+                Debug.Log($"{playerName} Update hand UI");
                 handUI.UpdateHandUI(hand.GetCards());
             }
         }
@@ -103,11 +102,8 @@ public class Player : MonoBehaviour
     public void PlayCard(Card card)
     {       
         hand.PlayCard(card);
-        Debug.Log($"{playerName} ���ƣ�{card.cardName}");
-        if (handUI != null)
-        {
-            handUI.UpdateHandUI(hand.GetCards());
-        }
+        Debug.Log($"{playerName} play card:{card.cardName}");
+        
     }
 
     public void WinRound()
@@ -115,11 +111,11 @@ public class Player : MonoBehaviour
         if (isInsane)
         {
             winRoundsInsane++;
-            Debug.Log($"{playerName} Ӯ���˷��غϣ���ǰ����ʤ�غ�����{winRoundsInsane}");
+            Debug.Log($"{playerName} win insane rounds:{winRoundsInsane}");
         } else
         {
             winRounds++;
-            Debug.Log($"{playerName} Ӯ���˻غϣ���ǰ���ǻ�ʤ�غ�����{winRounds}");
+            Debug.Log($"{playerName} win rounds:{winRounds}");
         }
     }
 
@@ -161,14 +157,14 @@ public class Player : MonoBehaviour
     }
 
 
-    //������zjs�ӵ�
+    
     public void Eliminate()
     {
         if (isImmortalThisRound)
         {
             return;
         }
-        Debug.Log($"{playerName} ����̭�ˣ�");
+        Debug.Log($"{playerName} is eliminated");
         isAlive = false;
     }
 
@@ -251,9 +247,9 @@ public class Player : MonoBehaviour
         if (card != null)
         {
             discardedCards.Add(card);
-            Debug.Log($"{playerName} ���Ƽ�¼���£�{card.cardName}");
+            Debug.Log($"{playerName} discarded card:{card.cardName}");
 
-            // ����8���� �� ��������
+            
             if (!IsImmortal() && !IsInsane() && card.value == 8 && card.isInsane)
             {
                 Eliminate();
@@ -263,7 +259,7 @@ public class Player : MonoBehaviour
                 Eliminate();
             }
 
-            // ����0���� �� ��������
+            
             if (!IsImmortal() && card.value == 0)
             {
                 Eliminate();

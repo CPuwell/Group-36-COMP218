@@ -5,7 +5,7 @@ public class Hand
 {
     private List<Card> cards = new List<Card>();
     private Card selectedCard = null;
-
+    public HandUI handUI;
     public int CardCount => cards.Count;
 
     public void AddCard(Card card)
@@ -27,6 +27,7 @@ public class Hand
         {
             selectedCard = card;
             Debug.Log($"选中卡牌: {card.cardName}");
+            
         }
     }
 
@@ -51,10 +52,7 @@ public class Hand
         if (cards.Contains(card))
         {
             // 如果你的卡牌带有逻辑 prefab（效果卡）
-            if (card.effectPrefab != null)
-            {
-                GameObject.Instantiate(card.effectPrefab);
-            }
+            card.PlayCard();
 
             // 如果你用的是 CardController 控制动画或特效
             CardController controller = card.cardObject.GetComponent<CardController>();
@@ -70,6 +68,8 @@ public class Hand
             
             // 通知 GameManager 记录弃牌
             GameManager.Instance.GetCurrentPlayer().RecordDiscard(card);
+
+            handUI.UpdateHandUI(GetCards());
         }
     }
 

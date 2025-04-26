@@ -33,16 +33,40 @@ public class Card
     {
         Debug.Log($"{cardName} effect played.");
 
-        // 触发特效 prefab（如果有）
         if (effectPrefab != null)
         {
-            GameObject.Instantiate(effectPrefab);
-        }
+            GameObject effectInstance = GameObject.Instantiate(effectPrefab);
 
-        // 你也可以考虑通过接口调用对应逻辑：
-        // var script = effectPrefab.GetComponent<ICardEffect>();
-        // script?.Execute();
+            // 尝试获取常见的UI效果类型，并调用Show
+            if (effectInstance.TryGetComponent<UICardEffectNotice>(out var notice))
+            {
+                notice.Show(description, () =>
+                {
+                    Debug.Log($"{cardName} 弹窗确认完成！");
+                });
+            }
+            else if (effectInstance.TryGetComponent<UIGuess>(out var guess))
+            {
+                // 猜牌逻辑（需要传目标玩家列表和回调）
+                guess.Show(GameManager.Instance.GetAvailableTargets(GameManager.Instance.GetCurrentPlayer()), (target, guessNumber) =>
+                {
+                    Debug.Log($"猜测完成，目标：{target.playerName}，数字：{guessNumber}");
+                });
+            }
+            else if (effectInstance.TryGetComponent<UIPlayerSelect>(out var select))
+            {
+                select.Show(GameManager.Instance.GetAvailableTargets(GameManager.Instance.GetCurrentPlayer()), (target) =>
+                {
+                    Debug.Log($"选择了玩家：{target.playerName}");
+                });
+            }
+            else
+            {
+                Debug.LogWarning($"未知卡牌效果Prefab，未能识别脚本类型！");
+            }
+        }
     }
+
 }
 
 public enum CardType
