@@ -10,7 +10,16 @@ public class CardEffectInsane6 : MonoBehaviour, IInsaneCard
         List<Player> targets = GameManager.Instance.GetAvailableTargets(currentPlayer);
         if (targets.Count == 0)
         {
-            UIManager.Instance.ShowPopup("没有可以交换手牌的目标玩家");
+            UIManager.Instance.ShowPopup("无法选择玩家");
+
+            // 获取要弃掉的卡
+            Card cardToDiscard = currentPlayer.GetSelectedCard();
+            if (cardToDiscard != null)
+            {
+                currentPlayer.DiscardCard(cardToDiscard);
+            }
+            currentPlayer.GoInsane();
+            GameManager.Instance.EndTurn();
             return;
         }
 
@@ -46,9 +55,17 @@ public class CardEffectInsane6 : MonoBehaviour, IInsaneCard
         if (playersWithCards.Count < 2)
         {
             UIManager.Instance.ShowPopup("没有足够的玩家参与重新分配（至少2人有牌）");
+            
+            // 获取要弃掉的卡
+            Card cardToDiscard = currentPlayer.GetSelectedCard();
+            if (cardToDiscard != null)
+            {
+                currentPlayer.DiscardCard(cardToDiscard);
+            }
+            GameManager.Instance.EndTurn();
             return;
         }
-
+        
         List<Card> collectedCards = new List<Card>();
         foreach (Player player in playersWithCards)
         {

@@ -9,7 +9,16 @@ public class CardEffect6 : MonoBehaviour, IMainEffect
 
         if (targetPlayers.Count == 0)
         {
-            UIManager.Instance.ShowPopup("没有可以交换的玩家");
+            UIManager.Instance.ShowPopup("无法选择");
+
+            // 获取要弃掉的卡
+            Card cardToDiscard = currentPlayer.GetSelectedCard(); 
+            if (cardToDiscard != null)
+            {
+                currentPlayer.DiscardCard(cardToDiscard);
+            }
+
+            GameManager.Instance.EndTurn();
             return;
         }
 
@@ -28,10 +37,6 @@ public class CardEffect6 : MonoBehaviour, IMainEffect
 
             currentPlayer.AddCard(theirCard);
             targetPlayer.AddCard(myCard);
-
-            UIManager.Instance.Log($"{currentPlayer.playerName} 与 {targetPlayer.playerName} 交换了手牌");
-            UIManager.Instance.Log($"{currentPlayer.playerName} 现在持有：{theirCard.cardName}");
-            UIManager.Instance.Log($"{targetPlayer.playerName} 现在持有：{myCard.cardName}");
 
             UIManager.Instance.ShowPopup($"{currentPlayer.playerName} 与 {targetPlayer.playerName} 成功交换了手牌！");
             GameManager.Instance.EndTurn();

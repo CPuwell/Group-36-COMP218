@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Player : MonoBehaviour
 {
-    public Transform[] cardSlots = new Transform[2]; // ÅÆ²Û
+    public Transform[] cardSlots = new Transform[2]; // ï¿½Æ²ï¿½
     public HandUI handUI;
     public int PlayerIndex { get; private set; }  
     public string playerName;
@@ -14,12 +14,12 @@ public class Player : MonoBehaviour
     bool isInsane = false; // Player Insane Status
     bool isProtected = false; // Effect of card 4
     bool isImmortalThisRound = false;// Effect of card insane 4
-    private List<Card> discardedCards = new List<Card>();// ÆúÅÆ¶Ñ
+    private List<Card> discardedCards = new List<Card>();// ï¿½ï¿½ï¿½Æ¶ï¿½
 
-    private Hand hand = new Hand(); // ÈÔÈ»Ë½ÓÐ±£´æ
-    
+    private Hand hand = new Hand(); // ï¿½ï¿½È»Ë½ï¿½Ð±ï¿½ï¿½ï¿½
 
-    public Hand Hand => hand;       // Íâ²¿Í¨¹ýÕâ¸öÖ»¶ÁÊôÐÔ·ÃÎÊ
+
+    public Hand Hand => hand;       // ï¿½â²¿Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½
 
     public bool IsHuman()
     {
@@ -30,37 +30,37 @@ public class Player : MonoBehaviour
         Card newCard = deck.Draw();
         if (newCard == null)
         {
-            Debug.LogWarning($"{playerName} ³éÅÆÊ§°Ü£ºdeck ¿Õ");
+            Debug.LogWarning($"{playerName} ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½deck ï¿½ï¿½");
             return;
         }
 
         hand.AddCard(newCard);
-        Debug.Log($"{PlayerIndex} ³éµ½ÁËÒ»ÕÅÅÆ£º{newCard.cardName}");
+        Debug.Log($"{PlayerIndex} ï¿½éµ½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Æ£ï¿½{newCard.cardName}");
 
-        // ÉèÖÃ¹éÊô
+        // ï¿½ï¿½ï¿½Ã¹ï¿½ï¿½ï¿½
         CardController controller = newCard.cardObject.GetComponent<CardController>();
         if (controller != null)
         {
             controller.SetCardOwner(this);
         }
 
-        //  AI Íæ¼ÒÌáÔç return£¬¾ø²»Ö´ÐÐ UI
+        //  AI ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ returnï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½ UI
         if (!isHuman)
         {
-            Debug.Log($"{playerName} ÊÇ AI£¬Ìø¹ý UI ÏÔÊ¾");
+            Debug.Log($"{playerName} ï¿½ï¿½ AIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ UI ï¿½ï¿½Ê¾");
             return;
         }
 
-        //  ÈËÀàÍæ¼Ò²ÅÖ´ÐÐÒÔÏÂ UI ²Ù×÷
+        //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ UI ï¿½ï¿½ï¿½ï¿½
         for (int i = 0; i < cardSlots.Length; i++)
         {
             
-                Debug.Log($"cardSlot[{i}] = {cardSlots[i]}"); //  ´òÓ¡°ó¶¨
+                Debug.Log($"cardSlot[{i}] = {cardSlots[i]}"); //  ï¿½ï¿½Ó¡ï¿½ï¿½
                
 
             if (cardSlots[i] == null)
             {
-                Debug.LogError($"[{playerName}] cardSlots[{i}] is null£¡");
+                Debug.LogError($"[{playerName}] cardSlots[{i}] is nullï¿½ï¿½");
                 continue;
             }
 
@@ -86,11 +86,11 @@ public class Player : MonoBehaviour
 
         if (handUI != null)
         {
-            Debug.Log($"{playerName} ÊÇÈËÀà£¬¸üÐÂÊÖÅÆ UI");
+            Debug.Log($"{playerName} ï¿½ï¿½ï¿½ï¿½ï¿½à£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ UI");
 
 
             if (isHuman) { 
-                Debug.Log($"{playerName} ÊÇÈËÀà£¬¸üÐÂÊÖÅÆ UI");
+                Debug.Log($"{playerName} ï¿½ï¿½ï¿½ï¿½ï¿½à£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ UI");
                 handUI.UpdateHandUI(hand.GetCards());
             }
         }
@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
     public void PlayCard(Card card)
     {       
         hand.PlayCard(card);
-        Debug.Log($"{playerName} ³öÅÆ£º{card.cardName}");
+        Debug.Log($"{playerName} ï¿½ï¿½ï¿½Æ£ï¿½{card.cardName}");
         if (handUI != null)
         {
             handUI.UpdateHandUI(hand.GetCards());
@@ -115,11 +115,11 @@ public class Player : MonoBehaviour
         if (isInsane)
         {
             winRoundsInsane++;
-            Debug.Log($"{playerName} Ó®µÃÁË·è¿ñ»ØºÏ£¡µ±Ç°·è¿ñ»ñÊ¤»ØºÏÊý£º{winRoundsInsane}");
+            Debug.Log($"{playerName} Ó®ï¿½ï¿½ï¿½Ë·ï¿½ï¿½ØºÏ£ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½Ê¤ï¿½Øºï¿½ï¿½ï¿½ï¿½ï¿½{winRoundsInsane}");
         } else
         {
             winRounds++;
-            Debug.Log($"{playerName} Ó®µÃÁË»ØºÏ£¡µ±Ç°ÀíÖÇ»ñÊ¤»ØºÏÊý£º{winRounds}");
+            Debug.Log($"{playerName} Ó®ï¿½ï¿½ï¿½Ë»ØºÏ£ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½Ç»ï¿½Ê¤ï¿½Øºï¿½ï¿½ï¿½ï¿½ï¿½{winRounds}");
         }
     }
 
@@ -161,14 +161,14 @@ public class Player : MonoBehaviour
     }
 
 
-    //ÒÔÏÂÊÇzjs¼ÓµÄ
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½zjsï¿½Óµï¿½
     public void Eliminate()
     {
         if (isImmortalThisRound)
         {
             return;
         }
-        Debug.Log($"{playerName} ±»ÌÔÌ­ÁË£¡");
+        Debug.Log($"{playerName} ï¿½ï¿½ï¿½ï¿½Ì­ï¿½Ë£ï¿½");
         isAlive = false;
     }
 
@@ -198,7 +198,7 @@ public class Player : MonoBehaviour
         hand.Discard(card);
         RecordDiscard(card);
 
-        // Æúµô8ºÅÅÆ ¡ú Á¢¼´³ö¾Ö
+        // ï¿½ï¿½ï¿½ï¿½8ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         if (!IsInsane() && card.value == 8 && card.isInsane)
         {
             Eliminate();
@@ -215,7 +215,7 @@ public class Player : MonoBehaviour
         if (cards.Count > 0)
         {
             Card cardToReturn = cards[0];
-            hand.ClearHand(); // Ö»ÓÐÒ»ÕÅÅÆ£¬ËùÒÔÖ±½ÓÇå¿Õ
+            hand.ClearHand(); // Ö»ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½
             return cardToReturn;
         }
         return null;
@@ -251,9 +251,9 @@ public class Player : MonoBehaviour
         if (card != null)
         {
             discardedCards.Add(card);
-            Debug.Log($"{playerName} ÆúÅÆ¼ÇÂ¼¸üÐÂ£º{card.cardName}");
+            Debug.Log($"{playerName} ï¿½ï¿½ï¿½Æ¼ï¿½Â¼ï¿½ï¿½ï¿½Â£ï¿½{card.cardName}");
 
-            // Æúµô8ºÅÅÆ ¡ú Á¢¼´³ö¾Ö
+            // ï¿½ï¿½ï¿½ï¿½8ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             if (!IsImmortal() && !IsInsane() && card.value == 8 && card.isInsane)
             {
                 Eliminate();
@@ -263,7 +263,7 @@ public class Player : MonoBehaviour
                 Eliminate();
             }
 
-            // Æúµô0ºÅÅÆ ¡ú Á¢¼´³ö¾Ö
+            // ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             if (!IsImmortal() && card.value == 0)
             {
                 Eliminate();
@@ -271,7 +271,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public int CountInsaneDiscards()// ¼ÆËãÆúÅÆ¶Ñ·è¿ñÅÆÊýÁ¿
+    public int CountInsaneDiscards()// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶Ñ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     {
         return discardedCards.FindAll(c => c.isInsane).Count;
     }
@@ -308,20 +308,24 @@ public class Player : MonoBehaviour
 
             if (card.isInsane)
             {
-                foundInsane = true; // ·¢ÏÖ·è¿ñÅÆ
+                foundInsane = true; // ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½
             }
 
-            // ÓÃ±ê×¼ÆúÅÆÂß¼­£¬°ÑÅÆ·Åµ½ÆúÅÆ¶Ñ
+            // ï¿½Ã±ï¿½×¼ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·Åµï¿½ï¿½ï¿½ï¿½Æ¶ï¿½
             RecordDiscard(card);
         }
 
-        // °ÑÕâÐ©ÅÆÕýÊ½´ÓÅÆ¶ÑÖÐÒÆ³ý
+        // ï¿½ï¿½ï¿½ï¿½Ð©ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½Æ³ï¿½
         deck.RemoveTopCards(topCards.Count);
 
         return foundInsane;
     }
 
-    
+    public Card GetSelectedCard()
+    {
+        return hand.GetSelectedCard();
+    }
+
 
 
 
