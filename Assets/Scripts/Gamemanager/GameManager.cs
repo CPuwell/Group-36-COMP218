@@ -1,8 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using System.Collections;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -13,9 +12,8 @@ public class GameManager : MonoBehaviour
     public List<Player> players; // Player List
     public Deck deck; // Card Deck
     private int currentPlayerIndex = 0; // Player Index
-    private float turnTime = 10f; // Count Down Time for each turn
+    private float turnTime = 1f; // Count Down Time for each turn
     private float timer; // Timer
-    private float ai_turnTime = 2f;
     private bool gameEnded = false;
     private bool RoundEnded = false;
     private int playerIndexCounter = 0; // Player Index Counter
@@ -60,18 +58,7 @@ public class GameManager : MonoBehaviour
         deckManager = FindFirstObjectByType<DeckManager>(); // 确保找到 DeckManager
         deck = deckManager.logicDeck;
         deck.Shuffle();
-        StartCoroutine(LoadUISceneAndStartGame());
-       
-    }
-    private IEnumerator LoadUISceneAndStartGame()
-    {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("UI", LoadSceneMode.Additive);
-        while (!asyncLoad.isDone)
-        {
-            yield return null; // 等待下一帧继续检查
-        }
 
-        // 确保UI场景已经加载完，再继续发牌
         foreach (Player player in players)
         {
             player.DrawCard(deck);
@@ -83,12 +70,13 @@ public class GameManager : MonoBehaviour
         StartTurn();
     }
 
+
     //Set Timer
     private void StartTurn()
     {
         
-        if (!gameStarted) return; // Avoid starting turn before game starts
 
+        
 
         Player currentPlayer = players[currentPlayerIndex];
         currentPlayer.SetProtected(false);
@@ -114,15 +102,7 @@ public class GameManager : MonoBehaviour
         
         currentPlayer.DrawCard(deck);
         UpdateDeckZoneDisplay();
-        if (!currentPlayer.isHuman)
-        {
-            timer = ai_turnTime;
-        }
-        else
-        {
-            timer = turnTime;
-        }
-
+        timer = turnTime;
         Debug.Log($"Now, {currentPlayer.playerName} is taking turn");
     }
 
@@ -207,19 +187,7 @@ public class GameManager : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            if (!players[currentPlayerIndex].isHuman)
-            {
-                Player currentPlayer = players[currentPlayerIndex];
-
-                if (currentPlayer is RuleBasedAIPlayer aiPlayer)
-                
-                    aiPlayer.PlayTurn(); //调用 base_ai 的出牌逻辑
-                }
-                else
-                {
-                    AutoPlay(); // 保底还是随机出牌(之后更改为玩家出牌）
-                }
-            }
+            AutoPlay(); //If time is up, auto play a card
             EndTurn();
         }
     }
