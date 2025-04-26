@@ -21,7 +21,7 @@ public class AiCardEffect3 : MonoBehaviour, IMainEffect
             return;
         }
 
-        if(currentPlayer.isHuman == true){
+        if(currentPlayer.isHuman = true){
         UIManager.Instance.ShowPlayerSelectionSimple(targets, selectedTarget =>
         {
             int currentValue = currentPlayer.GetHandValue();
