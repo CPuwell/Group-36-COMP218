@@ -1,5 +1,8 @@
 using UnityEngine;
+
 using UnityEngine.SceneManagement;
+
+using System.Collections;
 
 public class MainMenu : MonoBehaviour
 {
@@ -8,8 +11,18 @@ public class MainMenu : MonoBehaviour
     /// </summary>
     public void StartGame()
     {
-        // 加载 Table 场景，LoadSceneMode.Single 表示【替换当前场景】
-        SceneManager.LoadScene("Table", LoadSceneMode.Single);
+        
+        StartCoroutine(LoadUISceneAndStartGame());
+    }
+
+    private IEnumerator LoadUISceneAndStartGame()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Table", LoadSceneMode.Single);
+        while (!asyncLoad.isDone)
+        {
+            yield return null; // Wait for next frame to continue checking
+        }
+        Debug.Log("Game Scene Loaded Successfully!");
     }
 
     /// <summary>
