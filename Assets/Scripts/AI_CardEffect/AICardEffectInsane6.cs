@@ -35,7 +35,7 @@ public class AICardEffectInsane6 : MonoBehaviour, IInsaneCard
                     target.AddCard(myCard);
 
                     Debug.Log($"{currentPlayer.playerName} swapped hands with {target.playerName}.");
-                    UIManager.Instance.ShowPopup($"{currentPlayer.playerName} swapped hands with {target.playerName}.");
+                    UIManager.Instance.ShowPopup($"{currentPlayer.playerName} successfully swapped hands with {target.playerName}!");
                 }
                 else
                 {
@@ -63,7 +63,7 @@ public class AICardEffectInsane6 : MonoBehaviour, IInsaneCard
                 target.AddCard(myCard);
 
                 UIManager.Instance.Log($"AI {currentPlayer.playerName} swapped hands with {target.playerName}.");
-                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} swapped hands with {target.playerName}.");
+                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} successfully swapped hands with {target.playerName}!");
             }
             else
             {

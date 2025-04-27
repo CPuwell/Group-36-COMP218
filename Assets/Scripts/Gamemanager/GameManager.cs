@@ -14,9 +14,11 @@ public class GameManager : MonoBehaviour
     public Deck deck; // Card Deck
     private int currentPlayerIndex = 0; // Player Index
     //private float turnTime = 60f; // Count Down Time for each turn
-
-    private float ai_turnTime = 2f;
+    private bool turn_ended = false; // Turn Ended Flag
+    private float ai_turnTime = 5f;
+    
     private float timer; // Timer
+   
     private bool gameEnded = false;
     private bool RoundEnded = false;
     private int playerIndexCounter = 0; // Player Index Counter
@@ -91,14 +93,14 @@ public class GameManager : MonoBehaviour
     //Set Timer
     private void StartTurn()
     {
-        
+        turn_ended = false; // Reset turn ended flag    
         if (!gameStarted) return; // Avoid starting turn before game starts
 
 
         Player currentPlayer = players[currentPlayerIndex];
         currentPlayer.SetProtected(false);
         
-        Debug.Log($"[Turn Start] {currentPlayer.playerName} Current hand count:{currentPlayer.GetCards().Count}");
+        
         if (gameEnded) return; // avoid multiple start turn calls
         if (players[currentPlayerIndex].IsInsane() && currentPlayer.IsAlive())
         {
@@ -111,16 +113,16 @@ public class GameManager : MonoBehaviour
         
         CheckRoundWinCondition();
         CheckDeck();
-
+        
         if (!currentPlayer.IsAlive())
         {
             EndTurn(); // Automatically end turn if player is not alive
             return;
         }
+        Debug.Log($"[Turn Start] {currentPlayer.playerName} Current hand count:{currentPlayer.GetCards().Count}");
 
-        
 
-        
+
         currentPlayer.DrawCard(deck);
         UpdateDeckZoneDisplay();
         if (currentPlayer.isHuman)
@@ -149,7 +151,10 @@ public class GameManager : MonoBehaviour
 
             if (currentValue > highestValue)
             {
+                
+
                 highestValue = currentValue;
+                Debug.Log($"{alivePlayers[i].playerName}'s card value is {currentValue} now highest value is {highestValue}");
                 bestPlayer = alivePlayers[i];
                 winners.Clear();
                 winners.Add(bestPlayer);
@@ -191,15 +196,29 @@ public class GameManager : MonoBehaviour
     //End Turn and Switch to Next Player
     public void EndTurn()
     {
+        
+        turn_ended = true; // Set turn ended flag
         Debug.Log($"[Turn End] {players[currentPlayerIndex].playerName}'s turn ended");
         if (gameEnded) return; // avoid multiple end turn calls
         CheckRoundWinCondition();
         CheckDeck();
         if (RoundEnded) return;
-        currentPlayerIndex = (currentPlayerIndex + 1) % players.Count;
+       
 
+        StartCoroutine(WaitAndStartNextTurn()); 
+    }
+
+    private IEnumerator WaitAndStartNextTurn()
+    {
+        Debug.Log("Waiting 5 seconds before next turn...");
+        timer = 10f;
+        yield return new WaitForSeconds(5f); // Pause for 5 seconds for showing played card
+
+        currentPlayerIndex = (currentPlayerIndex + 1) % players.Count;
+        
         StartTurn();
     }
+
 
     //Automatic Play
     public void AutoPlay()
@@ -222,10 +241,15 @@ public class GameManager : MonoBehaviour
                 if (selectedCard != null)
                 {
                     currentPlayer.PlayCard(selectedCard); // Ai will play the card
+                    if (!turn_ended)
+                    {
+                        EndTurn(); // End turn after playing
+                    }
                 }
             
 
-            } 
+            }
+            
         }
         
         

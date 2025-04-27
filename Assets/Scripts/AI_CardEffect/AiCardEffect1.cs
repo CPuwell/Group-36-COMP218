@@ -36,12 +36,12 @@ public class AiCardEffect1 : MonoBehaviour, IMainEffect
 
                 if (targetValue == guessedNumber)
                 {
-                    UIManager.Instance.Log($"Correct guess! {selectedTarget.playerName}'s card was {targetValue}. They are eliminated.");
+                    UIManager.Instance.ShowPopup($"Correct guess! {selectedTarget.playerName}'s card was {targetValue}.");
                     selectedTarget.Eliminate();
                 }
                 else
                 {
-                    UIManager.Instance.Log($"Wrong guess. {selectedTarget.playerName}'s card was {targetValue}. Continue the game.");
+                    UIManager.Instance.ShowPopup($"Wrong guess. Continue the game.");
                 }
 
                 GameManager.Instance.EndTurn();
@@ -57,12 +57,12 @@ public class AiCardEffect1 : MonoBehaviour, IMainEffect
 
             if (targetValue == guessedNumber)
             {
-                UIManager.Instance.Log($"Correct guess! {targetPlayers[randomIndex].playerName}'s card was {targetValue}. They are eliminated.");
+                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} guessed {guessedNumber}. Correct! {targetPlayers[randomIndex].playerName} is eliminated!");
                 targetPlayers[randomIndex].Eliminate();
             }
             else
             {
-                UIManager.Instance.Log($"Wrong guess. {targetPlayers[randomIndex].playerName}'s card was {targetValue}. Continue the game.");
+                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} guessed the card of{targetPlayers[randomIndex].playerName} is {guessedNumber}. Wrong guess.");
             }
 
             GameManager.Instance.EndTurn();

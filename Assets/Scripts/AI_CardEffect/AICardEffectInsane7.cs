@@ -50,7 +50,7 @@ public class AICardEffectInsane7 : MonoBehaviour, IInsaneCard
             }
             else
             {
-                UIManager.Instance.ShowPopup($"AI {currentPlayer.playerName}'s other card value is greater than 4. Insane effect triggered! AI wins the round!");
+                UIManager.Instance.ShowPopup($"{currentPlayer.playerName}'s other card value is greater than 4. Insane effect triggered! {currentPlayer.playerName} wins the round!");
                 UIManager.Instance.Log($"AI {currentPlayer.playerName} triggered the insane Card 7 victory condition.");
             }
 
@@ -68,7 +68,7 @@ public class AICardEffectInsane7 : MonoBehaviour, IInsaneCard
             }
             else
             {
-                UIManager.Instance.ShowPopup($"AI {currentPlayer.playerName}'s other card value is not greater than 4. Insane effect not triggered.");
+                UIManager.Instance.ShowPopup($"AI {currentPlayer.playerName}'Insane effect not triggered.");
                 UIManager.Instance.Log($"AI {currentPlayer.playerName}'s insane Card 7 effect failed.");
             }
 
