@@ -62,7 +62,7 @@ public class AiCardEffect1 : MonoBehaviour, IMainEffect
             }
             else
             {
-                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} guessed the card of{targetPlayers[randomIndex].playerName} is {guessedNumber}. Wrong guess.");
+                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} guessed the card of {targetPlayers[randomIndex].playerName} is {guessedNumber}. Wrong guess.");
             }
 
             GameManager.Instance.EndTurn();

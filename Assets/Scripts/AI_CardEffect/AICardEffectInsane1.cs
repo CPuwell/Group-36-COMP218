@@ -64,7 +64,7 @@ public class AICardEffectInsane1 : MonoBehaviour, IInsaneCard
             }
             else
             {
-                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} guessed the card of{targetPlayers[randomIndex].playerName} is {guessedNumber}. Wrong guess.");
+                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} guessed the card of {targetPlayers[randomIndex].playerName} is {guessedNumber}. Wrong guess.");
             }
 
             currentPlayer.GoInsane();
@@ -151,7 +151,7 @@ public class AICardEffectInsane1 : MonoBehaviour, IInsaneCard
                 }
                 else
                 {
-                    UIManager.Instance.ShowPopup($"{currentPlayer.playerName} guessed the card of{selectedTarget.playerName} is {guessedNumber}. Wrong guess.");
+                    UIManager.Instance.ShowPopup($"{currentPlayer.playerName} guessed the card of {selectedTarget.playerName} is {guessedNumber}. Wrong guess.");
                 }
             }
 
