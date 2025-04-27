@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
         
         Debug.Log($"[回合开始] {currentPlayer.playerName} 当前手牌数量：{currentPlayer.GetCards().Count}");
         if (gameEnded) return; // avoid multiple start turn calls
-        if (players[currentPlayerIndex].IsInsane())
+        if (players[currentPlayerIndex].IsInsane() && currentPlayer.IsAlive())
         {
             if (players[currentPlayerIndex].RevealAndDiscardTopCards(deck))
             {

@@ -3,112 +3,16 @@
   "WorkspaceRootPath": "D:\\CPU\\COMP219\\Group-36-COMP218\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\CPU\\COMP219\\Group-36-COMP218\\assets\\scripts\\gamemanager\\deckmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager\\deckmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\CPU\\COMP219\\Group-36-COMP218\\assets\\scripts\\gamemanager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\cpu\\comp219\\group-36-comp218\\assets\\scripts\\gamemanager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\cpu\\comp219\\group-36-comp218\\assets\\scripts\\ai_cardeffect\\aicardeffectinsane6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ai_cardeffect\\aicardeffectinsane6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\cpu\\comp219\\group-36-comp218\\assets\\scripts\\ai_cardeffect\\aicardeffectinsane5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ai_cardeffect\\aicardeffectinsane5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\cpu\\comp219\\group-36-comp218\\assets\\scripts\\ai_cardeffect\\aicardeffect5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ai_cardeffect\\aicardeffect5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\cpu\\comp219\\group-36-comp218\\assets\\scripts\\ai_cardeffect\\aicardeffect2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ai_cardeffect\\aicardeffect2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\cpu\\comp219\\group-36-comp218\\assets\\scripts\\gamemanager\\rulebasedai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager\\rulebasedai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\CPU\\COMP219\\Group-36-COMP218\\assets\\scripts\\controller\\cardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\cardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\CPU\\COMP219\\Group-36-COMP218\\assets\\scripts\\gamemanager\\players.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\cpu\\comp219\\group-36-comp218\\assets\\scripts\\gamemanager\\players.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager\\players.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\CPU\\COMP219\\Group-36-COMP218\\assets\\scripts\\gamemanager\\hand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager\\hand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\CPU\\COMP219\\Group-36-COMP218\\assets\\scripts\\gamemanager\\startgamebuttonui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager\\startgamebuttonui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\CPU\\COMP219\\Group-36-COMP218\\assets\\scripts\\ai_cardeffect\\aicardeffect1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ai_cardeffect\\aicardeffect1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\CPU\\COMP219\\Group-36-COMP218\\assets\\scripts\\gamemanager\\handui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager\\handui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\CPU\\COMP219\\Group-36-COMP218\\assets\\scripts\\gamemanager\\handmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager\\handmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\CPU\\COMP219\\Group-36-COMP218\\assets\\scripts\\gamemanager\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\cpu\\comp219\\group-36-comp218\\assets\\scripts\\gamemanager\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\CPU\\COMP219\\Group-36-COMP218\\assets\\scripts\\gamemanager\\cardui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager\\cardui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\cpu\\comp219\\group-36-comp218\\assets\\scripts\\ai_cardeffect\\aicardeffect4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ai_cardeffect\\aicardeffect4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\cpu\\comp219\\group-36-comp218\\assets\\scripts\\controller\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\CPU\\COMP219\\Group-36-COMP218\\assets\\scripts\\cardeffect\\cardeffect1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardeffect\\cardeffect1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\CPU\\COMP219\\Group-36-COMP218\\assets\\scripts\\cardeffect\\cardeffect7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardeffect\\cardeffect7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\cpu\\comp219\\group-36-comp218\\assets\\scripts\\cardeffect\\cardeffectinsane7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardeffect\\cardeffectinsane7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\cpu\\comp219\\group-36-comp218\\assets\\scripts\\ai_cardeffect\\aicardeffectinsane7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ai_cardeffect\\aicardeffectinsane7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\cpu\\comp219\\group-36-comp218\\assets\\scripts\\ai_cardeffect\\aicardeffectinsane0.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ai_cardeffect\\aicardeffectinsane0.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AiCardEffect0.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\AI_CardEffect\\AiCardEffect0.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\CPU\\COMP219\\Group-36-COMP218\\assets\\scripts\\cardeffect\\cardeffect5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cardeffect\\cardeffect5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\CPU\\COMP219\\Group-36-COMP218\\assets\\scripts\\gamemanager\\deck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager\\deck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\CPU\\COMP219\\Group-36-COMP218\\assets\\scripts\\ai_cardeffect\\aicardeffect3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ai_cardeffect\\aicardeffect3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -118,353 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AICardEffectInsane6.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane6.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane6.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane6.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane6.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAAwBYAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T01:43:40.888Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AiCardEffect5.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AiCardEffect5.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AI_CardEffect\\AiCardEffect5.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AiCardEffect5.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AI_CardEffect\\AiCardEffect5.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T01:41:23.262Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AICardEffectInsane5.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane5.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane5.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane5.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane5.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAkwE8AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T01:41:11.507Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AiCardEffect2.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AiCardEffect2.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AI_CardEffect\\AiCardEffect2.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AiCardEffect2.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AI_CardEffect\\AiCardEffect2.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T01:36:24.603Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "UIManager.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Controller\\UIManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Controller\\UIManager.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Controller\\UIManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Controller\\UIManager.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAADEAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T23:11:38.506Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "AiCardEffect4.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AiCardEffect4.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AI_CardEffect\\AiCardEffect4.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AiCardEffect4.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AI_CardEffect\\AiCardEffect4.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T23:09:37.68Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RuleBasedAI.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\RuleBasedAI.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\RuleBasedAI.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\RuleBasedAI.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Gamemanager\\RuleBasedAI.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAUwBYAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T22:56:38.316Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "CardEffectInsane7.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\CardEffect\\CardEffectInsane7.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\CardEffect\\CardEffectInsane7.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\CardEffect\\CardEffectInsane7.cs",
-              "RelativeToolTip": "Assets\\Scripts\\CardEffect\\CardEffectInsane7.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAIwCwAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T22:24:47.231Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "AICardEffectInsane7.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane7.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane7.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane7.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane7.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAUwC8AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T22:23:42.684Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "AICardEffectInsane0.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane0.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane0.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane0.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane0.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T22:17:24.39Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "AiCardEffect0.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AiCardEffect0.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AI_CardEffect\\AiCardEffect0.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AiCardEffect0.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AI_CardEffect\\AiCardEffect0.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T22:16:53.871Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AiCardEffect1.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AiCardEffect1.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AI_CardEffect\\AiCardEffect1.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AiCardEffect1.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AI_CardEffect\\AiCardEffect1.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAAwEUAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T22:00:35.074Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "CardEffect5.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\CardEffect\\CardEffect5.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\CardEffect\\CardEffect5.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\CardEffect\\CardEffect5.cs",
-              "RelativeToolTip": "Assets\\Scripts\\CardEffect\\CardEffect5.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T21:34:46.642Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "CardEffect7.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\CardEffect\\CardEffect7.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\CardEffect\\CardEffect7.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\CardEffect\\CardEffect7.cs",
-              "RelativeToolTip": "Assets\\Scripts\\CardEffect\\CardEffect7.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T21:15:57.085Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "CardEffect1.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\CardEffect\\CardEffect1.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\CardEffect\\CardEffect1.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\CardEffect\\CardEffect1.cs",
-              "RelativeToolTip": "Assets\\Scripts\\CardEffect\\CardEffect1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T20:13:22.927Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Deck.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\Deck.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\Deck.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\Deck.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Gamemanager\\Deck.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAkwCEAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T20:12:25.874Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DeckManager.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\DeckManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\DeckManager.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\DeckManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Gamemanager\\DeckManager.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAAAGIAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T20:06:29.064Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "StartGameButtonUI.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\StartGameButtonUI.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\StartGameButtonUI.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\StartGameButtonUI.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Gamemanager\\StartGameButtonUI.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAwBkAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T19:47:49.878Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "GameManager.cs",
               "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\GameManager.cs",
               "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Gamemanager\\GameManager.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAUwIUAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAFkAAAAAAAAAAADgv3EAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T23:47:28.361Z",
+              "WhenOpened": "2025-04-27T12:44:06.527Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "AiCardEffect3.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AiCardEffect3.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AI_CardEffect\\AiCardEffect3.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AiCardEffect3.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AI_CardEffect\\AiCardEffect3.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvxcAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T18:41:11.896Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "HandUI.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\HandUI.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\HandUI.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\HandUI.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Gamemanager\\HandUI.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAA0wCkAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T16:42:08.268Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Hand.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\Hand.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\Hand.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\Hand.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Gamemanager\\Hand.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAqwEIAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T20:33:04.319Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "Players.cs",
               "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\Players.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\Players.cs",
               "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\Players.cs",
               "RelativeToolTip": "Assets\\Scripts\\Gamemanager\\Players.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAowEQAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAHMAAAAAAAAAAADgv38AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T20:29:51.615Z",
+              "WhenOpened": "2025-04-27T12:42:50.731Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "CardUI.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\CardUI.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\CardUI.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\CardUI.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Gamemanager\\CardUI.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T16:19:07.331Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "HandManager.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\HandManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\HandManager.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\HandManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Gamemanager\\HandManager.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAADwvwgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T16:28:21.702Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CardController.cs",
-              "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Controller\\CardController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Controller\\CardController.cs",
-              "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Controller\\CardController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Controller\\CardController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBoAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T20:34:43.942Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 2,
               "Title": "Card.cs",
               "DocumentMoniker": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\Card.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\Card.cs",
               "ToolTip": "D:\\CPU\\COMP219\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\Card.cs",
               "RelativeToolTip": "Assets\\Scripts\\Gamemanager\\Card.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABTAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwA8AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T21:50:37.37Z",
+              "WhenOpened": "2025-04-27T12:19:33.287Z",
               "EditorCaption": ""
             }
           ]

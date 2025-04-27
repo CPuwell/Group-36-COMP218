@@ -13,6 +13,7 @@ public class Card
     public string description;     // 描述文本
     public bool isInsane;          // 是否是疯狂牌
 
+    [System.NonSerialized]
     public GameObject cardObject;  // 对应的实例化 GameObject（运行时赋值）
     public GameObject effectPrefab; // 卡牌效果预制体（可拖入不同脚本 prefab）
 
