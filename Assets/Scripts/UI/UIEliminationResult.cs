@@ -4,15 +4,15 @@ using UnityEngine.UI;
 
 public class UIEliminationResult : MonoBehaviour
 {
-    [Header("UI 绑定")]
-    public GameObject panel;                  // 面板背景（整体）
-    public TextMeshProUGUI messageText;       // 显示内容
-    public Button closeButton;                // 关闭按钮
+    [Header("UI Bindings")]
+    public GameObject panel;                  // Panel background (entire panel)
+    public TextMeshProUGUI messageText;        // Text to display message
+    public Button closeButton;                 // Close button
 
     /// <summary>
-    /// 显示提示内容
+    /// Show the result message
     /// </summary>
-    /// <param name="message">要显示的提示文本</param>
+    /// <param name="message">The message text to display</param>
     public void Show(string message)
     {
         panel.SetActive(true);

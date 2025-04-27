@@ -6,15 +6,15 @@ using TMPro;
 
 public class UIPlayerSelect : MonoBehaviour
 {
-    [Header("玩家按钮")]
+    [Header("Player Buttons")]
     public Button button1;
     public Button button2;
     public Button button3;
     public Button button4;
     public Button button5;
-    public Button buttonSelf; // "yourself" 按钮
+    public Button buttonSelf; // "Yourself" button
 
-    [Header("控制按钮")]
+    [Header("Control Buttons")]
     public Button confirmButton;
     public Button cancelButton;
 
@@ -30,10 +30,10 @@ public class UIPlayerSelect : MonoBehaviour
 
         gameObject.SetActive(true);
 
-        // 激活/隐藏 “yourself” 按钮
+        // Activate/Deactivate the "Yourself" button
         buttonSelf.gameObject.SetActive(includeSelf);
 
-        // 设置每个按钮的点击事件
+        // Set click events for each button
         button1.onClick.RemoveAllListeners();
         button1.onClick.AddListener(() => SelectPlayerByIndex(1));
 
@@ -50,7 +50,7 @@ public class UIPlayerSelect : MonoBehaviour
         button5.onClick.AddListener(() => SelectPlayerByIndex(5));
 
         buttonSelf.onClick.RemoveAllListeners();
-        buttonSelf.onClick.AddListener(() => SelectPlayerByIndex(0)); // 0号是自己
+        buttonSelf.onClick.AddListener(() => SelectPlayerByIndex(0)); // Index 0 represents yourself
 
         confirmButton.onClick.RemoveAllListeners();
         confirmButton.onClick.AddListener(OnConfirm);
@@ -66,14 +66,14 @@ public class UIPlayerSelect : MonoBehaviour
     {
         selectedPlayer = currentTargets.Find(p => p.PlayerIndex == index);
         if (selectedPlayer != null)
-            UIManager.Instance.Log($"已选择玩家 {selectedPlayer.playerName}");
+            UIManager.Instance.Log($"Selected player {selectedPlayer.playerName}");
     }
 
     private void OnConfirm()
     {
         if (selectedPlayer == null)
         {
-            UIManager.Instance.ShowPopup("请选择一名玩家！");
+            UIManager.Instance.ShowPopup("Please select a player first!");
             return;
         }
 

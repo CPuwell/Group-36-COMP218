@@ -4,12 +4,12 @@ using TMPro;
 
 public class UIMIGO : MonoBehaviour
 {
-    [Header("UI ÔªËØ")]
+    [Header("UI Elements")]
     public TextMeshProUGUI messageText;
     public Image cardImage;
     public Button closeButton;
 
-    [Header("0ºÅÅÆÍ¼Æ¬")]
+    [Header("Card No.0 Image")]
     public Sprite miGoCardSprite;
 
     private System.Action onClosedCallback;
@@ -19,7 +19,7 @@ public class UIMIGO : MonoBehaviour
         gameObject.SetActive(true);
         onClosedCallback = onClosed;
 
-        messageText.text = $"The targeted player is forced to add the Card Mi-Go Braincase to their hand.";
+        messageText.text = "The targeted player is forced to add the Card Mi-Go Braincase to their hand.";
         cardImage.sprite = miGoCardSprite;
 
         closeButton.onClick.RemoveAllListeners();

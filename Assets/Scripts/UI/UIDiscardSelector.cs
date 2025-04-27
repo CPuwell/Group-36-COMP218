@@ -5,15 +5,15 @@ using TMPro;
 
 public class UIDiscardSelector : MonoBehaviour
 {
-    [Header("卡牌展示")]
+    [Header("Card Display")]
     public Image cardImageLeft;
     public Image cardImageRight;
 
-    [Header("选择按钮")]
+    [Header("Selection Buttons")]
     public Button chooseLeftButton;
     public Button chooseRightButton;
 
-    [Header("提示文字（可选）")]
+    [Header("Title Text (optional)")]
     public TextMeshProUGUI titleText;
 
     private Card leftCard;
@@ -21,11 +21,11 @@ public class UIDiscardSelector : MonoBehaviour
     private Action<Card> onCardSelected;
 
     /// <summary>
-    /// 显示弃牌选择界面
+    /// Show the discard selection panel
     /// </summary>
-    /// <param name="card1">左边卡</param>
-    /// <param name="card2">右边卡</param>
-    /// <param name="onChosen">弃牌后触发的回调</param>
+    /// <param name="card1">Left card</param>
+    /// <param name="card2">Right card</param>
+    /// <param name="onChosen">Callback triggered after discarding</param>
     public void Show(Card card1, Card card2, Action<Card> onChosen)
     {
         gameObject.SetActive(true);
@@ -45,13 +45,13 @@ public class UIDiscardSelector : MonoBehaviour
 
         if (titleText != null)
         {
-            titleText.text = "Please discard a card below";
+            titleText.text = "Please discard one of the cards below";
         }
     }
 
     private void SelectCard(Card chosen)
     {
-        Debug.Log($"玩家选择弃牌：{chosen.cardName}");
+        Debug.Log($"Player selected to discard: {chosen.cardName}");
         onCardSelected?.Invoke(chosen);
         gameObject.SetActive(false);
     }

@@ -5,7 +5,7 @@ using TMPro;
 
 public class UICardReveal : MonoBehaviour
 {
-    [Header("UI ×é¼þ")]
+    [Header("UI component")]
     public Image cardImage;
     public TextMeshProUGUI titleText;
     public Button closeButton;

@@ -19,11 +19,11 @@ public class UIInsaneChoice : MonoBehaviour
     {
         panel.SetActive(true);
 
-        // 清理旧监听
+        // Clear old listeners
         saneButton.onClick.RemoveAllListeners();
         insaneButton.onClick.RemoveAllListeners();
 
-        // 绑定新逻辑
+        // Bind new logic
         saneButton.onClick.AddListener(() =>
         {
             panel.SetActive(false);
@@ -37,3 +37,4 @@ public class UIInsaneChoice : MonoBehaviour
         });
     }
 }
+
