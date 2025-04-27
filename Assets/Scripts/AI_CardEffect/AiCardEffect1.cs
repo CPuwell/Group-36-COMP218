@@ -9,7 +9,7 @@ public class AiCardEffect1 : MonoBehaviour, IMainEffect
 
         if (targetPlayers.Count == 0)
         {
-            UIManager.Instance.ShowPopup("No available players to guess.");
+            UIManager.Instance.ShowPopup("No available players to chose.");
             // Discard the selected card
             Card cardToDiscard = currentPlayer.GetSelectedCard();
             if (cardToDiscard != null)

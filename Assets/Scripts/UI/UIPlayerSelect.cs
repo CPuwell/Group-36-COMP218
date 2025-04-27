@@ -14,9 +14,8 @@ public class UIPlayerSelect : MonoBehaviour
     public Button button5;
     public Button buttonSelf; // "Yourself" button
 
-    [Header("Control Buttons")]
+    [Header("Control Button")]
     public Button confirmButton;
-    public Button cancelButton;
 
     private List<Player> currentTargets;
     private Action<Player> onPlayerSelected;
@@ -54,12 +53,6 @@ public class UIPlayerSelect : MonoBehaviour
 
         confirmButton.onClick.RemoveAllListeners();
         confirmButton.onClick.AddListener(OnConfirm);
-
-        cancelButton.onClick.RemoveAllListeners();
-        cancelButton.onClick.AddListener(() =>
-        {
-            gameObject.SetActive(false);
-        });
     }
 
     private void SelectPlayerByIndex(int index)

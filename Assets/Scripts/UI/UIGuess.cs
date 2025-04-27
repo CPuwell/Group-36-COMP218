@@ -16,9 +16,8 @@ public class UIGuess : MonoBehaviour
     [Header("Input Field")]
     public TMP_InputField inputField;
 
-    [Header("Control Buttons")]
+    [Header("Confirm Button")]
     public Button confirmButton;
-    public Button cancelButton;
 
     private List<Player> currentTargets;
     private Action<Player, int> onGuessConfirmed;
@@ -32,10 +31,8 @@ public class UIGuess : MonoBehaviour
 
         gameObject.SetActive(true);
 
-        // Clear selection
         ResetButtons();
 
-        // Add click event listeners to each button (index starting from 1)
         button1.onClick.RemoveAllListeners();
         button1.onClick.AddListener(() => SelectPlayerByIndex(1));
 
@@ -53,12 +50,6 @@ public class UIGuess : MonoBehaviour
 
         confirmButton.onClick.RemoveAllListeners();
         confirmButton.onClick.AddListener(OnConfirm);
-
-        cancelButton.onClick.RemoveAllListeners();
-        cancelButton.onClick.AddListener(() =>
-        {
-            gameObject.SetActive(false);
-        });
     }
 
     private void SelectPlayerByIndex(int index)
@@ -93,6 +84,6 @@ public class UIGuess : MonoBehaviour
 
     private void ResetButtons()
     {
-        // Optional: Clear button colors or other UI states
+        // Optional: Reset button states if needed
     }
 }
