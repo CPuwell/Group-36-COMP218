@@ -36,16 +36,16 @@ public class AICardEffectInsane3 : MonoBehaviour, IInsaneCard
                 if (currentValue > targetValue)
                 {
                     selectedTarget.Eliminate();
-                    UIManager.Instance.ShowPopup($"{selectedTarget.playerName} is eliminated! (Lower value)");
+                    UIManager.Instance.ShowPopup($"{currentPlayer.playerName} compare the card with {selectedTarget.playerName}, {selectedTarget.playerName} is eliminated.");
                 }
                 else if (currentValue < targetValue)
                 {
                     currentPlayer.Eliminate();
-                    UIManager.Instance.ShowPopup($"{currentPlayer.playerName} is eliminated! (Lower value)");
+                    UIManager.Instance.ShowPopup($"{currentPlayer.playerName} compare the card with {selectedTarget.playerName}, {currentPlayer.playerName} is eliminated.");
                 }
                 else
                 {
-                    UIManager.Instance.ShowPopup("It's a tie! No one is eliminated.");
+                    UIManager.Instance.ShowPopup($"{currentPlayer.playerName} compare the card with {selectedTarget.playerName}, No one is eliminated.");
                 }
 
                 currentPlayer.GoInsane(); // After effect, go insane
@@ -66,16 +66,16 @@ public class AICardEffectInsane3 : MonoBehaviour, IInsaneCard
             if (currentValue > targetValue)
             {
                 selectedTarget.Eliminate();
-                UIManager.Instance.ShowPopup($"{selectedTarget.playerName} is eliminated! (Lower value)");
+                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} compare the card with {selectedTarget.playerName}, {selectedTarget.playerName} is eliminated.");
             }
             else if (currentValue < targetValue)
             {
                 currentPlayer.Eliminate();
-                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} is eliminated! (Lower value)");
+                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} compare the card with {selectedTarget.playerName}, {currentPlayer.playerName} is eliminated.");
             }
             else
             {
-                UIManager.Instance.ShowPopup("It's a tie! No one is eliminated.");
+                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} compare the card with {selectedTarget.playerName}, No one is eliminated.");
             }
 
             currentPlayer.GoInsane(); // After effect, go insane
@@ -129,11 +129,11 @@ public class AICardEffectInsane3 : MonoBehaviour, IInsaneCard
             if (!selectedTarget.IsInsane())
             {
                 selectedTarget.Eliminate();
-                UIManager.Instance.ShowPopup($"{selectedTarget.playerName} is not insane and has been eliminated!");
+                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} choose the {selectedTarget.playerName}, {selectedTarget.playerName} is not insane and has been eliminated!");
             }
             else
             {
-                UIManager.Instance.ShowPopup($"{selectedTarget.playerName} is already insane and is immune to elimination.");
+                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} choose the {selectedTarget.playerName}, {selectedTarget.playerName} is already insane and is immune to elimination.");
             }
 
             GameManager.Instance.EndTurn();

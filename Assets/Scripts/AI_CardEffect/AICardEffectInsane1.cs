@@ -59,12 +59,12 @@ public class AICardEffectInsane1 : MonoBehaviour, IInsaneCard
 
             if (targetValue == guessedNumber)
             {
-                UIManager.Instance.Log($"Correct! {targetPlayers[randomIndex].playerName}'s card was {targetValue}. They are eliminated.");
+                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} guessed {guessedNumber}. Correct! {targetPlayers[randomIndex].playerName} is eliminated!");
                 targetPlayers[randomIndex].Eliminate();
             }
             else
             {
-                UIManager.Instance.Log($"Wrong guess. {targetPlayers[randomIndex].playerName}'s card was {targetValue}. Continue the game.");
+                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} guessed the card of{targetPlayers[randomIndex].playerName} is {guessedNumber}. Wrong guess.");
             }
 
             currentPlayer.GoInsane();
@@ -117,7 +117,7 @@ public class AICardEffectInsane1 : MonoBehaviour, IInsaneCard
                     }
                     else
                     {
-                        UIManager.Instance.ShowPopup($"Wrong guess. {selectedTarget.playerName}'s card was {realValue}.");
+                        UIManager.Instance.ShowPopup($"Wrong guess.");
                     }
                 }
 
@@ -130,12 +130,12 @@ public class AICardEffectInsane1 : MonoBehaviour, IInsaneCard
             Player selectedTarget = targets[Random.Range(0, targets.Count)];
             int realValue = selectedTarget.GetHandValue();
 
-            UIManager.Instance.Log($"AI {currentPlayer.playerName} selected {selectedTarget.playerName}.");
+            UIManager.Instance.Log($"{currentPlayer.playerName} selected {selectedTarget.playerName}.");
 
             if (realValue == 1)
             {
                 selectedTarget.Eliminate();
-                UIManager.Instance.ShowPopup($"{selectedTarget.playerName}'s card is 1. Eliminated immediately!");
+                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} selected {selectedTarget.playerName}.{selectedTarget.playerName}'s card is 1. Eliminated immediately!");
             }
             else
             {
@@ -147,11 +147,11 @@ public class AICardEffectInsane1 : MonoBehaviour, IInsaneCard
                 if (guessedNumber == realValue)
                 {
                     selectedTarget.Eliminate();
-                    UIManager.Instance.ShowPopup($"Correct! {selectedTarget.playerName} is eliminated!");
+                    UIManager.Instance.ShowPopup($"{currentPlayer.playerName} guessed {guessedNumber}. Correct! {selectedTarget.playerName} is eliminated!");
                 }
                 else
                 {
-                    UIManager.Instance.ShowPopup($"Wrong guess. {selectedTarget.playerName}'s card was {realValue}.");
+                    UIManager.Instance.ShowPopup($"{currentPlayer.playerName} guessed the card of{selectedTarget.playerName} is {guessedNumber}. Wrong guess.");
                 }
             }
 

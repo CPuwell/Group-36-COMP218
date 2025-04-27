@@ -27,7 +27,7 @@ public class AICardEffectInsane5 : MonoBehaviour, IInsaneCard
 
         if (currentPlayer.isHuman)
         {
-            UIManager.Instance.ShowPlayerSelectionSimple(targets, selectedTarget =>
+            UIManager.Instance.ShowPlayerSelectionAllowSelf(targets, selectedTarget =>
             {
                 Card oldCard = selectedTarget.RemoveCard();
                 if (oldCard != null)
@@ -53,11 +53,10 @@ public class AICardEffectInsane5 : MonoBehaviour, IInsaneCard
             if (oldCard != null)
             {
                 selectedTarget.DiscardCard(oldCard);
-                UIManager.Instance.Log($"{selectedTarget.playerName} discarded {oldCard.cardName}.");
+                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} selected {selectedTarget.playerName} as the target.{selectedTarget.playerName} discarded {oldCard.cardName}.");
             }
 
             selectedTarget.DrawCard(GameManager.Instance.deck);
-            UIManager.Instance.ShowPopup($"{selectedTarget.playerName} discarded a card and drew a new one.");
 
             currentPlayer.GoInsane(); // After sane effect, go insane
             GameManager.Instance.EndTurn();
@@ -149,7 +148,7 @@ public class AICardEffectInsane5 : MonoBehaviour, IInsaneCard
 
                 // Give target a Card 0
                 GameManager.Instance.GiveSpecificCardToPlayer(selectedTarget, "0");
-                UIManager.Instance.Log($"{selectedTarget.playerName} received a Card 0.");
+                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} stole {selectedTarget.playerName}'s card. {selectedTarget.playerName} received a Card 0.");
 
                 // No need for AI to show Mi-Go UI
                 GameManager.Instance.EndTurn();
