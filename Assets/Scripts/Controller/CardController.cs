@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class CardController : MonoBehaviour
 {
-    public Card cardData; // 卡牌基础数据（Card 类实例，含 id、名称、类型、value 等）
-    private Player owner; // 此卡牌的持有者
+    public Card cardData; // Card base data (instance of Card class, includes id, name, type, value, etc.)
+    private Player owner; // The owner of this card
 
     /// <summary>
-    /// 设置卡牌所属玩家（在卡牌发到玩家手里时设置）
+    /// Set the owner of the card (called when the card is dealt to a player)
     /// </summary>
     public void SetCardOwner(Player player)
     {
@@ -14,31 +14,31 @@ public class CardController : MonoBehaviour
     }
 
     /// <summary>
-    /// 外部调用这个函数来打出卡牌
+    /// External call to play this card
     /// </summary>
     public void Play()
     {
         if (cardData == null || owner == null)
         {
-            Debug.LogWarning("卡牌数据或拥有者未设置！");
+            Debug.LogWarning("Card data or owner is not set!");
             return;
         }
 
-        Debug.Log($"【{owner.playerName}】打出了【{cardData.cardName}】");
+        Debug.Log($"[{owner.playerName}] played [{cardData.cardName}]");
 
-        // 根据卡牌类型分流处理
+        // Dispatch according to card type
         if (cardData.isInsane)
         {
-            HandleInsaneCard(); // 疯狂牌逻辑
+            HandleInsaneCard(); // Insane card logic
         }
         else
         {
-            HandleNormalCard(); // 普通牌逻辑
+            HandleNormalCard(); // Normal card logic
         }
     }
 
     /// <summary>
-    /// 处理普通卡牌（使用 IMainEffect 接口）
+    /// Handle normal card (uses IMainEffect interface)
     /// </summary>
     private void HandleNormalCard()
     {
@@ -49,68 +49,63 @@ public class CardController : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"普通卡牌 {cardData.cardName} 没有挂载 IMainEffect 效果脚本！");
-
+            Debug.LogWarning($"Normal card {cardData.cardName} does not have an IMainEffect script attached!");
         }
     }
 
     /// <summary>
-    /// 处理疯狂卡牌（使用 IInsaneCard 接口）
+    /// Handle insane card (uses IInsaneCard interface)
     /// </summary>
     private void HandleInsaneCard()
     {
         var insaneEffect = GetComponent<IInsaneCard>();
         if (insaneEffect == null)
         {
-            Debug.LogWarning($"疯狂卡牌 {cardData.cardName} 没有挂载 IInsaneCard 效果脚本！");
+            Debug.LogWarning($"Insane card {cardData.cardName} does not have an IInsaneCard script attached!");
             return;
         }
 
-        // 玩家还处于理智状态，只能打出疯狂牌的理智效果
+        // Player is still sane, can only use the sane effect
         if (!owner.IsInsane())
         {
-            Debug.Log($"{owner.playerName} 是理智状态，只能使用理智效果");
+            Debug.Log($"{owner.playerName} is sane and can only use the sane effect");
             insaneEffect.ExecuteSaneEffect(owner);
-           
         }
         else
         {
-            if (owner.isHuman) {
-                // 玩家已疯狂，可以选择执行疯狂或理智效果
-                Debug.Log($"{owner.playerName} 已疯狂，弹出选择 UI");
+            if (owner.isHuman)
+            {
+                // Player is insane, can choose between insane and sane effects
+                Debug.Log($"{owner.playerName} is insane, showing choice UI");
 
                 UIInsaneChoice.Instance.Show(
                     onSane: () =>
                     {
-                        Debug.Log("选择执行 理智效果");
+                        Debug.Log("Chose to use Sane Effect");
                         insaneEffect.ExecuteSaneEffect(owner);
-
                     },
                     onInsane: () =>
                     {
-                        Debug.Log("选择执行 疯狂效果");
+                        Debug.Log("Chose to use Insane Effect");
                         insaneEffect.ExecuteInsaneEffect(owner);
-
                     }
                 );
             }
             else
             {
-                bool chooseInsane = Random.value > 0.5f; // 随机 50% 选择
+                bool chooseInsane = Random.value > 0.5f; // Randomly choose 50%
 
                 if (chooseInsane)
                 {
-                    Debug.Log($"{owner.playerName} (AI) 选择执行疯狂效果");
+                    Debug.Log($"{owner.playerName} (AI) chose to use Insane Effect");
                     insaneEffect.ExecuteInsaneEffect(owner);
                 }
                 else
                 {
-                    Debug.Log($"{owner.playerName} (AI) 选择执行理智效果");
+                    Debug.Log($"{owner.playerName} (AI) chose to use Sane Effect");
                     insaneEffect.ExecuteSaneEffect(owner);
                 }
             }
         }
     }
-
-   
 }
