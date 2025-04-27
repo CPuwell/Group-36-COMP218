@@ -5,17 +5,17 @@ public class AiCardEffect5 : MonoBehaviour, IMainEffect
 {
     public void ExecuteEffect(Player currentPlayer)
     {
-        // 包括自己，且活着、未受保护
+        // Include self; must be alive and not protected
         List<Player> targetPlayers = GameManager.Instance.players.FindAll(
             p => p.IsAlive() && !p.IsProtected()
         );
 
         if (targetPlayers.Count == 0)
-        {   
-            UIManager.Instance.ShowPopup("无法选择");
+        {
+            UIManager.Instance.ShowPopup("No available targets.");
 
-            // 获取要弃掉的卡
-            Card cardToDiscard = currentPlayer.GetSelectedCard(); 
+            // Discard the selected card
+            Card cardToDiscard = currentPlayer.GetSelectedCard();
             if (cardToDiscard != null)
             {
                 currentPlayer.DiscardCard(cardToDiscard);
@@ -25,46 +25,48 @@ public class AiCardEffect5 : MonoBehaviour, IMainEffect
             return;
         }
 
-        if(currentPlayer.isHuman == true){
-        UIManager.Instance.ShowPlayerSelectionAllowSelf(targetPlayers, selectedTarget =>
+        if (currentPlayer.isHuman == true)
         {
-            Card oldCard = selectedTarget.RemoveCard();
-
-            if (oldCard != null)
+            UIManager.Instance.ShowPlayerSelectionAllowSelf(targetPlayers, selectedTarget =>
             {
-                selectedTarget.DiscardCard(oldCard);
-                Debug.Log($"{selectedTarget.playerName} 弃掉了 {oldCard.cardName}");
-            }
-            else
-            {
-                Debug.Log($"{selectedTarget.playerName} 没有手牌可以弃掉");
-            }
+                Card oldCard = selectedTarget.RemoveCard();
 
-            selectedTarget.DrawCard(GameManager.Instance.deck);
+                if (oldCard != null)
+                {
+                    selectedTarget.DiscardCard(oldCard);
+                    Debug.Log($"{selectedTarget.playerName} discarded {oldCard.cardName}.");
+                }
+                else
+                {
+                    Debug.Log($"{selectedTarget.playerName} had no cards to discard.");
+                }
 
-            UIManager.Instance.ShowPopup($"{selectedTarget.playerName} 弃掉了手牌并抽了一张新牌");
-            GameManager.Instance.EndTurn();
-        });
-    }else{
-            int randomIndex = UnityEngine.Random.Range(0,targetPlayers.Count);
-        
-    
+                selectedTarget.DrawCard(GameManager.Instance.deck);
+
+                UIManager.Instance.ShowPopup($"{selectedTarget.playerName} discarded a card and drew a new one.");
+                GameManager.Instance.EndTurn();
+            });
+        }
+        else
+        {
+            int randomIndex = UnityEngine.Random.Range(0, targetPlayers.Count);
+
             Card oldCard = targetPlayers[randomIndex].RemoveCard();
 
             if (oldCard != null)
             {
                 targetPlayers[randomIndex].DiscardCard(oldCard);
-                Debug.Log($"{targetPlayers[randomIndex].playerName} 弃掉了 {oldCard.cardName}");
+                Debug.Log($"{targetPlayers[randomIndex].playerName} discarded {oldCard.cardName}.");
             }
             else
             {
-                Debug.Log($"{targetPlayers[randomIndex].playerName} 没有手牌可以弃掉");
+                Debug.Log($"{targetPlayers[randomIndex].playerName} had no cards to discard.");
             }
 
             targetPlayers[randomIndex].DrawCard(GameManager.Instance.deck);
 
-            UIManager.Instance.ShowPopup($"{targetPlayers[randomIndex].playerName} 弃掉了手牌并抽了一张新牌");
+            UIManager.Instance.ShowPopup($"{targetPlayers[randomIndex].playerName} discarded a card and drew a new one.");
             GameManager.Instance.EndTurn();
-    };
+        }
     }
 }

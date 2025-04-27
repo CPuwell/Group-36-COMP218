@@ -9,9 +9,9 @@ public class AiCardEffect6 : MonoBehaviour, IMainEffect
 
         if (targetPlayers.Count == 0)
         {
-            UIManager.Instance.ShowPopup("无法选择");
-             // 获取要弃掉的卡
-            Card cardToDiscard = currentPlayer.GetSelectedCard(); 
+            UIManager.Instance.ShowPopup("No available targets.");
+            // Discard the selected card
+            Card cardToDiscard = currentPlayer.GetSelectedCard();
             if (cardToDiscard != null)
             {
                 currentPlayer.DiscardCard(cardToDiscard);
@@ -21,37 +21,38 @@ public class AiCardEffect6 : MonoBehaviour, IMainEffect
             return;
         }
 
-        // 使用统一的简化选择界面
-        if(currentPlayer.isHuman == true){
-        UIManager.Instance.ShowPlayerSelectionSimple(targetPlayers, targetPlayer =>
+        // Use the simplified player selection UI
+        if (currentPlayer.isHuman == true)
         {
-            Card myCard = currentPlayer.RemoveCard();
-            Card theirCard = targetPlayer.RemoveCard();
-
-            if (myCard == null || theirCard == null)
+            UIManager.Instance.ShowPlayerSelectionSimple(targetPlayers, targetPlayer =>
             {
-                UIManager.Instance.ShowPopup("交换失败：其中有玩家没有手牌");
+                Card myCard = currentPlayer.RemoveCard();
+                Card theirCard = targetPlayer.RemoveCard();
+
+                if (myCard == null || theirCard == null)
+                {
+                    UIManager.Instance.ShowPopup("Swap failed: One of the players has no cards.");
+                    GameManager.Instance.EndTurn();
+                    return;
+                }
+
+                currentPlayer.AddCard(theirCard);
+                targetPlayer.AddCard(myCard);
+
+                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} successfully swapped hands with {targetPlayer.playerName}!");
                 GameManager.Instance.EndTurn();
-                return;
-            }
+            });
+        }
+        else
+        {
+            int randomIndex = UnityEngine.Random.Range(0, targetPlayers.Count);
 
-            currentPlayer.AddCard(theirCard);
-            targetPlayer.AddCard(myCard);
-
-            UIManager.Instance.ShowPopup($"{currentPlayer.playerName} 与 {targetPlayer.playerName} 成功交换了手牌！");
-            GameManager.Instance.EndTurn();
-        });
-    }else{
-
-         
-          int randomIndex = UnityEngine.Random.Range(0,targetPlayers.Count);
-  
-         Card myCard = currentPlayer.RemoveCard();
+            Card myCard = currentPlayer.RemoveCard();
             Card theirCard = targetPlayers[randomIndex].RemoveCard();
 
             if (myCard == null || theirCard == null)
             {
-                UIManager.Instance.ShowPopup("交换失败：其中有玩家没有手牌");
+                UIManager.Instance.ShowPopup("Swap failed: One of the players has no cards.");
                 GameManager.Instance.EndTurn();
                 return;
             }
@@ -59,10 +60,8 @@ public class AiCardEffect6 : MonoBehaviour, IMainEffect
             currentPlayer.AddCard(theirCard);
             targetPlayers[randomIndex].AddCard(myCard);
 
-            UIManager.Instance.ShowPopup($"{currentPlayer.playerName} 与 {targetPlayers[randomIndex].playerName} 成功交换了手牌！");
+            UIManager.Instance.ShowPopup($"{currentPlayer.playerName} successfully swapped hands with {targetPlayers[randomIndex].playerName}!");
             GameManager.Instance.EndTurn();
-        
-
-    }
+        }
     }
 }

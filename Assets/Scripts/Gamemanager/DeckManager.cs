@@ -3,16 +3,15 @@ using UnityEngine;
 
 public class DeckManager : MonoBehaviour
 {
-    public GameObject cardPrefab;           // 通用Card预制体
-    public Transform deckZone;              // 牌库区域
-    public Sprite[] frontSprites;            // 0~8是普通卡，9~17是Insane卡
-    public Sprite backSprite;                // 统一的卡背
-    public Transform specialCardZone; // 单独存放0号牌
+    public GameObject cardPrefab;           // General Card prefab
+    public Transform deckZone;              // Deck area
+    public Sprite[] frontSprites;            // Front sprites: 0-8 normal cards, 9-17 insane cards
+    public Sprite backSprite;                // Unified card back
+    public Transform specialCardZone;        // Special zone for Card 0
 
-    private List<GameObject> deck = new List<GameObject>(); // 当前牌堆
-    
+    private List<GameObject> deck = new List<GameObject>(); // Current deck
+    public Deck logicDeck = new Deck(); // Logical deck
 
-    public Deck logicDeck = new Deck(); // 逻辑牌堆
     void Start()
     {
         InitializeDeck();
@@ -21,12 +20,12 @@ public class DeckManager : MonoBehaviour
 
     public void InitializeDeck()
     {
-        logicDeck = new Deck(); // 重新 new 一个新的 Deck
+        logicDeck = new Deck(); // Reset logic deck
 
-        // 清空之前的牌
+        // Clear previous cards
         foreach (Transform child in deckZone)
         {
-            if (child.gameObject.name == "DeckTopCardImage") continue; //  保留DeckTopCardImage
+            if (child.gameObject.name == "DeckTopCardImage") continue; // Keep DeckTopCardImage
             Destroy(child.gameObject);
         }
         foreach (GameObject card in deck)
@@ -35,14 +34,14 @@ public class DeckManager : MonoBehaviour
         }
         deck.Clear();
 
-        // 添加 Card1 五张
+        // Add five copies of Card1
         for (int i = 0; i < 5; i++)
         {
             Card c = CreateCardData("Card1", "1", 1, frontSprites[0], false);
             CreateCard(c);
         }
 
-        // 添加 Card2 ~ Card5 各两张
+        // Add two copies of Card2 ~ Card5
         for (int id = 1; id <= 4; id++)
         {
             for (int j = 0; j < 2; j++)
@@ -52,51 +51,50 @@ public class DeckManager : MonoBehaviour
             }
         }
 
-        // 添加 Card6 ~ Card8 各一张
+        // Add one copy of Card6 ~ Card8
         for (int id = 5; id <= 7; id++)
         {
             Card c = CreateCardData($"Card{id + 1}", $"{id + 1}", id + 1, frontSprites[id], false);
             CreateCard(c);
         }
 
-        // 添加 InsaneCard0 ~ InsaneCard8 各一张
+        // Add one copy of InsaneCard0 ~ InsaneCard8
         for (int id = 8; id <= 16; id++)
         {
             Card c = CreateCardData($"InsaneCard{id - 8}", $"{id - 8}m", id - 8, frontSprites[id], true);
             CreateCard(c);
         }
 
-        Debug.Log($"牌堆初始化完成，共有 {deck.Count} 张牌。");
+        Debug.Log($"Deck initialized. Total cards: {deck.Count}");
     }
 
     void CreateCard(Card cardData)
     {
+        // 1. Instantiate a new Card GameObject
+        GameObject newCard = Instantiate(cardPrefab, deckZone);
+        cardData.cardObject = newCard;
 
-        // 1. 创建一张卡牌GameObject
-        GameObject newCard = Instantiate(cardPrefab, deckZone); // cardPrefab 是你提前做好的卡片预制体，deckZone是牌堆区域
-        cardData.cardObject = newCard; // 这里把新建的 GameObject 赋值给 Card 的 cardObject 属性
-        // 2. 找到这张牌的CardUI组件
+        // 2. Set up CardUI
         CardUI cardUI = newCard.GetComponent<CardUI>();
-
         if (cardUI != null)
         {
-            // 3. 把CardData传给CardUI，让CardUI自己绑定图片和逻辑
-            cardUI.SetCard(cardData, null); //这里的 Hand 传 null，因为在Deck阶段，牌还没进手牌（不需要绑定Hand）
-            cardUI.Flip(false); // 初始盖着（背面朝上）
+            cardUI.SetCard(cardData, null); // No Hand yet during deck setup
+            cardUI.Flip(false); // Face down initially
         }
         else
         {
-            Debug.LogError("CreateCard失败：新建的牌上找不到 CardUI 脚本！");
+            Debug.LogError("CreateCard failed: CardUI component not found!");
         }
-        CardController controller = newCard.GetComponent<CardController>();
 
+        CardController controller = newCard.GetComponent<CardController>();
         if (controller == null)
         {
             controller = newCard.AddComponent<CardController>();
         }
-
         controller.cardData = cardData;
+
         AttachCardEffect(newCard, cardData);
+
         if (cardData.cardId == "0m")
         {
             if (specialCardZone != null)
@@ -104,11 +102,11 @@ public class DeckManager : MonoBehaviour
                 newCard.transform.SetParent(specialCardZone, false);
                 newCard.transform.localPosition = Vector3.zero;
                 newCard.transform.localScale = Vector3.one;
-                Debug.Log("0号牌已成功放置到 specialCardZone。");
+                Debug.Log("Special Card 0 placed into specialCardZone.");
             }
             else
             {
-                Debug.LogWarning("specialCardZone 未设置，0号牌依然留在 deckZone！");
+                Debug.LogWarning("specialCardZone not assigned. Card 0 remains in deckZone!");
             }
         }
         else
@@ -117,8 +115,6 @@ public class DeckManager : MonoBehaviour
             logicDeck.AddCard(cardData);
         }
     }
-
-
 
     void ShuffleDeck()
     {
@@ -130,7 +126,7 @@ public class DeckManager : MonoBehaviour
             deck[randomIndex] = temp;
         }
 
-        // 重排层级
+        // Reorder hierarchy
         for (int i = 0; i < deck.Count; i++)
         {
             deck[i].transform.SetSiblingIndex(i);
@@ -139,7 +135,6 @@ public class DeckManager : MonoBehaviour
         Debug.Log("Deck shuffled!");
     }
 
-    // 可以增加一个抽牌接口
     public GameObject DrawCard()
     {
         if (deck.Count > 0)
@@ -153,11 +148,11 @@ public class DeckManager : MonoBehaviour
             Debug.LogWarning("Deck is empty!");
             return null;
         }
-
     }
+
     Card CreateCardData(string name, string id, int value, Sprite front, bool isInsane)
     {
-        // 加载特效 prefab（从 Resources/Effects 文件夹中）
+        // Load effect prefab from Resources/Effects folder
         GameObject effect = Resources.Load<GameObject>($"Effects/CardEffect{value}");
 
         Card card = new Card(
@@ -165,8 +160,7 @@ public class DeckManager : MonoBehaviour
             id,
             front,
             backSprite,
-            
-            "描述", // 你可以拓展描述逻辑
+            "Description", // You can expand this later
             value,
             isInsane,
             effect
@@ -193,13 +187,11 @@ public class DeckManager : MonoBehaviour
         if (effectType != null)
         {
             card.AddComponent(effectType);
-            Debug.Log($"成功为 {cardData.cardName} 挂载脚本 {scriptName}");
+            Debug.Log($"Successfully attached script {scriptName} to {cardData.cardName}");
         }
         else
         {
-            Debug.LogWarning($"未找到脚本 {scriptName}，为 {cardData.cardName} 跳过挂载！");
+            Debug.LogWarning($"Script {scriptName} not found. Skipped attaching to {cardData.cardName}");
         }
     }
-
-
 }

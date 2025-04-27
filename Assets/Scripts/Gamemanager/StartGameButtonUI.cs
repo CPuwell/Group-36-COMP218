@@ -4,35 +4,32 @@ using UnityEngine.UI;
 public class StartGameUI : MonoBehaviour
 {
     public GameManager gameManager;
-    public Player humanPlayer; // 在 Inspector 中手动拖入 Player0
+    public Player humanPlayer; // Drag Player0 manually in the Inspector
     public Button startButton;
 
     public void StartGame()
     {
         if (gameManager == null || humanPlayer == null)
         {
-            Debug.LogWarning("GameManager 或 HumanPlayer 没有绑定！");
+            Debug.LogWarning("GameManager or HumanPlayer is not assigned!");
             return;
         }
 
-        //  添加人类玩家（场景中已有对象）
+        // Add the human player (already existing in the scene)
         humanPlayer.isHuman = true;
-
         humanPlayer.Initialize(gameManager.GetNextPlayerIndex(), "Player");
-
         gameManager.players.Add(humanPlayer);
 
-        //  添加 5 个 AI 玩家
+        // Add 5 AI players
         for (int i = 1; i <= 5; i++)
         {
             gameManager.AddPlayer($"Bot {i}");
         }
 
-        //  启动游戏
+        // Start the game
         gameManager.StartGame();
 
-        //  隐藏按钮
+        // Hide the start button
         startButton.gameObject.SetActive(false);
     }
-
 }

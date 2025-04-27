@@ -1,27 +1,25 @@
 using System.Collections.Generic;
 using UnityEngine;
+
 public class Deck
 {
-    private List<Card> cards = new List<Card>(); 
+    private List<Card> cards = new List<Card>();
     private System.Random random = new System.Random();
-    
 
-    public bool HasCards => cards.Count > 0; 
+    public bool HasCards => cards.Count > 0;
 
     public Deck()
     {
         InitializeDeck();
-        Shuffle(); 
+        Shuffle();
     }
-    
+
     private void InitializeDeck()
     {
         cards.Clear();
-       
-        
     }
 
-    // 洗牌
+    // Shuffle the deck
     public void Shuffle()
     {
         for (int i = 0; i < cards.Count; i++)
@@ -31,10 +29,10 @@ public class Deck
             cards[i] = cards[swapIndex];
             cards[swapIndex] = temp;
         }
-        Debug.Log("The cards have been shuffled");
+        Debug.Log("The deck has been shuffled.");
     }
 
-    // 抽一张牌
+    // Draw one card
     public Card Draw()
     {
         if (cards.Count > 0)
@@ -46,21 +44,18 @@ public class Deck
         }
         else
         {
-            Debug.Log("deck is empty");
+            Debug.Log("The deck is empty.");
             return null;
         }
-
-        
-
     }
 
-    // 将一张牌放回牌堆（可以用于某些特殊卡牌效果）
+    // Return a card to the deck (for special effects)
     public void ReturnCard(Card card)
     {
         if (card != null)
         {
             cards.Add(card);
-            Debug.Log($"Card: {card.cardName} is back into deck");
+            Debug.Log($"Card {card.cardName} returned to the deck.");
         }
     }
 
@@ -72,7 +67,7 @@ public class Deck
         }
         else
         {
-            Debug.Log($"deck has {cards.Count} cards");
+            Debug.Log($"The deck has {cards.Count} cards remaining.");
             return false;
         }
     }
@@ -82,10 +77,11 @@ public class Deck
         if (card != null)
         {
             cards.Add(card);
-            Debug.Log($"Card: {card.cardName} added to deck");
+            Debug.Log($"Card {card.cardName} added to the deck.");
         }
     }
-    // 偷看前几张牌
+
+    // Peek at the top few cards
     public List<Card> PeekTopCards(int count)
     {
         List<Card> topCards = new List<Card>();
@@ -96,11 +92,9 @@ public class Deck
         return topCards;
     }
 
-    // 移除前几张牌（真正抽走）
+    // Remove the top few cards (actually draw them out)
     public void RemoveTopCards(int count)
     {
         cards.RemoveRange(0, Mathf.Min(count, cards.Count));
     }
-
-
 }

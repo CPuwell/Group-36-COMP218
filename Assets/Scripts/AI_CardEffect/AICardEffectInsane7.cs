@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class AICardEffectInsane7 : MonoBehaviour, IInsaneCard
@@ -14,69 +13,66 @@ public class AICardEffectInsane7 : MonoBehaviour, IInsaneCard
         }
         else
         {
-            Debug.LogError("CardEffectInsane7 找不到 CardController！");
+            Debug.LogError("CardEffectInsane7: CardController not found!");
         }
     }
 
     public void ExecuteSaneEffect(Player currentPlayer)
     {
-        Debug.Log("【正常效果】7号牌没有主动效果，仅含出牌限制功能（不能打出除非另一张牌大于4）");
-        
-        // No special action needed for human or AI players - just go insane and end turn
+        Debug.Log("[Sane Effect] Card 7 has no active effect. It only restricts play (cannot be played unless the other card's value is greater than 4).");
+
         currentPlayer.GoInsane();
         GameManager.Instance.EndTurn();
     }
 
     public void ExecuteInsaneEffect(Player currentPlayer)
     {
-        Debug.Log("【疯狂效果】如果你另一张牌大于4，你直接赢得本轮");
+        Debug.Log("[Insane Effect] If your other card's value is greater than 4, you win the round immediately.");
 
         Card otherCard = currentPlayer.GetOtherCard(thisCard);
         if (otherCard == null)
         {
-            Debug.Log("没有找到另一张手牌，效果无效");
-            UIManager.Instance.ShowPopup("你的另一张牌无法识别，效果无效");
+            Debug.Log("No other card found. Effect invalid.");
+            UIManager.Instance.ShowPopup("Your other card could not be identified. Effect invalid.");
             GameManager.Instance.EndTurn();
             return;
         }
 
-        Debug.Log($"你的另一张手牌是：{otherCard.cardName}（数值 {otherCard.value}）");
+        Debug.Log($"Your other card is: {otherCard.cardName} (Value: {otherCard.value})");
 
         if (otherCard.value > 4)
         {
-            Debug.Log($"{currentPlayer.playerName} 成功触发疯狂7号牌效果，立即赢得本轮！");
-            
+            Debug.Log($"{currentPlayer.playerName} triggered the insane Card 7 effect and wins the round!");
+
             if (currentPlayer.isHuman)
             {
-                UIManager.Instance.ShowPopup("你另一张牌数值大于 4，疯狂效果触发！你赢得了本轮游戏！");
+                UIManager.Instance.ShowPopup("Your other card's value is greater than 4! Insane effect triggered! You win the round!");
             }
             else
             {
-                // AI player victory
-                UIManager.Instance.ShowPopup($"AI {currentPlayer.playerName} 另一张牌数值大于 4，疯狂效果触发！AI 赢得了本轮游戏！");
-                UIManager.Instance.Log($"AI {currentPlayer.playerName} 触发了疯狂7号牌胜利条件");
+                UIManager.Instance.ShowPopup($"AI {currentPlayer.playerName}'s other card value is greater than 4. Insane effect triggered! AI wins the round!");
+                UIManager.Instance.Log($"AI {currentPlayer.playerName} triggered the insane Card 7 victory condition.");
             }
-            
+
             currentPlayer.WinRound();
             GameManager.Instance.EndTurn();
             GameManager.Instance.DeclareWinner(currentPlayer);
         }
         else
         {
-            Debug.Log("另一张手牌不大于4，效果无效");
-            
+            Debug.Log("Other card value is not greater than 4. Effect did not trigger.");
+
             if (currentPlayer.isHuman)
             {
-                UIManager.Instance.ShowPopup("你的另一张手牌不大于 4，疯狂效果未触发");
+                UIManager.Instance.ShowPopup("Your other card's value is not greater than 4. Insane effect not triggered.");
             }
             else
             {
-                UIManager.Instance.ShowPopup($"AI {currentPlayer.playerName} 的另一张手牌不大于 4，疯狂效果未触发");
-                UIManager.Instance.Log($"AI {currentPlayer.playerName} 的疯狂7号牌效果失败");
+                UIManager.Instance.ShowPopup($"AI {currentPlayer.playerName}'s other card value is not greater than 4. Insane effect not triggered.");
+                UIManager.Instance.Log($"AI {currentPlayer.playerName}'s insane Card 7 effect failed.");
             }
-            
+
             GameManager.Instance.EndTurn();
         }
     }
-
 }

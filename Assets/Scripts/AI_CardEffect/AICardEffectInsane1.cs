@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using System.Collections.Generic;
 using static UnityEngine.GraphicsBuffer;
@@ -7,13 +6,13 @@ public class AICardEffectInsane1 : MonoBehaviour, IInsaneCard
 {
     public void ExecuteSaneEffect(Player currentPlayer)
     {
-        Debug.Log("【正常效果】选择玩家并猜数字（不能猜1），猜中出局");
+        Debug.Log("[Sane Effect] Choose a player and guess a number (cannot guess 1). If guessed correctly, target is eliminated.");
 
         List<Player> targetPlayers = GameManager.Instance.GetAvailableTargets(currentPlayer);
         if (targetPlayers.Count == 0)
         {
-            UIManager.Instance.ShowPopup("wufaxuanze");
-            // 获取要弃掉的卡
+            UIManager.Instance.ShowPopup("No available targets.");
+            // Discard the selected card
             Card cardToDiscard = currentPlayer.GetSelectedCard();
             if (cardToDiscard != null)
             {
@@ -24,13 +23,14 @@ public class AICardEffectInsane1 : MonoBehaviour, IInsaneCard
             return;
         }
 
-        // 弹出猜测 UI
-        if (currentPlayer.isHuman) { 
+        // Show guess UI
+        if (currentPlayer.isHuman)
+        {
             UIManager.Instance.ShowGuessEffect(targetPlayers, (selectedTarget, guessedNumber) =>
             {
                 if (guessedNumber == 1)
                 {
-                    UIManager.Instance.ShowPopup("不能猜 1，请重新选择");
+                    UIManager.Instance.ShowPopup("Cannot guess number 1. Please choose again.");
                     return;
                 }
 
@@ -38,11 +38,11 @@ public class AICardEffectInsane1 : MonoBehaviour, IInsaneCard
                 if (targetValue == guessedNumber)
                 {
                     selectedTarget.Eliminate();
-                    UIManager.Instance.ShowPopup($"猜中！{selectedTarget.playerName} 出局！");
+                    UIManager.Instance.ShowPopup($"Correct! {selectedTarget.playerName} is eliminated!");
                 }
                 else
                 {
-                    UIManager.Instance.ShowPopup($"猜错了。{selectedTarget.playerName} 的手牌是 {targetValue}");
+                    UIManager.Instance.ShowPopup($"Wrong guess. {selectedTarget.playerName}'s card was {targetValue}.");
                 }
 
                 currentPlayer.GoInsane();
@@ -54,18 +54,17 @@ public class AICardEffectInsane1 : MonoBehaviour, IInsaneCard
             int randomIndex = UnityEngine.Random.Range(0, targetPlayers.Count);
 
             int[] options = { 0, 2, 3, 4, 5, 6, 7, 8 };
-            int num = options[UnityEngine.Random.Range(0, options.Length)];
-            int guessedNumber = num;
+            int guessedNumber = options[UnityEngine.Random.Range(0, options.Length)];
             int targetValue = targetPlayers[randomIndex].GetHandValue();
 
             if (targetValue == guessedNumber)
             {
-                UIManager.Instance.Log($"猜中了！{targetPlayers[randomIndex].playerName} 的手牌是 {targetValue}，他出局了！");
+                UIManager.Instance.Log($"Correct! {targetPlayers[randomIndex].playerName}'s card was {targetValue}. They are eliminated.");
                 targetPlayers[randomIndex].Eliminate();
             }
             else
             {
-                UIManager.Instance.Log($"猜错了。{targetPlayers[randomIndex].playerName} 的手牌是 {targetValue}，继续游戏");
+                UIManager.Instance.Log($"Wrong guess. {targetPlayers[randomIndex].playerName}'s card was {targetValue}. Continue the game.");
             }
 
             currentPlayer.GoInsane();
@@ -75,13 +74,13 @@ public class AICardEffectInsane1 : MonoBehaviour, IInsaneCard
 
     public void ExecuteInsaneEffect(Player currentPlayer)
     {
-        Debug.Log("【疯狂效果】选一名玩家，若其手牌为1直接出局，否则猜一次");
+        Debug.Log("[Insane Effect] Choose a player. If their card is 1, they are immediately eliminated; otherwise, guess once.");
 
         List<Player> targets = GameManager.Instance.GetAvailableTargets(currentPlayer);
         if (targets.Count == 0)
         {
-            UIManager.Instance.ShowPopup("wufaxuanze");
-            // 获取要弃掉的卡
+            UIManager.Instance.ShowPopup("No available targets.");
+            // Discard the selected card
             Card cardToDiscard = currentPlayer.GetSelectedCard();
             if (cardToDiscard != null)
             {
@@ -101,24 +100,24 @@ public class AICardEffectInsane1 : MonoBehaviour, IInsaneCard
                 if (realValue == 1)
                 {
                     selectedTarget.Eliminate();
-                    UIManager.Instance.ShowPopup($"{selectedTarget.playerName} 手牌是 1，直接出局！");
+                    UIManager.Instance.ShowPopup($"{selectedTarget.playerName}'s card is 1. Eliminated immediately!");
                 }
                 else
                 {
                     if (guessedNumber == 1)
                     {
-                        UIManager.Instance.ShowPopup("不能猜 1，请重新选择");
+                        UIManager.Instance.ShowPopup("Cannot guess number 1. Please choose again.");
                         return;
                     }
 
                     if (guessedNumber == realValue)
                     {
                         selectedTarget.Eliminate();
-                        UIManager.Instance.ShowPopup($"猜中了！{selectedTarget.playerName} 出局！");
+                        UIManager.Instance.ShowPopup($"Correct! {selectedTarget.playerName} is eliminated!");
                     }
                     else
                     {
-                        UIManager.Instance.ShowPopup($"猜错了。{selectedTarget.playerName} 的手牌是 {realValue}");
+                        UIManager.Instance.ShowPopup($"Wrong guess. {selectedTarget.playerName}'s card was {realValue}.");
                     }
                 }
 
@@ -127,37 +126,36 @@ public class AICardEffectInsane1 : MonoBehaviour, IInsaneCard
         }
         else
         {
-            // AI player logic for insane mode
+            // AI logic in insane mode
             Player selectedTarget = targets[Random.Range(0, targets.Count)];
             int realValue = selectedTarget.GetHandValue();
 
-            UIManager.Instance.Log($"AI {currentPlayer.playerName} 选择了 {selectedTarget.playerName}");
-            
+            UIManager.Instance.Log($"AI {currentPlayer.playerName} selected {selectedTarget.playerName}.");
+
             if (realValue == 1)
             {
                 selectedTarget.Eliminate();
-                UIManager.Instance.ShowPopup($"{selectedTarget.playerName} 手牌是 1，直接出局！");
+                UIManager.Instance.ShowPopup($"{selectedTarget.playerName}'s card is 1. Eliminated immediately!");
             }
             else
             {
-                int[] possibleGuesses = {2, 3, 4, 5, 6, 7, 8}; // Cannot guess 1
+                int[] possibleGuesses = { 2, 3, 4, 5, 6, 7, 8 }; // Cannot guess 1
                 int guessedNumber = possibleGuesses[Random.Range(0, possibleGuesses.Length)];
-                
-                UIManager.Instance.Log($"AI {currentPlayer.playerName} 猜测数字 {guessedNumber}");
-                
+
+                UIManager.Instance.Log($"AI {currentPlayer.playerName} guessed {guessedNumber}.");
+
                 if (guessedNumber == realValue)
                 {
                     selectedTarget.Eliminate();
-                    UIManager.Instance.ShowPopup($"猜中了！{selectedTarget.playerName} 出局！");
+                    UIManager.Instance.ShowPopup($"Correct! {selectedTarget.playerName} is eliminated!");
                 }
                 else
                 {
-                    UIManager.Instance.ShowPopup($"猜错了。{selectedTarget.playerName} 的手牌是 {realValue}");
+                    UIManager.Instance.ShowPopup($"Wrong guess. {selectedTarget.playerName}'s card was {realValue}.");
                 }
             }
-            
+
             GameManager.Instance.EndTurn();
         }
     }
-
 }

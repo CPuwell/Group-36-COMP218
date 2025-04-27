@@ -3,50 +3,45 @@ using System.Collections.Generic;
 
 public class Player : MonoBehaviour
 {
-    public Transform[] cardSlots = new Transform[2]; // �Ʋ�
+    public Transform[] cardSlots = new Transform[2]; // Card slots
     public HandUI handUI;
-    public int PlayerIndex { get; private set; }  
+    public int PlayerIndex { get; private set; }
     public string playerName;
-    bool isAlive = true; // Player Status
-    public bool isHuman = false; // Player Type
-    private int winRounds = 0; // Player Win Round
-    private int winRoundsInsane = 0; // Player Win Round Insane
-    bool isInsane = false; // Player Insane Status
-    bool isProtected = false; // Effect of card 4
-    bool isImmortalThisRound = false;// Effect of card insane 4
+    private bool isAlive = true; // Player status
+    public bool isHuman = false; // Player type
+    private int winRounds = 0; // Normal win rounds
+    private int winRoundsInsane = 0; // Insane win rounds
+    private bool isInsane = false; // Insane status
+    private bool isProtected = false; // Protected status (effect of Card 4)
+    private bool isImmortalThisRound = false; // Immortal this round (effect of insane Card 4)
     private List<Card> discardedCards = new List<Card>();
-
     private Hand hand;
-
-
-
 
     public Hand Hand => hand;
 
     private void Awake()
     {
-        hand = new Hand(handUI); // 把 handUI 传进去！！
+        hand = new Hand(handUI); // Pass handUI reference
     }
 
     public bool IsHuman()
     {
         return isHuman;
     }
+
     public void DrawCard(Deck deck)
     {
-        
         Card newCard = deck.Draw();
         if (newCard == null)
         {
-            Debug.LogWarning($"{playerName} can't draw because deck is empty");
+            Debug.LogWarning($"{playerName} can't draw because the deck is empty.");
             return;
         }
 
         hand.AddCard(newCard);
-        Debug.Log($"{PlayerIndex} draw card:{newCard.cardName}");
+        Debug.Log($"{PlayerIndex} drew card: {newCard.cardName}");
 
-
-        CardController controller = newCard.cardObject.GetComponent<CardController>();
+        CardController controller = newCard.cardObject?.GetComponent<CardController>();
         if (controller != null)
         {
             controller.SetCardOwner(this);
@@ -58,15 +53,9 @@ public class Player : MonoBehaviour
         }
     }
 
-
-
-
-
     public void PlayCard(Card card)
-    {       
+    {
         hand.PlayCard(card);
-        
-        
     }
 
     public void WinRound()
@@ -74,22 +63,20 @@ public class Player : MonoBehaviour
         if (isInsane)
         {
             winRoundsInsane++;
-            Debug.Log($"{playerName} win insane rounds:{winRoundsInsane}");
-        } else
+            Debug.Log($"{playerName} won an insane round. Total insane wins: {winRoundsInsane}");
+        }
+        else
         {
             winRounds++;
-            Debug.Log($"{playerName} win rounds:{winRounds}");
+            Debug.Log($"{playerName} won a normal round. Total wins: {winRounds}");
         }
     }
 
     public void RandomPlayCard()
     {
-
         int randomIndex = Random.Range(0, hand.CardCount);
         PlayCard(hand.GetCards()[randomIndex]);
-        
     }
-
 
     public void Initialize(int index, string name)
     {
@@ -114,23 +101,20 @@ public class Player : MonoBehaviour
         return winRounds;
     }
 
-    public int CheckInsaintyWin()
+    public int CheckInsanityWin()
     {
         return winRoundsInsane;
     }
 
-
-    
     public void Eliminate()
     {
         if (isImmortalThisRound)
         {
             return;
         }
-        Debug.Log($"{playerName} is eliminated");
+        Debug.Log($"{playerName} is eliminated.");
         isAlive = false;
     }
-
 
     public bool IsAlive()
     {
@@ -157,7 +141,7 @@ public class Player : MonoBehaviour
         hand.Discard(card);
         RecordDiscard(card);
 
-        // ����8���� �� ��������
+        // If discarding an 8-value card -> immediate elimination
         if (!IsInsane() && card.value == 8 && card.isInsane)
         {
             Eliminate();
@@ -174,7 +158,7 @@ public class Player : MonoBehaviour
         if (cards.Count > 0)
         {
             Card cardToReturn = cards[0];
-            hand.ClearHand(); // ֻ��һ���ƣ�����ֱ�����
+            hand.ClearHand(); // Only one card, clear hand
             return cardToReturn;
         }
         return null;
@@ -210,9 +194,8 @@ public class Player : MonoBehaviour
         if (card != null)
         {
             discardedCards.Add(card);
-            Debug.Log($"{playerName} discarded card:{card.cardName}");
+            Debug.Log($"{playerName} discarded card: {card.cardName}");
 
-            
             if (!IsImmortal() && !IsInsane() && card.value == 8 && card.isInsane)
             {
                 Eliminate();
@@ -222,7 +205,6 @@ public class Player : MonoBehaviour
                 Eliminate();
             }
 
-            
             if (!IsImmortal() && card.value == 0)
             {
                 Eliminate();
@@ -230,7 +212,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public int CountInsaneDiscards()// �������ƶѷ��������
+    public int CountInsaneDiscards()
     {
         return discardedCards.FindAll(c => c.isInsane).Count;
     }
@@ -243,7 +225,6 @@ public class Player : MonoBehaviour
     public Card GetOtherCard(Card excludedCard)
     {
         List<Card> cards = GetCards();
-
         foreach (Card card in cards)
         {
             if (card != excludedCard)
@@ -251,14 +232,12 @@ public class Player : MonoBehaviour
                 return card;
             }
         }
-
         return null;
     }
 
     public bool RevealAndDiscardTopCards(Deck deck)
     {
         List<Card> topCards = deck.PeekTopCards(CountInsaneDiscards());
-
         bool foundInsane = false;
 
         foreach (Card card in topCards)
@@ -267,14 +246,12 @@ public class Player : MonoBehaviour
 
             if (card.isInsane)
             {
-                foundInsane = true; // ���ַ����
+                foundInsane = true;
             }
 
-            // �ñ�׼�����߼������Ʒŵ����ƶ�
             RecordDiscard(card);
         }
 
-        // ����Щ����ʽ���ƶ����Ƴ�
         deck.RemoveTopCards(topCards.Count);
 
         return foundInsane;
@@ -284,8 +261,4 @@ public class Player : MonoBehaviour
     {
         return hand.GetSelectedCard();
     }
-
-
-
-
 }

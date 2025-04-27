@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class RuleBasedAI
 {
-    // 主入口：选择一张牌来出
+    // Main entry: Choose a card to play
     public static Card ChooseCard(Player player)
     {
         List<Card> hand = player.GetCards();
@@ -15,7 +15,7 @@ public static class RuleBasedAI
             return null;
         }
 
-        // 选一张合法的牌来打出
+        // Select a valid card to play
         Card selectedCard = ChooseValidCard(player, hand);
 
         if (selectedCard != null)
@@ -25,15 +25,15 @@ public static class RuleBasedAI
         }
         else
         {
-            Debug.LogWarning($"{player.playerName} no valid card found, playing randomly.");
-            return hand[0]; // 如果找不到合法牌，打第一张
+            Debug.LogWarning($"{player.playerName} found no valid card, playing randomly.");
+            return hand[0]; // If no valid card found, play the first one
         }
     }
 
-    // 按优先规则选择合法出牌
+    // Select a valid card based on priority rules
     private static Card ChooseValidCard(Player player, List<Card> hand)
     {
-        hand.Sort((a, b) => a.value.CompareTo(b.value)); // 按数值升序排序
+        hand.Sort((a, b) => a.value.CompareTo(b.value)); // Sort by ascending value
 
         foreach (var card in hand)
         {
@@ -43,10 +43,10 @@ public static class RuleBasedAI
             }
         }
 
-        return null; // 没找到合法牌
+        return null; // No valid card found
     }
 
-    // 判断一张牌是否可以出
+    // Check if a card can be played
     private static bool IsValidPlay(Player player, Card card)
     {
         List<Player> targets = GameManager.Instance.GetAvailableTargets(player);
@@ -64,34 +64,25 @@ public static class RuleBasedAI
         switch (card.value)
         {
             case 0:
-                return false; // 特殊：0不能主动打出
+                return false; // Special: Card 0 cannot be played actively
             case 1:
             case 2:
             case 3:
-                return true; // 猜牌、比较大小、查看手牌
+                return true; // Guess card, compare values, view hand
             case 5:
-                if (has7)
-                {
-                    return false;
-                }
-                else return true;// 让别人弃牌必须有目标
+                return !has7; // Card 5 can be played unless holding 7
             case 6:
-                if (has7)
-                {
-                    return false;
-                }
-                else return true;
+                return !has7; // Card 6 same as above
             case 7:
-                return true;
+                return true; // Card 7 is always playable
             case 8:
                 if (player.GetCards().Count > 1)
-                    return false; // 有两张牌时尽量不打8
+                    return false; // Avoid playing 8 when having two cards
                 break;
             default:
                 break;
         }
 
-        return true; // 其他默认可以出
+        return true; // Other cards are generally playable
     }
 }
-

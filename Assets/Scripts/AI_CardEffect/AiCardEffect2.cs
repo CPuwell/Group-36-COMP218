@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -10,8 +9,8 @@ public class AiCardEffect2 : MonoBehaviour, IMainEffect
 
         if (targetPlayers.Count == 0)
         {
-            UIManager.Instance.ShowPopup("没有其他玩家可供查看");
-             // 获取要弃掉的卡
+            UIManager.Instance.ShowPopup("No available players to view.");
+            // Discard the selected card
             Card cardToDiscard = currentPlayer.GetSelectedCard(); 
             if (cardToDiscard != null)
             {
@@ -22,33 +21,35 @@ public class AiCardEffect2 : MonoBehaviour, IMainEffect
             return;
         }
 
-        // 选择一名玩家
-        if(currentPlayer.isHuman == true){
-        UIManager.Instance.ShowPlayerSelectionSimple(targetPlayers, selectedPlayer =>
+        // Choose a player to view
+        if (currentPlayer.isHuman == true)
         {
-            UIManager.Instance.Log($"{currentPlayer.playerName} 查看了 {selectedPlayer.playerName} 的手牌");
-
-            List<Card> cards = selectedPlayer.GetCards();
-
-            if (cards.Count > 0)
+            UIManager.Instance.ShowPlayerSelectionSimple(targetPlayers, selectedPlayer =>
             {
-                Card card = cards[0];
+                UIManager.Instance.Log($"{currentPlayer.playerName} viewed {selectedPlayer.playerName}'s card.");
 
-                // 展示卡牌图像
-                UIManager.Instance.ShowCardReveal(card, selectedPlayer.playerName, () =>
+                List<Card> cards = selectedPlayer.GetCards();
+
+                if (cards.Count > 0)
                 {
-                    GameManager.Instance.EndTurn(); // 展示后结束回合
-                });
-            }
-            else
-            {
-                UIManager.Instance.ShowPopup($"{selectedPlayer.playerName} 没有手牌");
-                GameManager.Instance.EndTurn();
-            }
-        });
-        }else{
+                    Card card = cards[0];
+
+                    // Show the selected player's card
+                    UIManager.Instance.ShowCardReveal(card, selectedPlayer.playerName, () =>
+                    {
+                        GameManager.Instance.EndTurn(); // End turn after revealing
+                    });
+                }
+                else
+                {
+                    UIManager.Instance.ShowPopup($"{selectedPlayer.playerName} has no cards.");
+                    GameManager.Instance.EndTurn();
+                }
+            });
+        }
+        else
+        {
             GameManager.Instance.EndTurn();
         }
-        ;
     }
 }

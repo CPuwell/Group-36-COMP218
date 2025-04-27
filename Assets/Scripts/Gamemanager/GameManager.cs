@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     private int playerIndexCounter = 0; // Player Index Counter
     private bool gameStarted = false; // Game Start Flag
     private DeckManager deckManager; // Deck Manager
-    public Image deckTopCardImage; // 在 Inspector 中手动拖入
+    public Image deckTopCardImage; 
 
 
     private void Awake()
@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
     // Initialize the game
     public void StartGame()
     {
-        deckManager = FindFirstObjectByType<DeckManager>(); // 确保找到 DeckManager
+        deckManager = FindFirstObjectByType<DeckManager>(); // Find DeckManager
         deck = deckManager.logicDeck;
         deck.Shuffle();
         StartCoroutine(LoadUISceneAndStartGame());
@@ -69,10 +69,10 @@ public class GameManager : MonoBehaviour
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("UI", LoadSceneMode.Additive);
         while (!asyncLoad.isDone)
         {
-            yield return null; // 等待下一帧继续检查
+            yield return null; // Wait for next frame to continue checking
         }
 
-        // 确保UI场景已经加载完，再继续发牌
+        
         foreach (Player player in players)
         {
             player.DrawCard(deck);
@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
         Player currentPlayer = players[currentPlayerIndex];
         currentPlayer.SetProtected(false);
         
-        Debug.Log($"[回合开始] {currentPlayer.playerName} 当前手牌数量：{currentPlayer.GetCards().Count}");
+        Debug.Log($"[Turn Start] {currentPlayer.playerName} Current hand count:{currentPlayer.GetCards().Count}");
         if (gameEnded) return; // avoid multiple start turn calls
         if (players[currentPlayerIndex].IsInsane() && currentPlayer.IsAlive())
         {
@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
 
         if (!currentPlayer.IsAlive())
         {
-            EndTurn(); // 自动跳过死亡玩家
+            EndTurn(); // Automatically end turn if player is not alive
             return;
         }
 
@@ -164,7 +164,7 @@ public class GameManager : MonoBehaviour
         if (winners.Count == 1)
         {
             bestPlayer.WinRound();
-            DeclareWinner(bestPlayer); // 直接宣布赢家
+            DeclareWinner(bestPlayer); // Declare the winner
         }
         else
         {
@@ -187,11 +187,11 @@ public class GameManager : MonoBehaviour
         //}
     }
 
-    //出完牌就调用回合结束的方法，然后先执行卡牌效果然后检查胜利条件
+    
     //End Turn and Switch to Next Player
     public void EndTurn()
     {
-        Debug.Log($"[回合结束] {players[currentPlayerIndex].playerName} 的回合结束");
+        Debug.Log($"[Turn End] {players[currentPlayerIndex].playerName}'s turn ended");
         if (gameEnded) return; // avoid multiple end turn calls
         CheckRoundWinCondition();
         CheckDeck();
@@ -221,7 +221,7 @@ public class GameManager : MonoBehaviour
             Card selectedCard = RuleBasedAI.ChooseCard(currentPlayer);
                 if (selectedCard != null)
                 {
-                    currentPlayer.PlayCard(selectedCard); // 让 AI 打出这张牌
+                    currentPlayer.PlayCard(selectedCard); // Ai will play the card
                 }
             
 
@@ -242,7 +242,7 @@ public class GameManager : MonoBehaviour
         if (alivePlayers.Count == 1)
         {
             alivePlayers[0].WinRound();
-            DeclareWinner(alivePlayers[0]); // 直接宣布赢家
+            DeclareWinner(alivePlayers[0]); // Declare the winner
         }
 
 
@@ -270,7 +270,7 @@ public class GameManager : MonoBehaviour
     //    RoundEnded = true;
     //    Debug.Log("Round Ended");
 
-    //    // 清除所有玩家的不死状态（疯狂保护）
+    //    
     //    foreach (Player player in players)
     //    {
     //        player.SetImmortalThisRound(false);
@@ -286,7 +286,7 @@ public class GameManager : MonoBehaviour
     //        players[i].Reset();
     //    }
     //    deckManager.InitializeDeck();
-    //    deck = deckManager.logicDeck; // 非常重要，重新同步deck引用
+    //    deck = deckManager.logicDeck; 
     //    deck.Shuffle();
 
     //    foreach (Player player in players)
@@ -303,7 +303,7 @@ public class GameManager : MonoBehaviour
         if (RoundEnded == true)
         {
             for (int i = 0; i < players.Count; i++) {
-                if (players[i].CheckWin() == 2 || players[i].CheckInsaintyWin() == 3)
+                if (players[i].CheckWin() == 2 || players[i].CheckInsanityWin() == 3)
                 {
                     DeclareWinner(players[i]);
                 }
@@ -316,7 +316,7 @@ public class GameManager : MonoBehaviour
         gameEnded = true;
         RoundEnded = true;
         Debug.Log($" Game Over! Winner is {winner.playerName} (Player {winner.PlayerIndex})!");
-        // 这里可以加上弹出胜利界面或者返回主菜单
+        
     }
 
 
@@ -325,10 +325,10 @@ public class GameManager : MonoBehaviour
     //{
     //    RoundEnded = true;
     //    Debug.Log($"Player {winner.PlayerIndex} Wins!");
-    //    // 这里可以添加游戏结束 UI、动画等
+    //    
     //}
 
-    //封装出可以选择的玩家列表
+    
     public List<Player> GetAvailableTargets(Player currentPlayer)
     {
         return players.FindAll(p => p != currentPlayer && p.IsAlive() && !p.IsProtected() && !p.IsImmortal());
@@ -340,17 +340,17 @@ public class GameManager : MonoBehaviour
     }
 
 
-    //强制给予某张牌
+    //Force-give a specific card
     public void GiveSpecificCardToPlayer(Player target, string cardId)
     {
-        // 你可以根据 cardId 预设构建卡牌（此处为举例）
         Card newCard = new Card(
-            "米·戈的大脑容器", "0", null, null,
-            "被强制植入疯狂容器", 0, true // 是疯狂牌
+            "Mi-Go Brain Cylinder", "0", null, null,
+            "Forced into madness container", 0, true
         );
         target.AddCard(newCard);
-        Debug.Log($"{target.playerName} 被强制获得卡牌：{newCard.cardName}");
+        Debug.Log($"{target.playerName} was forcibly given the card: {newCard.cardName}");
     }
+
 
     public Player GetCurrentPlayer()
     {
@@ -359,14 +359,14 @@ public class GameManager : MonoBehaviour
 
     public void PlayCard(Card card)
     {
-        // 找到当前玩家
+        // Find current player
         Player currentPlayer = players[currentPlayerIndex];
-        // 当前玩家打出这张牌
+        
         currentPlayer.PlayCard(card);
         if (card.cardObject == null)
         {
-            Debug.LogWarning($"弃置的卡牌 {card.cardName} 的 cardObject 是空的，重新生成！");
-            // 重新生成一个新的 GameObject 来展示
+            Debug.LogWarning($"Discarded card {card.cardName} has a null cardObject, recreating!");
+            
         }
 
         ShowCardInDiscardZone(card);  
@@ -387,7 +387,7 @@ public class GameManager : MonoBehaviour
         CardUI cardUI = cardObject.GetComponent<CardUI>();
         if (cardUI != null)
         {
-            cardUI.Flip(true); // 翻面
+            cardUI.Flip(true); // Flip
         }
         else
         {
@@ -397,12 +397,12 @@ public class GameManager : MonoBehaviour
         var button = cardObject.GetComponent<UnityEngine.UI.Button>();
         if (button != null)
         {
-            button.interactable = false; // 如果有Button，就禁用
+            button.interactable = false; 
         }
         else
         {
-            // 不再打Error了，因为弃牌展示用的Prefab可以没有Button
-            Debug.Log("弃置的牌Prefab上没有Button组件，跳过禁用。");
+            
+            Debug.Log("No Button component on discard card prefab. Skipped disabling.");
         }
 
         return;
@@ -438,11 +438,11 @@ public class GameManager : MonoBehaviour
 
         if (deck.IsEmpty())
         {
-            deckTopCardImage.gameObject.SetActive(false); // 隐藏
+            deckTopCardImage.gameObject.SetActive(false); // Hide
         }
         else
         {
-            deckTopCardImage.gameObject.SetActive(true);  // 显示
+            deckTopCardImage.gameObject.SetActive(true);  // Display
         }
     }
 

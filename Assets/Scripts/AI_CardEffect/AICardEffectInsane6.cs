@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -6,13 +5,13 @@ public class AICardEffectInsane6 : MonoBehaviour, IInsaneCard
 {
     public void ExecuteSaneEffect(Player currentPlayer)
     {
-        Debug.Log("【正常效果】与目标交换手牌");
+        Debug.Log("[Sane Effect] Swap hands with a target player.");
 
         List<Player> targets = GameManager.Instance.GetAvailableTargets(currentPlayer);
         if (targets.Count == 0)
         {
-            UIManager.Instance.ShowPopup("wufaxuanze");
-            // 获取要弃掉的卡
+            UIManager.Instance.ShowPopup("No available targets.");
+            // Discard the selected card
             Card cardToDiscard = currentPlayer.GetSelectedCard();
             if (cardToDiscard != null)
             {
@@ -35,13 +34,13 @@ public class AICardEffectInsane6 : MonoBehaviour, IInsaneCard
                     currentPlayer.AddCard(theirCard);
                     target.AddCard(myCard);
 
-                    Debug.Log($"{currentPlayer.playerName} 与 {target.playerName} 交换了手牌");
-                    UIManager.Instance.ShowPopup($"{currentPlayer.playerName} 与 {target.playerName} 交换了手牌");
+                    Debug.Log($"{currentPlayer.playerName} swapped hands with {target.playerName}.");
+                    UIManager.Instance.ShowPopup($"{currentPlayer.playerName} swapped hands with {target.playerName}.");
                 }
                 else
                 {
-                    Debug.Log("交换失败，其中一人没有手牌");
-                    UIManager.Instance.ShowPopup("交换失败，其中一人没有手牌");
+                    Debug.Log("Swap failed. One of the players has no cards.");
+                    UIManager.Instance.ShowPopup("Swap failed. One of the players has no cards.");
                 }
 
                 currentPlayer.GoInsane();
@@ -50,11 +49,11 @@ public class AICardEffectInsane6 : MonoBehaviour, IInsaneCard
         }
         else
         {
-            // AI 玩家随机选择目标
+            // AI player randomly selects a target
             Player target = targets[Random.Range(0, targets.Count)];
-            
-            UIManager.Instance.Log($"AI {currentPlayer.playerName} 选择了 {target.playerName} 作为目标");
-            
+
+            UIManager.Instance.Log($"AI {currentPlayer.playerName} selected {target.playerName} as the target.");
+
             Card myCard = currentPlayer.RemoveCard();
             Card theirCard = target.RemoveCard();
 
@@ -63,13 +62,13 @@ public class AICardEffectInsane6 : MonoBehaviour, IInsaneCard
                 currentPlayer.AddCard(theirCard);
                 target.AddCard(myCard);
 
-                UIManager.Instance.Log($"AI {currentPlayer.playerName} 与 {target.playerName} 交换了手牌");
-                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} 与 {target.playerName} 交换了手牌");
+                UIManager.Instance.Log($"AI {currentPlayer.playerName} swapped hands with {target.playerName}.");
+                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} swapped hands with {target.playerName}.");
             }
             else
             {
-                UIManager.Instance.Log("交换失败，其中一人没有手牌");
-                UIManager.Instance.ShowPopup("交换失败，其中一人没有手牌");
+                UIManager.Instance.Log("Swap failed. One of the players has no cards.");
+                UIManager.Instance.ShowPopup("Swap failed. One of the players has no cards.");
             }
 
             currentPlayer.GoInsane();
@@ -79,19 +78,19 @@ public class AICardEffectInsane6 : MonoBehaviour, IInsaneCard
 
     public void ExecuteInsaneEffect(Player currentPlayer)
     {
-        Debug.Log("【疯狂效果】重新分配所有玩家手牌");
+        Debug.Log("[Insane Effect] Redistribute all players' cards.");
 
         List<Player> targets = GameManager.Instance.GetAvailableTargetsAllowSelf(currentPlayer);
         List<Player> playersWithCards = targets.FindAll(p => p.GetCards().Count > 0);
 
         if (playersWithCards.Count < 2)
         {
-            UIManager.Instance.ShowPopup("没有足够的玩家参与重新分配！(至少2人有牌)");
+            UIManager.Instance.ShowPopup("Not enough players with cards to redistribute! (At least two required)");
             GameManager.Instance.EndTurn();
             return;
         }
 
-        // 收集所有牌
+        // Collect all cards
         List<Card> collectedCards = new List<Card>();
         foreach (Player player in playersWithCards)
         {
@@ -99,30 +98,29 @@ public class AICardEffectInsane6 : MonoBehaviour, IInsaneCard
             if (card != null)
             {
                 collectedCards.Add(card);
-                Debug.Log($"收集了 {player.playerName} 的手牌：{card.cardName}");
+                Debug.Log($"Collected {player.playerName}'s card: {card.cardName}");
                 if (currentPlayer.isHuman)
                 {
-                    // 只有人类玩家时才显示详细收集信息
-                    UIManager.Instance.Log($"收集了 {player.playerName} 的手牌");
+                    UIManager.Instance.Log($"Collected {player.playerName}'s card.");
                 }
             }
         }
 
         Shuffle(collectedCards);
 
-        // 重新分配
+        // Redistribute the cards
         for (int i = 0; i < playersWithCards.Count; i++)
         {
             playersWithCards[i].AddCard(collectedCards[i]);
-            Debug.Log($"{playersWithCards[i].playerName} 获得了新手牌：{collectedCards[i].cardName}");
+            Debug.Log($"{playersWithCards[i].playerName} received a new card: {collectedCards[i].cardName}");
             if (currentPlayer.isHuman)
             {
-                UIManager.Instance.Log($"{playersWithCards[i].playerName} 获得了新手牌");
+                UIManager.Instance.Log($"{playersWithCards[i].playerName} received a new card.");
             }
         }
 
-        // 使用简单弹窗通知
-        UIManager.Instance.ShowPopup("所有玩家的手牌已被重新分配。");
+        // Simple notification popup
+        UIManager.Instance.ShowPopup("All players' hands have been redistributed.");
 
         GameManager.Instance.EndTurn();
     }
@@ -137,5 +135,4 @@ public class AICardEffectInsane6 : MonoBehaviour, IInsaneCard
             list[j] = temp;
         }
     }
-
 }

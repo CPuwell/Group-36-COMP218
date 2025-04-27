@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -6,13 +5,13 @@ public class AICardEffectInsane2 : MonoBehaviour, IInsaneCard
 {
     public void ExecuteSaneEffect(Player currentPlayer)
     {
-        Debug.Log("【正常效果】查看一名玩家的手牌");
+        Debug.Log("[Sane Effect] View one player's hand.");
 
         List<Player> targets = GameManager.Instance.GetAvailableTargets(currentPlayer);
         if (targets.Count == 0)
         {
-            UIManager.Instance.ShowPopup("wufaxuanze");
-            // 获取要弃掉的卡
+            UIManager.Instance.ShowPopup("No available targets.");
+            // Discard the selected card
             Card cardToDiscard = currentPlayer.GetSelectedCard();
             if (cardToDiscard != null)
             {
@@ -32,13 +31,13 @@ public class AICardEffectInsane2 : MonoBehaviour, IInsaneCard
                 {
                     UIManager.Instance.ShowCardReveal(cards[0], selectedTarget.playerName, () =>
                     {
-                        currentPlayer.GoInsane(); // 正常效果触发疯狂
+                        currentPlayer.GoInsane(); // After viewing, go insane
                         GameManager.Instance.EndTurn();
                     });
                 }
                 else
                 {
-                    UIManager.Instance.ShowPopup($"{selectedTarget.playerName} 没有手牌");
+                    UIManager.Instance.ShowPopup($"{selectedTarget.playerName} has no cards.");
                     currentPlayer.GoInsane();
                     GameManager.Instance.EndTurn();
                 }
@@ -49,34 +48,34 @@ public class AICardEffectInsane2 : MonoBehaviour, IInsaneCard
             // AI player logic
             Player selectedTarget = targets[Random.Range(0, targets.Count)];
             List<Card> cards = selectedTarget.GetCards();
-            
-            UIManager.Instance.Log($"AI {currentPlayer.playerName} 查看了 {selectedTarget.playerName} 的手牌");
-            
+
+            UIManager.Instance.Log($"AI {currentPlayer.playerName} viewed {selectedTarget.playerName}'s hand.");
+
             if (cards.Count > 0)
             {
-                // AI doesn't need to actually see the card, but we log it for game tracking
-                UIManager.Instance.Log($"AI {currentPlayer.playerName} 看到了 {selectedTarget.playerName} 的牌: {cards[0].cardName}");
+                // Log the card name for tracking
+                UIManager.Instance.Log($"AI {currentPlayer.playerName} saw {selectedTarget.playerName}'s card: {cards[0].cardName}");
                 currentPlayer.GoInsane();
             }
             else
             {
-                UIManager.Instance.ShowPopup($"{selectedTarget.playerName} 没有手牌");
+                UIManager.Instance.ShowPopup($"{selectedTarget.playerName} has no cards.");
                 currentPlayer.GoInsane();
             }
-            
+
             GameManager.Instance.EndTurn();
         }
     }
 
     public void ExecuteInsaneEffect(Player currentPlayer)
     {
-        Debug.Log("【疯狂效果】查看目标手牌 + 自己抽牌 + 弃一张");
+        Debug.Log("[Insane Effect] View target's hand + draw a card + discard one card.");
 
         List<Player> targets = GameManager.Instance.GetAvailableTargets(currentPlayer);
         if (targets.Count == 0)
         {
-            UIManager.Instance.ShowPopup("没有其他玩家可供查看");
-            // 获取要弃掉的卡
+            UIManager.Instance.ShowPopup("No available players to view.");
+            // Discard the selected card
             Card cardToDiscard = currentPlayer.GetSelectedCard();
             if (cardToDiscard != null)
             {
@@ -102,7 +101,7 @@ public class AICardEffectInsane2 : MonoBehaviour, IInsaneCard
                         List<Card> myCards = currentPlayer.GetCards();
                         if (myCards.Count == 2)
                         {
-                            // 人类玩家选择弃牌
+                            // Let human player choose a card to discard
                             UIManager.Instance.ShowDiscardSelector(myCards[0], myCards[1], cardToDiscard =>
                             {
                                 currentPlayer.DiscardCard(cardToDiscard);
@@ -111,14 +110,14 @@ public class AICardEffectInsane2 : MonoBehaviour, IInsaneCard
                         }
                         else
                         {
-                            Debug.Log("手牌不是2张，无法弃牌");
+                            Debug.Log("Player does not have two cards. Cannot discard.");
                             GameManager.Instance.EndTurn();
                         }
                     });
                 }
                 else
                 {
-                    UIManager.Instance.ShowPopup($"{selectedTarget.playerName} 没有手牌");
+                    UIManager.Instance.ShowPopup($"{selectedTarget.playerName} has no cards.");
                     currentPlayer.DrawCard(GameManager.Instance.deck);
                     GameManager.Instance.EndTurn();
                 }
@@ -126,42 +125,39 @@ public class AICardEffectInsane2 : MonoBehaviour, IInsaneCard
         }
         else
         {
-            // AI player logic for insane mode
+            // AI logic for insane mode
             Player selectedTarget = targets[Random.Range(0, targets.Count)];
             List<Card> targetCards = selectedTarget.GetCards();
-            
-            UIManager.Instance.Log($"AI {currentPlayer.playerName} 查看了 {selectedTarget.playerName} 的手牌");
-            
+
+            UIManager.Instance.Log($"AI {currentPlayer.playerName} viewed {selectedTarget.playerName}'s hand.");
+
             if (targetCards.Count > 0)
             {
-                UIManager.Instance.Log($"AI {currentPlayer.playerName} 看到了 {selectedTarget.playerName} 的牌: {targetCards[0].cardName}");
-                
-                // AI draws a card
+                UIManager.Instance.Log($"AI {currentPlayer.playerName} saw {selectedTarget.playerName}'s card: {targetCards[0].cardName}");
+
                 currentPlayer.DrawCard(GameManager.Instance.deck);
-                UIManager.Instance.Log($"AI {currentPlayer.playerName} 抽了一张牌");
-                
+                UIManager.Instance.Log($"AI {currentPlayer.playerName} drew a card.");
+
                 List<Card> myCards = currentPlayer.GetCards();
                 if (myCards.Count == 2)
                 {
-                    // AI discards a card (random strategy)
                     Card cardToDiscard = myCards[Random.Range(0, myCards.Count)];
                     currentPlayer.DiscardCard(cardToDiscard);
-                    UIManager.Instance.Log($"AI {currentPlayer.playerName} 弃掉了 {cardToDiscard.cardName}");
+                    UIManager.Instance.Log($"AI {currentPlayer.playerName} discarded {cardToDiscard.cardName}.");
                 }
                 else
                 {
-                    Debug.Log("AI 手牌不是2张，无法弃牌");
+                    Debug.Log("AI does not have two cards. Cannot discard.");
                 }
             }
             else
             {
-                UIManager.Instance.ShowPopup($"{selectedTarget.playerName} 没有手牌");
+                UIManager.Instance.ShowPopup($"{selectedTarget.playerName} has no cards.");
                 currentPlayer.DrawCard(GameManager.Instance.deck);
-                UIManager.Instance.Log($"AI {currentPlayer.playerName} 抽了一张牌");
+                UIManager.Instance.Log($"AI {currentPlayer.playerName} drew a card.");
             }
-            
+
             GameManager.Instance.EndTurn();
         }
     }
-
 }

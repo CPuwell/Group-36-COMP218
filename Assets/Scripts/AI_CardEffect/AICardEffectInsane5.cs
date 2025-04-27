@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -6,7 +5,7 @@ public class AICardEffectInsane5 : MonoBehaviour, IInsaneCard
 {
     public void ExecuteSaneEffect(Player currentPlayer)
     {
-        Debug.Log("【正常效果】目标弃牌并抽一张");
+        Debug.Log("[Sane Effect] Target discards a card and draws a new one.");
 
         List<Player> targets = GameManager.Instance.players.FindAll(
             p => p.IsAlive() && !p.IsProtected()
@@ -14,8 +13,8 @@ public class AICardEffectInsane5 : MonoBehaviour, IInsaneCard
 
         if (targets.Count == 0)
         {
-            UIManager.Instance.ShowPopup("wufaxuanze");
-            // 获取要弃掉的卡
+            UIManager.Instance.ShowPopup("No available targets.");
+            // Discard the selected card
             Card cardToDiscard = currentPlayer.GetSelectedCard();
             if (cardToDiscard != null)
             {
@@ -37,43 +36,43 @@ public class AICardEffectInsane5 : MonoBehaviour, IInsaneCard
                 }
 
                 selectedTarget.DrawCard(GameManager.Instance.deck);
-                UIManager.Instance.ShowPopup($"{selectedTarget.playerName} 弃牌并抽了一张新牌");
+                UIManager.Instance.ShowPopup($"{selectedTarget.playerName} discarded a card and drew a new one.");
 
-                currentPlayer.GoInsane(); // 正常效果后进入疯狂状态
+                currentPlayer.GoInsane(); // After sane effect, go insane
                 GameManager.Instance.EndTurn();
             });
         }
         else
         {
-            // AI 玩家随机选择目标
+            // AI player randomly selects a target
             Player selectedTarget = targets[Random.Range(0, targets.Count)];
-            
-            UIManager.Instance.Log($"AI {currentPlayer.playerName} 选择了 {selectedTarget.playerName} 作为目标");
-            
+
+            UIManager.Instance.Log($"AI {currentPlayer.playerName} selected {selectedTarget.playerName} as the target.");
+
             Card oldCard = selectedTarget.RemoveCard();
             if (oldCard != null)
             {
                 selectedTarget.DiscardCard(oldCard);
-                UIManager.Instance.Log($"{selectedTarget.playerName} 弃掉了 {oldCard.cardName}");
+                UIManager.Instance.Log($"{selectedTarget.playerName} discarded {oldCard.cardName}.");
             }
 
             selectedTarget.DrawCard(GameManager.Instance.deck);
-            UIManager.Instance.ShowPopup($"{selectedTarget.playerName} 弃牌并抽了一张新牌");
+            UIManager.Instance.ShowPopup($"{selectedTarget.playerName} discarded a card and drew a new one.");
 
-            currentPlayer.GoInsane(); // 正常效果后进入疯狂状态
+            currentPlayer.GoInsane(); // After sane effect, go insane
             GameManager.Instance.EndTurn();
         }
     }
 
     public void ExecuteInsaneEffect(Player currentPlayer)
     {
-        Debug.Log("【疯狂效果】偷取目标 → 弃一张 → 给对方强制添加0号牌");
+        Debug.Log("[Insane Effect] Steal a card from target -> discard one -> give target a Card 0.");
 
         List<Player> targets = GameManager.Instance.GetAvailableTargets(currentPlayer);
         if (targets.Count == 0)
         {
-            UIManager.Instance.ShowPopup("wufaxuanze");
-            // 获取要弃掉的卡
+            UIManager.Instance.ShowPopup("No available targets.");
+            // Discard the selected card
             Card cardToDiscard = currentPlayer.GetSelectedCard();
             if (cardToDiscard != null)
             {
@@ -90,13 +89,13 @@ public class AICardEffectInsane5 : MonoBehaviour, IInsaneCard
                 Card stolenCard = selectedTarget.RemoveCard();
                 if (stolenCard == null)
                 {
-                    UIManager.Instance.ShowPopup($"{selectedTarget.playerName} 没有手牌，偷牌失败");
+                    UIManager.Instance.ShowPopup($"{selectedTarget.playerName} has no cards. Steal failed.");
                     GameManager.Instance.EndTurn();
                     return;
                 }
 
                 currentPlayer.AddCard(stolenCard);
-                Debug.Log($"{currentPlayer.playerName} 偷取了 {selectedTarget.playerName} 的手牌：{stolenCard.cardName}");
+                Debug.Log($"{currentPlayer.playerName} stole {selectedTarget.playerName}'s card: {stolenCard.cardName}");
 
                 List<Card> myCards = currentPlayer.GetCards();
                 if (myCards.Count == 2)
@@ -105,10 +104,10 @@ public class AICardEffectInsane5 : MonoBehaviour, IInsaneCard
                     {
                         currentPlayer.DiscardCard(cardToDiscard);
 
-                        // 发给目标 0 号牌
+                        // Give target a Card 0
                         GameManager.Instance.GiveSpecificCardToPlayer(selectedTarget, "0");
 
-                        // 展示 UI 提示目标获得 0 号牌
+                        // Show Mi-Go reveal UI
                         UIManager.Instance.ShowMiGoBrainReveal(selectedTarget, () =>
                         {
                             GameManager.Instance.EndTurn();
@@ -117,50 +116,49 @@ public class AICardEffectInsane5 : MonoBehaviour, IInsaneCard
                 }
                 else
                 {
-                    Debug.LogWarning("当前玩家手牌数量不足两张，无法执行弃牌操作");
+                    Debug.LogWarning("Current player does not have two cards. Cannot discard.");
                     GameManager.Instance.EndTurn();
                 }
             });
         }
         else
         {
-            // AI 玩家随机选择目标
+            // AI player randomly selects a target
             Player selectedTarget = targets[Random.Range(0, targets.Count)];
-            
-            UIManager.Instance.Log($"AI {currentPlayer.playerName} 选择了 {selectedTarget.playerName} 作为目标");
-            
+
+            UIManager.Instance.Log($"AI {currentPlayer.playerName} selected {selectedTarget.playerName} as the target.");
+
             Card stolenCard = selectedTarget.RemoveCard();
             if (stolenCard == null)
             {
-                UIManager.Instance.ShowPopup($"{selectedTarget.playerName} 没有手牌，偷牌失败");
+                UIManager.Instance.ShowPopup($"{selectedTarget.playerName} has no cards. Steal failed.");
                 GameManager.Instance.EndTurn();
                 return;
             }
 
             currentPlayer.AddCard(stolenCard);
-            UIManager.Instance.Log($"{currentPlayer.playerName} 偷取了 {selectedTarget.playerName} 的手牌：{stolenCard.cardName}");
+            UIManager.Instance.Log($"{currentPlayer.playerName} stole {selectedTarget.playerName}'s card: {stolenCard.cardName}");
 
             List<Card> myCards = currentPlayer.GetCards();
             if (myCards.Count == 2)
             {
-                // AI 随机选择要弃掉的牌
+                // AI randomly discards a card
                 Card cardToDiscard = myCards[Random.Range(0, myCards.Count)];
                 currentPlayer.DiscardCard(cardToDiscard);
-                UIManager.Instance.Log($"AI {currentPlayer.playerName} 弃掉了 {cardToDiscard.cardName}");
+                UIManager.Instance.Log($"AI {currentPlayer.playerName} discarded {cardToDiscard.cardName}.");
 
-                // 发给目标 0 号牌
+                // Give target a Card 0
                 GameManager.Instance.GiveSpecificCardToPlayer(selectedTarget, "0");
-                UIManager.Instance.Log($"{selectedTarget.playerName} 获得了一张 0 号牌");
-                
-                // AI 不需要展示 UI，直接结束回合
+                UIManager.Instance.Log($"{selectedTarget.playerName} received a Card 0.");
+
+                // No need for AI to show Mi-Go UI
                 GameManager.Instance.EndTurn();
             }
             else
             {
-                Debug.LogWarning("当前玩家手牌数量不足两张，无法执行弃牌操作");
+                Debug.LogWarning("Current player does not have two cards. Cannot discard.");
                 GameManager.Instance.EndTurn();
             }
         }
     }
-
 }

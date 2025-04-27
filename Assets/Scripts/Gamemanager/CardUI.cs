@@ -7,25 +7,24 @@ public class CardUI : MonoBehaviour, IPointerClickHandler
     public Image frontImage;
     public Image backImage;
 
-    private Card cardData;              // 当前绑定的卡牌数据
+    private Card cardData;              // The card data currently bound to this UI
     private bool isFaceUp = false;
-    private Hand owningHand;           // 当前手牌（逻辑层）引用
+    private Hand owningHand;             // Reference to the owning hand (logic layer)
 
-    // 设置卡牌图像与数据
-    public void SetCard(Card card,Hand hand)
+    // Set card visuals and data
+    public void SetCard(Card card, Hand hand)
     {
-        Debug.Log($"设置卡牌：{card.cardName}");
+        Debug.Log($"Set card: {card.cardName}");
         cardData = card;
-        owningHand = hand; // 绑定手牌引用
-        
+        owningHand = hand; // Bind hand reference
 
         frontImage.sprite = card.frontSprite;
         backImage.sprite = card.backSprite;
 
-        Flip(false); // 初始是盖着的
+        Flip(false); // Initially face down
     }
 
-    // 翻牌：true 显示正面，false 显示背面
+    // Flip the card: true = face up, false = face down
     public void Flip(bool faceUp)
     {
         isFaceUp = faceUp;
@@ -33,29 +32,28 @@ public class CardUI : MonoBehaviour, IPointerClickHandler
         backImage.gameObject.SetActive(!faceUp);
     }
 
-    // 点击事件处理（双击出牌）
+    // Handle click events (double-click to play the card)
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log($"Clicked on card: {(cardData != null ? cardData.cardName : "null")}");
 
         if (!IsMyTurn())
         {
-            Debug.LogWarning("现在不是你的回合，无法出牌！");
+            Debug.LogWarning("It is not your turn. You cannot play a card now!");
             return;
         }
 
         if (owningHand != null && cardData != null)
         {
-            owningHand.SelectCard(cardData); // 只在不为 null 时调用
+            owningHand.SelectCard(cardData);
         }
         else
         {
-            Debug.LogWarning("CardUI 点击时 owningHand 或 cardData 为 null！");
+            Debug.LogWarning("CardUI clicked but owningHand or cardData is null!");
         }
     }
 
-
-    //elegate 事件：当卡牌被选中时调用
+    // Delegate method: called when this card is selected
     public void SetSelected(bool selected)
     {
         GetComponent<Image>().color = selected ? Color.yellow : Color.white;
@@ -66,8 +64,6 @@ public class CardUI : MonoBehaviour, IPointerClickHandler
         if (GameManager.Instance == null) return false;
 
         Player currentPlayer = GameManager.Instance.GetCurrentPlayer();
-
         return currentPlayer != null && currentPlayer.isHuman;
     }
-
 }

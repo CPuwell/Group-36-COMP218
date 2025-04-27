@@ -4,13 +4,13 @@ public class AICardEffectInsane0 : MonoBehaviour, IInsaneCard
 {
     public void ExecuteSaneEffect(Player currentPlayer)
     {
-        Debug.Log("【理智效果】你打出了 0号牌（米·戈的大脑容器），立即出局！");
+        Debug.Log("[Sane Effect] You played Card 0 (Mi-Go Brain Cylinder) and are immediately eliminated.");
         GameManager.Instance.EndTurn();
     }
 
     public void ExecuteInsaneEffect(Player currentPlayer)
     {
-        Debug.Log("【疯狂效果】你打出了 0号牌（米·戈的大脑容器），立即出局！");
+        Debug.Log("[Insane Effect] You played Card 0 (Mi-Go Brain Cylinder) and are immediately eliminated.");
         GameManager.Instance.EndTurn();
     }
 }

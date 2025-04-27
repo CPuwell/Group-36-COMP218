@@ -9,8 +9,8 @@ public class AiCardEffect1 : MonoBehaviour, IMainEffect
 
         if (targetPlayers.Count == 0)
         {
-            UIManager.Instance.ShowPopup("没有其他玩家可供选择");
-            // 获取要弃掉的卡
+            UIManager.Instance.ShowPopup("No available players to guess.");
+            // Discard the selected card
             Card cardToDiscard = currentPlayer.GetSelectedCard();
             if (cardToDiscard != null)
             {
@@ -21,15 +21,14 @@ public class AiCardEffect1 : MonoBehaviour, IMainEffect
             return;
         }
 
-        // 调用 UI 选择玩家 + 猜数字
+        // If player is human, open guess panel
         if (currentPlayer.isHuman == true)
         {
             UIManager.Instance.ShowGuessEffect(targetPlayers, (selectedTarget, guessedNumber) =>
             {
-
                 if (guessedNumber == 1)
                 {
-                    UIManager.Instance.ShowPopup("不能猜数字 1，请重新选择");
+                    UIManager.Instance.ShowPopup("You cannot guess number 1. Please choose another number.");
                     return;
                 }
 
@@ -37,12 +36,12 @@ public class AiCardEffect1 : MonoBehaviour, IMainEffect
 
                 if (targetValue == guessedNumber)
                 {
-                    UIManager.Instance.Log($"猜中了！{selectedTarget.playerName} 的手牌是 {targetValue}，他出局了！");
+                    UIManager.Instance.Log($"Correct guess! {selectedTarget.playerName}'s card was {targetValue}. They are eliminated.");
                     selectedTarget.Eliminate();
                 }
                 else
                 {
-                    UIManager.Instance.Log($"猜错了。{selectedTarget.playerName} 的手牌是 {targetValue}，继续游戏");
+                    UIManager.Instance.Log($"Wrong guess. {selectedTarget.playerName}'s card was {targetValue}. Continue the game.");
                 }
 
                 GameManager.Instance.EndTurn();
@@ -50,21 +49,20 @@ public class AiCardEffect1 : MonoBehaviour, IMainEffect
         }
         else
         {
-                int randomIndex = UnityEngine.Random.Range(0, targetPlayers.Count);
-  
+            int randomIndex = UnityEngine.Random.Range(0, targetPlayers.Count);
+
             int[] options = { 0, 2, 3, 4, 5, 6, 7, 8 };
-            int num = options[UnityEngine.Random.Range(0, options.Length)];
-            int guessedNumber = num;
+            int guessedNumber = options[UnityEngine.Random.Range(0, options.Length)];
             int targetValue = targetPlayers[randomIndex].GetHandValue();
 
             if (targetValue == guessedNumber)
             {
-                UIManager.Instance.Log($"猜中了！{targetPlayers[randomIndex].playerName} 的手牌是 {targetValue}，他出局了！");
+                UIManager.Instance.Log($"Correct guess! {targetPlayers[randomIndex].playerName}'s card was {targetValue}. They are eliminated.");
                 targetPlayers[randomIndex].Eliminate();
             }
             else
             {
-                UIManager.Instance.Log($"猜错了。{targetPlayers[randomIndex].playerName} 的手牌是 {targetValue}，继续游戏");
+                UIManager.Instance.Log($"Wrong guess. {targetPlayers[randomIndex].playerName}'s card was {targetValue}. Continue the game.");
             }
 
             GameManager.Instance.EndTurn();
