@@ -6,7 +6,15 @@ public class AICardEffectInsane7 : MonoBehaviour, IInsaneCard
 
     private void Awake()
     {
-        thisCard = GetComponent<Card>();
+        CardController controller = GetComponent<CardController>();
+        if (controller != null)
+        {
+            thisCard = controller.cardData;
+        }
+        else
+        {
+            Debug.LogError("CardEffectInsane7 找不到 CardController！");
+        }
     }
 
     public void ExecuteSaneEffect(Player currentPlayer)

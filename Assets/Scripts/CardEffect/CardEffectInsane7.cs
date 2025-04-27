@@ -6,8 +6,17 @@ public class CardEffectInsane7 : MonoBehaviour, IInsaneCard
 
     private void Awake()
     {
-        thisCard = GetComponent<Card>();
+        CardController controller = GetComponent<CardController>();
+        if (controller != null)
+        {
+            thisCard = controller.cardData;
+        }
+        else
+        {
+            Debug.LogError("CardEffectInsane7 ’“≤ªµΩ CardController£°");
+        }
     }
+
 
     public void ExecuteSaneEffect(Player currentPlayer)
     {

@@ -55,15 +55,10 @@ public class Hand
 
         if (cards.Contains(card))
         {
-            // 如果你的卡牌带有逻辑 prefab（效果卡）
-            card.PlayCard();
+            
 
             // 如果你用的是 CardController 控制动画或特效
             CardController controller = card.cardObject.GetComponent<CardController>();
-            if (controller != null)
-            {
-                controller.Play();
-            }
             GameManager.Instance.ShowCardInDiscardZone(card); // 显示在弃牌区;
             cards.Remove(card);
             selectedCard = null;
@@ -76,8 +71,12 @@ public class Hand
             {
                 handUI.UpdateHandUI(cards); // 更新手牌 UI
             }
+            if (controller != null)
+            {
+                controller.Play();
+            }
+            
 
-            GameManager.Instance.EndTurn();
             
         }
     }
@@ -102,8 +101,7 @@ public class Hand
     {
         if (cards.Count == 2 && cards.Exists(c => c.value == 7))
         {
-            Card other = cards.Find(c => c != card);
-            if (card.value != 7 && other.value > 4)
+            if (card.value != 7 && card.value > 4)
             {
                 Debug.Log("你不能打出这张牌，因为你持有7号牌，且另一张牌大于4。你必须打出7号牌！");
                 return false;

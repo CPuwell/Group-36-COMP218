@@ -31,57 +31,40 @@ public class HandUI : MonoBehaviour
         Debug.Log($"CardSlot数量{cardSlots.Count}");
         for (int i = 0; i < cardSlots.Count; i++)
         {
-            // 清除旧的卡牌 GameObject
+            // 1. 清除所有旧物体
             foreach (Transform child in cardSlots[i].transform)
             {
-                // 不再销毁 GameObject，只隐藏它
-                child.gameObject.SetActive(false);
+                Destroy(child.gameObject);
             }
 
-
+            // 2. 给每个 cardSlots[i] 填充新卡牌
             if (i < hand.Count)
             {
                 Card card = hand[i];
-                GameObject cardObj = card.cardObject;
-
-                if (cardObj == null)
+                if (card.cardObject == null)
                 {
-                    Debug.LogError($"手牌 {card.cardName} 的 cardObject 为 null！");
+                    Debug.LogError($"手牌 {card.cardName} 的 cardObject 是 null！");
                     continue;
                 }
 
-                // 设置 parent 为对应的 cardSlot
-                cardObj.transform.SetParent(cardSlots[i].transform, false);
+                // ---  重点1：重新克隆一张新的 cardObject ---
+                GameObject newCardObj = GameObject.Instantiate(card.cardObject);
+                newCardObj.transform.SetParent(cardSlots[i].transform, false);
+                newCardObj.transform.localPosition = Vector3.zero;
+                newCardObj.transform.localScale = Vector3.one;
+                newCardObj.transform.localRotation = Quaternion.identity;
+                newCardObj.SetActive(true);
 
-
-
-                RectTransform rt = cardObj.GetComponent<RectTransform>();
-                if (rt != null)
-                {
-                    rt.anchorMin = new Vector2(0.5f, 0.5f);
-                    rt.anchorMax = new Vector2(0.5f, 0.5f);
-                    rt.pivot = new Vector2(0.5f, 0.5f);
-                    rt.anchoredPosition = Vector2.zero;
-                    rt.localScale = Vector3.one;
-                    rt.localRotation = Quaternion.identity;
-                    rt.SetAsLastSibling(); // 确保显示在最上层
-                }
-
-                cardObj.SetActive(true);
-
-
-
-                // 重新绑定 CardUI 信息
-                CardUI cardUI = cardObj.GetComponent<CardUI>();
+                // ---  重点2：确保 CardUI 重新绑定 ---
+                CardUI cardUI = newCardObj.GetComponent<CardUI>();
                 if (cardUI != null)
                 {
                     cardUI.SetCard(card, gameManager.GetCurrentPlayer().Hand);
-                    cardUI.Flip(true);
-                    Debug.Log($"SetCard成功");
+                    cardUI.Flip(true); // 正面朝上
                 }
                 else
                 {
-                    Debug.LogError("cardObject 上找不到 CardUI 脚本！");
+                    Debug.LogError($"新 cardObject 缺少 CardUI 组件！");
                 }
             }
         }

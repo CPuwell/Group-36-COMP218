@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2584091367181250789}
-  - component: {fileID: 7542791326494262273}
   - component: {fileID: 7480235947757173912}
+  - component: {fileID: 8651401007659791934}
   m_Layer: 0
   m_Name: CardEffect13
   m_TagString: Untagged
@@ -33,18 +33,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7542791326494262273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 55722434926394479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57425da6a11aa794187d52ddd17ae166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7480235947757173912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,3 +55,15 @@ MonoBehaviour:
     isInsane: 1
     cardObject: {fileID: 0}
     effectPrefab: {fileID: 55722434926394479}
+--- !u!114 &8651401007659791934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55722434926394479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d00762459d7098f4c81a0e9a25185a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

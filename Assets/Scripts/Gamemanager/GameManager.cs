@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public List<Player> players; // Player List
     public Deck deck; // Card Deck
     private int currentPlayerIndex = 0; // Player Index
-    private float turnTime = 60f; // Count Down Time for each turn
+    //private float turnTime = 60f; // Count Down Time for each turn
 
     private float ai_turnTime = 2f;
     private float timer; // Timer
@@ -102,7 +102,11 @@ public class GameManager : MonoBehaviour
         if (gameEnded) return; // avoid multiple start turn calls
         if (players[currentPlayerIndex].IsInsane())
         {
-                players[currentPlayerIndex].RevealAndDiscardTopCards(deck);
+            if (players[currentPlayerIndex].RevealAndDiscardTopCards(deck))
+            {
+                currentPlayer.Eliminate();
+            }
+            
         }
         
         CheckRoundWinCondition();
@@ -121,7 +125,7 @@ public class GameManager : MonoBehaviour
         UpdateDeckZoneDisplay();
         if (currentPlayer.isHuman)
         {
-            timer = turnTime;
+            timer = -1f;
         }else
         {
             timer = ai_turnTime;
@@ -208,25 +212,23 @@ public class GameManager : MonoBehaviour
     {
         if (!gameStarted || gameEnded) return; // Avoid running the timer before the game starts
 
-        timer -= Time.deltaTime;
-        if (timer <= 0)
-        {
-            Player currentPlayer = players[currentPlayerIndex];
-
-            if (!currentPlayer.isHuman)
+        if (!players[currentPlayerIndex].isHuman) {
+            timer -= Time.deltaTime;
+            if (timer <= 0)
             {
-                Card selectedCard = RuleBasedAI.ChooseCard(currentPlayer);
+            Player currentPlayer = players[currentPlayerIndex];         
+
+            Card selectedCard = RuleBasedAI.ChooseCard(currentPlayer);
                 if (selectedCard != null)
                 {
                     currentPlayer.PlayCard(selectedCard); // 让 AI 打出这张牌
                 }
-            }
-            else
-            {
-                AutoPlay(); // 人类玩家还是走 AutoPlay()
-            }
-            EndTurn();
+            
+
+            } 
         }
+        
+        
     }
 
     public void CheckRoundWinCondition()
@@ -368,7 +370,6 @@ public class GameManager : MonoBehaviour
         }
 
         ShowCardInDiscardZone(card);  
-        EndTurn();
     }
 
     public void ShowCardInDiscardZone(Card card)

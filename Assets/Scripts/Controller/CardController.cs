@@ -75,34 +75,42 @@ public class CardController : MonoBehaviour
         }
         else
         {
-            // 玩家已疯狂，可以选择执行疯狂或理智效果
-            Debug.Log($"{owner.playerName} 已疯狂，弹出选择 UI");
+            if (owner.isHuman) {
+                // 玩家已疯狂，可以选择执行疯狂或理智效果
+                Debug.Log($"{owner.playerName} 已疯狂，弹出选择 UI");
 
-            UIInsaneChoice.Instance.Show(
-                onSane: () =>
+                UIInsaneChoice.Instance.Show(
+                    onSane: () =>
+                    {
+                        Debug.Log("选择执行 理智效果");
+                        insaneEffect.ExecuteSaneEffect(owner);
+
+                    },
+                    onInsane: () =>
+                    {
+                        Debug.Log("选择执行 疯狂效果");
+                        insaneEffect.ExecuteInsaneEffect(owner);
+
+                    }
+                );
+            }
+            else
+            {
+                bool chooseInsane = Random.value > 0.5f; // 随机 50% 选择
+
+                if (chooseInsane)
                 {
-                    Debug.Log("选择执行 理智效果");
-                    insaneEffect.ExecuteSaneEffect(owner);
-                    
-                },
-                onInsane: () =>
-                {
-                    Debug.Log("选择执行 疯狂效果");
+                    Debug.Log($"{owner.playerName} (AI) 选择执行疯狂效果");
                     insaneEffect.ExecuteInsaneEffect(owner);
-                    
                 }
-            );
+                else
+                {
+                    Debug.Log($"{owner.playerName} (AI) 选择执行理智效果");
+                    insaneEffect.ExecuteSaneEffect(owner);
+                }
+            }
         }
     }
 
-    /// <summary>
-    /// 如果玩家还活着，就继续下一回合（淘汰就不继续了）
-    /// </summary>
-    private void EndTurnIfNeeded()
-    {
-        if (owner.IsAlive())
-        {
-            GameManager.Instance.EndTurn();
-        }
-    }
+   
 }

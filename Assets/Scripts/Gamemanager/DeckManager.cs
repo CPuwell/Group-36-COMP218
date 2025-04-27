@@ -7,6 +7,7 @@ public class DeckManager : MonoBehaviour
     public Transform deckZone;              // 牌库区域
     public Sprite[] frontSprites;            // 0~8是普通卡，9~17是Insane卡
     public Sprite backSprite;                // 统一的卡背
+    public Transform specialCardZone; // 单独存放0号牌
 
     private List<GameObject> deck = new List<GameObject>(); // 当前牌堆
     
@@ -61,7 +62,7 @@ public class DeckManager : MonoBehaviour
         // 添加 InsaneCard0 ~ InsaneCard8 各一张
         for (int id = 8; id <= 16; id++)
         {
-            Card c = CreateCardData($"InsaneCard{id - 7}", $"{id - 7}m", id + 1, frontSprites[id], true);
+            Card c = CreateCardData($"InsaneCard{id - 8}", $"{id - 8}m", id - 8, frontSprites[id], true);
             CreateCard(c);
         }
 
@@ -87,10 +88,34 @@ public class DeckManager : MonoBehaviour
         {
             Debug.LogError("CreateCard失败：新建的牌上找不到 CardUI 脚本！");
         }
+        CardController controller = newCard.GetComponent<CardController>();
 
-        // 4. 将创建的牌加入deck中
-        deck.Add(newCard);
-        logicDeck.AddCard(cardData); // 将卡牌数据加入逻辑牌堆
+        if (controller == null)
+        {
+            controller = newCard.AddComponent<CardController>();
+        }
+
+        controller.cardData = cardData;
+        AttachCardEffect(newCard, cardData);
+        if (cardData.cardId == "0m")
+        {
+            if (specialCardZone != null)
+            {
+                newCard.transform.SetParent(specialCardZone, false);
+                newCard.transform.localPosition = Vector3.zero;
+                newCard.transform.localScale = Vector3.one;
+                Debug.Log("0号牌已成功放置到 specialCardZone。");
+            }
+            else
+            {
+                Debug.LogWarning("specialCardZone 未设置，0号牌依然留在 deckZone！");
+            }
+        }
+        else
+        {
+            deck.Add(newCard);
+            logicDeck.AddCard(cardData);
+        }
     }
 
 
@@ -149,5 +174,32 @@ public class DeckManager : MonoBehaviour
 
         return card;
     }
+
+    void AttachCardEffect(GameObject card, Card cardData)
+    {
+        string scriptName;
+
+        if (cardData.isInsane)
+        {
+            scriptName = $"AICardEffectInsane{cardData.value}";
+        }
+        else
+        {
+            scriptName = $"AiCardEffect{cardData.value}";
+        }
+
+        System.Type effectType = System.Type.GetType(scriptName);
+
+        if (effectType != null)
+        {
+            card.AddComponent(effectType);
+            Debug.Log($"成功为 {cardData.cardName} 挂载脚本 {scriptName}");
+        }
+        else
+        {
+            Debug.LogWarning($"未找到脚本 {scriptName}，为 {cardData.cardName} 跳过挂载！");
+        }
+    }
+
 
 }

@@ -23,7 +23,7 @@ public class StartGameUI : MonoBehaviour
         gameManager.players.Add(humanPlayer);
 
         //  Ìí¼Ó 5 ¸ö AI Íæ¼Ò
-        for (int i = 2; i <= 6; i++)
+        for (int i = 1; i <= 5; i++)
         {
             gameManager.AddPlayer($"Bot {i}");
         }

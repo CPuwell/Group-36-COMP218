@@ -9,8 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4976386323454959167}
-  - component: {fileID: 6182434501251743119}
-  - component: {fileID: 7504096966985512778}
+  - component: {fileID: 3473533017906345482}
   m_Layer: 0
   m_Name: CardEffect1
   m_TagString: Untagged
@@ -33,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6182434501251743119
+--- !u!114 &3473533017906345482
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,28 +41,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2514894343683846643}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ee6c5e7efdd0774597f8ef7813a787c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5143c69025ded0d46b774cd0c40c60c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7504096966985512778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2514894343683846643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c04a9a9d02e93c149b5e94e9b512323a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardData:
-    cardName: Investigators
-    cardId: 1
-    frontSprite: {fileID: -1331832228257751863, guid: f5ef0042d1ec6184693f9951d059709d, type: 3}
-    backSprite: {fileID: 870234187787707586, guid: abbcfb06f6d1f0345a4c8ba064fec724, type: 3}
-    value: 1
-    description: Card1
-    isInsane: 0
-    cardObject: {fileID: 0}
-    effectPrefab: {fileID: 2514894343683846643}

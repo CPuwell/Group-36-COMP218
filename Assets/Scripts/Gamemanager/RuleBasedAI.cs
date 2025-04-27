@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public static class RuleBasedAI
@@ -57,6 +58,7 @@ public static class RuleBasedAI
         }
 
         bool has0 = handValues.Contains(0);
+        bool has7 = handValues.Contains(7);
         bool has8 = handValues.Contains(8);
 
         switch (card.value)
@@ -68,8 +70,17 @@ public static class RuleBasedAI
             case 3:
                 return true; // 猜牌、比较大小、查看手牌
             case 5:
-                return targets.Count > 0; // 让别人弃牌必须有目标
+                if (has7)
+                {
+                    return false;
+                }
+                else return true;// 让别人弃牌必须有目标
             case 6:
+                if (has7)
+                {
+                    return false;
+                }
+                else return true;
             case 7:
                 return true;
             case 8:

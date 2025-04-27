@@ -45,61 +45,16 @@ public class Player : MonoBehaviour
         hand.AddCard(newCard);
         Debug.Log($"{PlayerIndex} draw card:{newCard.cardName}");
 
-        
+
         CardController controller = newCard.cardObject.GetComponent<CardController>();
         if (controller != null)
         {
             controller.SetCardOwner(this);
         }
 
-       
-        if (!isHuman)
+        if (handUI != null && isHuman)
         {
-            
-            return;
-        }
-
-        
-        for (int i = 0; i < cardSlots.Length; i++)
-        {
-            
-                Debug.Log($"cardSlot[{i}] = {cardSlots[i]}"); 
-               
-
-            if (cardSlots[i] == null)
-            {
-                Debug.LogError($"[{playerName}] cardSlots[{i}] is null");
-                continue;
-            }
-
-            if (cardSlots[i].childCount == 0)
-            {
-                newCard.cardObject.transform.SetParent(cardSlots[i], false);
-                newCard.cardObject.transform.localPosition = Vector3.zero;
-                newCard.cardObject.transform.localScale = Vector3.one;
-
-                CardUI cardUI = newCard.cardObject.GetComponent<CardUI>();
-                if (cardUI != null)
-                {
-                    cardUI.SetCard(newCard, this.hand);
-                    cardUI.Flip(false);
-                }
-
-                break;
-            }
-
-            GameManager.RefreshDeckZone();
-        }
-
-
-        if (handUI != null)
-        {
-            
-
-            if (isHuman) { 
-                Debug.Log($"{playerName} Update hand UI");
-                handUI.UpdateHandUI(hand.GetCards());
-            }
+            handUI.UpdateHandUI(hand.GetCards());
         }
     }
 
@@ -110,7 +65,7 @@ public class Player : MonoBehaviour
     public void PlayCard(Card card)
     {       
         hand.PlayCard(card);
-        Debug.Log($"{playerName} play card:{card.cardName}");
+        
         
     }
 

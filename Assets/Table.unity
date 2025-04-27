@@ -482,6 +482,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &645897605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 645897606}
+  m_Layer: 5
+  m_Name: SpecialCardZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &645897606
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645897605}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 718073140}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &718073136
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,6 +618,7 @@ RectTransform:
   - {fileID: 1630617950}
   - {fileID: 1485809833}
   - {fileID: 511069010}
+  - {fileID: 645897606}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -847,6 +883,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2832936720111755058, guid: ce22d29e4a7f252468cc6fdd23cc1a67, type: 3}
   m_PrefabInstance: {fileID: 1448406662}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1110441930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110441928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04a9a9d02e93c149b5e94e9b512323a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardData:
+    cardName: Investigators
+    cardId: 1
+    frontSprite: {fileID: -1331832228257751863, guid: f5ef0042d1ec6184693f9951d059709d, type: 3}
+    backSprite: {fileID: 870234187787707586, guid: abbcfb06f6d1f0345a4c8ba064fec724, type: 3}
+    value: 1
+    description: Card1
+    isInsane: 0
+    cardObject: {fileID: 0}
+    effectPrefab: {fileID: 2514894343683846643, guid: 0e0b80ccd0e031543b962219c6bf07dc, type: 3}
 --- !u!1 &1181740289
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,6 +970,7 @@ MonoBehaviour:
   - {fileID: -5585573172241326865, guid: a6bb39fe8f3197441963060af1db20ed, type: 3}
   - {fileID: 659992971924208602, guid: 0d84ff161c16a8e48a637eeb711be963, type: 3}
   backSprite: {fileID: 870234187787707586, guid: abbcfb06f6d1f0345a4c8ba064fec724, type: 3}
+  specialCardZone: {fileID: 645897606}
 --- !u!1 &1430542322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,7 +1159,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 625885707754600226, guid: ce22d29e4a7f252468cc6fdd23cc1a67, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1110441930}
   m_SourcePrefab: {fileID: 100100000, guid: ce22d29e4a7f252468cc6fdd23cc1a67, type: 3}
 --- !u!1 &1485809832
 GameObject:

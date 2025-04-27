@@ -38,6 +38,12 @@ public class CardUI : MonoBehaviour, IPointerClickHandler
     {
         Debug.Log($"Clicked on card: {(cardData != null ? cardData.cardName : "null")}");
 
+        if (!IsMyTurn())
+        {
+            Debug.LogWarning("现在不是你的回合，无法出牌！");
+            return;
+        }
+
         if (owningHand != null && cardData != null)
         {
             owningHand.SelectCard(cardData); // 只在不为 null 时调用
@@ -53,6 +59,15 @@ public class CardUI : MonoBehaviour, IPointerClickHandler
     public void SetSelected(bool selected)
     {
         GetComponent<Image>().color = selected ? Color.yellow : Color.white;
+    }
+
+    private bool IsMyTurn()
+    {
+        if (GameManager.Instance == null) return false;
+
+        Player currentPlayer = GameManager.Instance.GetCurrentPlayer();
+
+        return currentPlayer != null && currentPlayer.isHuman;
     }
 
 }
