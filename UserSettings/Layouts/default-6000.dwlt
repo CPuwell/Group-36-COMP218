@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1706.6667
     height: 869.3334
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 90
+  controlID: 36
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -419,9 +419,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: d241ffff
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d241ffff5842ffff5c50ffff7e70ffffb470ffffd870fffff673ffff267effff769affff2ca1fffffea1ffff8ea3ffff0e840000c68400007a8500001aa00000c2b7000048ba0000d0c60000ecc90000
+      m_ExpandedIDs: d289ffff92a1ffffbaa1ffff4ea3ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1132,7 +1132,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/UI
+    - Assets/Scenes
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1142,16 +1142,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/UI
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Github\Group-36-COMP218
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 37.333344}
-    m_SelectedIDs: b0840000
-    m_LastClickedID: 33968
-    m_ExpandedIDs: 000000009a830000a883000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: b6830000
+    m_LastClickedID: 33718
+    m_ExpandedIDs: 00000000a8830000b883000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

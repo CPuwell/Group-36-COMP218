@@ -42,7 +42,7 @@ public class AICardEffectInsane1 : MonoBehaviour, IInsaneCard
                 }
                 else
                 {
-                    UIManager.Instance.ShowPopup($"Wrong guess. {selectedTarget.playerName}'s card was {targetValue}.");
+                    UIManager.Instance.ShowPopup($"Wrong guess.");
                 }
 
                 currentPlayer.GoInsane();

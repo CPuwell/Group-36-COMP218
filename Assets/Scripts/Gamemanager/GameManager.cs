@@ -138,7 +138,6 @@ public class GameManager : MonoBehaviour
 
     public void CompareCard()
     {
-
         List<Player> alivePlayers = players.FindAll(players => players.IsAlive());
         Player bestPlayer = alivePlayers[0];
         int highestValue = bestPlayer.Hand.GetCardValue();
@@ -170,6 +169,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Game Draw");
             gameEnded = true;
+            UIManager.Instance.ShowDrawPanel();
         }
 
         //Mutipul Round Mode
@@ -315,9 +315,18 @@ public class GameManager : MonoBehaviour
     {
         gameEnded = true;
         RoundEnded = true;
-        Debug.Log($" Game Over! Winner is {winner.playerName} (Player {winner.PlayerIndex})!");
-        
+        Debug.Log($"Game Over! Winner is {winner.playerName} (Player {winner.PlayerIndex})!");
+
+        if (winner.isHuman)  // Plaer win
+        {
+            UIManager.Instance.ShowVictoryPanel();
+        }
+        else  // Ai win
+        {
+            UIManager.Instance.ShowDefeatPanel($"You were defeated by {winner.playerName}!");
+        }
     }
+
 
 
     //multipul round mode
@@ -328,7 +337,7 @@ public class GameManager : MonoBehaviour
     //    
     //}
 
-    
+
     public List<Player> GetAvailableTargets(Player currentPlayer)
     {
         return players.FindAll(p => p != currentPlayer && p.IsAlive() && !p.IsProtected() && !p.IsImmortal());

@@ -53,6 +53,24 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void StealCard(Card newCard)
+    {
+        hand.AddCard(newCard);
+        Debug.Log($"{PlayerIndex} steal card: {newCard.cardName}");
+
+        CardController controller = newCard.cardObject?.GetComponent<CardController>();
+        if (controller != null)
+        {
+            controller.SetCardOwner(this);
+        }
+
+        if (handUI != null && isHuman)
+        {
+            handUI.UpdateHandUI(hand.GetCards());
+        }
+    }
+
+
     public void PlayCard(Card card)
     {
         hand.PlayCard(card);

@@ -94,7 +94,7 @@ public class AICardEffectInsane5 : MonoBehaviour, IInsaneCard
                     return;
                 }
 
-                currentPlayer.AddCard(stolenCard);
+                currentPlayer.StealCard(stolenCard);
                 Debug.Log($"{currentPlayer.playerName} stole {selectedTarget.playerName}'s card: {stolenCard.cardName}");
 
                 List<Card> myCards = currentPlayer.GetCards();

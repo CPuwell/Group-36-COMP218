@@ -8,7 +8,8 @@ public class MainMenu : MonoBehaviour
     /// </summary>
     public void StartGame()
     {
-        SceneManager.LoadScene("Table"); // 注意：Table 必须加进 Build Settings！
+        // 加载 Table 场景，LoadSceneMode.Single 表示【替换当前场景】
+        SceneManager.LoadScene("Table", LoadSceneMode.Single);
     }
 
     /// <summary>
