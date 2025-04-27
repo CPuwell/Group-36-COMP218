@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
         turn_ended = false; // Reset turn ended flag    
         if (!gameStarted) return; // Avoid starting turn before game starts
 
+        NoticeController.Instance.SetNotice($"{players[currentPlayerIndex].playerName}'s Turn");
 
         Player currentPlayer = players[currentPlayerIndex];
         currentPlayer.SetProtected(false);
@@ -487,5 +488,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public bool IsGameEnded()
+    {
+        return gameEnded;
+    }
+
+    public void TriggerPlayerDefeat(string defeatMessage)
+    {
+        gameEnded = true;
+        RoundEnded = true;
+
+        UIManager.Instance.ShowDefeatPanel(defeatMessage);
+    }
 
 }

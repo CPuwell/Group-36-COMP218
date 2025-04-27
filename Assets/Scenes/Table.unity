@@ -903,7 +903,6 @@ MonoBehaviour:
     value: 1
     description: Card1
     isInsane: 0
-    cardObject: {fileID: 0}
     effectPrefab: {fileID: 2514894343683846643, guid: 0e0b80ccd0e031543b962219c6bf07dc, type: 3}
 --- !u!1 &1181740289
 GameObject:

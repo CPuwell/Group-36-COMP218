@@ -74,6 +74,8 @@ public class Player : MonoBehaviour
     public void PlayCard(Card card)
     {
         hand.PlayCard(card);
+        NoticeController.Instance.SetNotice($"{playerName} plays {card.cardName}");
+
     }
 
     public void WinRound()
@@ -132,7 +134,14 @@ public class Player : MonoBehaviour
         }
         Debug.Log($"{playerName} is eliminated.");
         isAlive = false;
+
+        if (isHuman && GameManager.Instance != null && !GameManager.Instance.IsGameEnded())
+        {
+            Debug.Log("Human player eliminated. Triggering defeat UI.");
+            GameManager.Instance.TriggerPlayerDefeat($"{playerName} has been eliminated!");
+        }
     }
+
 
     public bool IsAlive()
     {
