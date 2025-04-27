@@ -10,32 +10,33 @@ public class UIManager : MonoBehaviour
 
     public UIDiscardSelector discardSelectorPanel;
 
-    [Header("General Popup")]
+    [Header("通用弹窗")]
     public GameObject popupPanel;
     public TextMeshProUGUI popupText;
     public Button popupCloseButton;
-
-    [Header("Guess Card UI (for Card No.1)")]
+    [Header("猜牌 UI（用于1号牌）")]
     public UIGuess guessPanel;
 
-    [Header("Player Selection UI (for Cards No.2, 3, 6)")]
+    [Header("玩家选择 UI（用于2、3、6号牌）")]
     public UIPlayerSelect playerSelectPanel;
 
-    [Header("Card Reveal UI (to show target's hand)")]
+    [Header("展示卡牌 UI（用于展示目标手牌）")]
     public UICardReveal cardRevealPanel;
 
-    [Header("Mi-Go Card UI (for Card No.0)")]
+    [Header("Mi-Go 0号牌 UI")]
     public UIMIGO miGoPanel;
 
-    [Header("Log Output (optional)")]
+    [Header("日志输出（可选）")]
     public TextMeshProUGUI logTextArea;
+ 
+
 
     private void Awake()
     {
         Instance = this;
     }
 
-    // ========= General Popup =========
+    // ========== 通用弹窗 ==========
     public void ShowPopup(string message)
     {
         popupPanel.SetActive(true);
@@ -48,37 +49,37 @@ public class UIManager : MonoBehaviour
         });
     }
 
-    // ========= Guess Card (for Card No.1) =========
+    // ========== 猜牌（用于1号牌）==========
     public void ShowGuessEffect(List<Player> targets, Action<Player, int> onGuessConfirmed)
     {
         if (targets == null || targets.Count == 0)
         {
-            ShowPopup("No other players available for guessing");
+            ShowPopup("没有其他玩家可供猜牌");
             return;
         }
 
         guessPanel.Show(targets, onGuessConfirmed);
     }
 
-    // ========= Simple Player Selection (for Cards No.2, 3, 6) =========
+    // ========== 简单玩家选择（用于2、3、6号牌）==========
     public void ShowPlayerSelectionSimple(List<Player> players, Action<Player> onSelected)
     {
         if (players == null || players.Count == 0)
         {
-            ShowPopup("No players available for selection");
+            ShowPopup("没有可供选择的玩家");
             return;
         }
 
         playerSelectPanel.Show(players, onSelected);
     }
 
-    // ========= Card Reveal (for Card No.2 ShowCard) =========
+    // ========== 展示卡牌（用于2号牌 ShowCard）==========
     public void ShowCardReveal(Card card, string ownerName, Action onClosed = null)
     {
         cardRevealPanel.Show(card, ownerName, onClosed);
     }
 
-    // ========= Log Output =========
+    // ========== 日志输出 ==========
     public void Log(string message)
     {
         Debug.Log("[UI] " + message);
@@ -89,7 +90,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    // ========= Hide All Panels =========
+    // ========== 通用关闭 ==========
     public void HideAllPanels()
     {
         popupPanel?.SetActive(false);
@@ -97,26 +98,26 @@ public class UIManager : MonoBehaviour
         playerSelectPanel?.gameObject.SetActive(false);
         cardRevealPanel?.gameObject.SetActive(false);
     }
-
-    // ========= Player Selection Allowing Self (for Card No.5) =========
+    
+ 
+    // 5号牌
     public void ShowPlayerSelectionAllowSelf(List<Player> players, Action<Player> onSelected)
     {
         playerSelectPanel.Show(players, onSelected, true);
     }
 
-    // ========= Discard Selector (for Card No.4) =========
     public void ShowDiscardSelector(Card card1, Card card2, Action<Card> onChosen)
     {
         discardSelectorPanel.Show(card1, card2, onChosen);
     }
 
-    // ========= Mi-Go Brain Reveal =========
-    public void ShowMiGoBrainReveal(Player target, Action onClosed = null)
+    public void ShowMiGoBrainReveal(Player target, System.Action onClosed = null)
     {
         if (miGoPanel != null)
         {
             miGoPanel.Show(target, onClosed);
         }
     }
-}
 
+
+}
