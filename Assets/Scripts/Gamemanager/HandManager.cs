@@ -8,12 +8,12 @@ public class HandManager : MonoBehaviour
     public void AddCard(Card card)
     {
         hand.AddCard(card);
-        // 这里可以不需要手动 UpdateHandUI 了，交给事件系统自动做
+        // There is no need to manually UpdateHandUI here, let the event system do it automatically
     }
 
     public void OnCardClicked(Card card)
     {
         hand.SelectCard(card);
-        // 这里也不用强行UpdateHandUI了，打出牌后Hand自己会触发OnHandChanged
+        // There is no need to force UpdateHandUI here. After playing the card, Hand will trigger OnHandChanged by itself.
     }
 }
