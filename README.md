@@ -9,3 +9,5 @@ This project was developed solely for educational purposes as part of a universi
 It is not affiliated with, endorsed by, or associated with AEG in any way.
 
 If you are the copyright holder and wish for any material to be removed, please contact us.
+
+License: [MIT](./LICENSE)
