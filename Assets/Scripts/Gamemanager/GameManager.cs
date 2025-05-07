@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
     // Initialize the game
     public void StartGame()
     {
+
         deckManager = FindFirstObjectByType<DeckManager>(); // Find DeckManager
         deck = deckManager.logicDeck;
         deck.Shuffle();
@@ -100,8 +101,17 @@ public class GameManager : MonoBehaviour
 
         Player currentPlayer = players[currentPlayerIndex];
         currentPlayer.SetProtected(false);
-        
-        
+
+        if (!currentPlayer.IsHuman())
+        {
+            UIManager.Instance.ShowAITurnIndicatorByPlayer(currentPlayer);
+        }
+        else
+        {
+            UIManager.Instance.ClearAITurnIndicators(); // 如果是玩家，关闭所有圈圈
+        }
+
+        if (gameEnded) return;
         if (gameEnded) return; // avoid multiple start turn calls
         if (players[currentPlayerIndex].IsInsane() && currentPlayer.IsAlive())
         {
@@ -135,6 +145,8 @@ public class GameManager : MonoBehaviour
         {
             timer = ai_turnTime;
         }
+
+        UIManager.Instance.UpdateImmortalIndicators(players);
 
         Debug.Log($"Now, {currentPlayer.playerName} is taking turn");
     }
@@ -352,6 +364,8 @@ public class GameManager : MonoBehaviour
         gameEnded = true;
         RoundEnded = true;
         Debug.Log($"Game Over! Winner is {winner.playerName} (Player {winner.PlayerIndex})!");
+
+        UIManager.Instance.ClearAITurnIndicators();
 
         if (winner.isHuman)  // Plaer win
         {
