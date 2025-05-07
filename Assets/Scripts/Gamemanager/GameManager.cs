@@ -108,6 +108,8 @@ public class GameManager : MonoBehaviour
             if (players[currentPlayerIndex].RevealAndDiscardTopCards(deck))
             {
                 currentPlayer.Eliminate();
+                Debug.Log($"{currentPlayer.playerName} is eliminated due to insanity.");
+                UIManager.Instance.ShowPopup($"{currentPlayer.playerName} is eliminated due to insanity.");
             }
             
         }
@@ -193,20 +195,29 @@ public class GameManager : MonoBehaviour
         //}
     }
 
-    
+
     //End Turn and Switch to Next Player
     public void EndTurn()
     {
-        
+
         turn_ended = true; // Set turn ended flag
         Debug.Log($"[Turn End] {players[currentPlayerIndex].playerName}'s turn ended");
         if (gameEnded) return; // avoid multiple end turn calls
         CheckRoundWinCondition();
         CheckDeck();
         if (RoundEnded) return;
-       
 
-        StartCoroutine(WaitAndStartNextTurn()); 
+        // Update the current player index
+        currentPlayerIndex = (currentPlayerIndex + 1) % players.Count;
+
+        if (players[currentPlayerIndex].IsAlive())
+        {
+            StartCoroutine(WaitAndStartNextTurn());
+        }
+        else
+        {          
+            StartTurn();
+        }
     }
 
     private IEnumerator WaitAndStartNextTurn()
@@ -215,7 +226,7 @@ public class GameManager : MonoBehaviour
         timer = 10f;
         yield return new WaitForSeconds(5f); // Pause for 5 seconds for showing played card
 
-        currentPlayerIndex = (currentPlayerIndex + 1) % players.Count;
+        
         
         StartTurn();
     }
@@ -458,7 +469,7 @@ public class GameManager : MonoBehaviour
 
     public void CheckDeck()
     {
-        if (deck.IsEmpty())
+        if (deck.IsEmpty() && gameEnded == false)
         {
             Debug.Log("Deck is empty now compare card value");
             CompareCard();
