@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "D:\\Github\\Group-36-COMP218\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\github\\group-36-comp218\\assets\\scripts\\controller\\pausemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\pausemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\Github\\Group-36-COMP218\\assets\\scripts\\ai_cardeffect\\aicardeffectinsane1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ai_cardeffect\\aicardeffectinsane1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\Github\\Group-36-COMP218\\assets\\scripts\\ai_cardeffect\\aicardeffect1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ai_cardeffect\\aicardeffect1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\Github\\Group-36-COMP218\\assets\\scripts\\gamemanager\\players.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager\\players.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,12 +23,12 @@
       "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|d:\\github\\group-36-comp218\\assets\\scripts\\controller\\noticecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\Github\\Group-36-COMP218\\assets\\scripts\\controller\\noticecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\noticecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|d:\\github\\group-36-comp218\\assets\\scripts\\controller\\newmonobehaviourscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\controller\\newmonobehaviourscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Controller\\NewMonoBehaviourScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Controller\\NewMonoBehaviourScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\Github\\Group-36-COMP218\\assets\\scripts\\menu\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\Github\\Group-36-COMP218\\assets\\scripts\\gamemanager\\startgamebuttonui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager\\startgamebuttonui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\Github\\Group-36-COMP218\\assets\\scripts\\ai_cardeffect\\aicardeffectinsane1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ai_cardeffect\\aicardeffectinsane1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{40FCBD1D-DA8C-DFD4-24EA-29BBB3BE05D4}|Assembly-CSharp.csproj|D:\\Github\\Group-36-COMP218\\assets\\scripts\\controller\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -70,11 +78,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PauseManager.cs",
+              "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Controller\\PauseManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Controller\\PauseManager.cs",
+              "ToolTip": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Controller\\PauseManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Controller\\PauseManager.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T20:59:34.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "AiCardEffect1.cs",
+              "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AiCardEffect1.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AI_CardEffect\\AiCardEffect1.cs",
+              "ToolTip": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AiCardEffect1.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AI_CardEffect\\AiCardEffect1.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAIwEUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T22:58:52.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "NoticeController.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Controller\\NoticeController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Controller\\NoticeController.cs",
@@ -82,12 +115,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Controller\\NoticeController.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T21:39:17.839Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-27T21:39:17.839Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "NewMonoBehaviourScript.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Controller\\NewMonoBehaviourScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Controller\\NewMonoBehaviourScript.cs",
@@ -95,12 +127,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Controller\\NewMonoBehaviourScript.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T21:37:38.519Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-27T21:37:38.519Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "DeckManager.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\DeckManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\DeckManager.cs",
@@ -112,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "GameManager.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\GameManager.cs",
@@ -120,12 +151,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Gamemanager\\GameManager.cs",
               "ViewState": "AgIAAN4BAAAAAAAAAAAIwPYBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T17:21:57.106Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-27T17:21:57.106Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "MainMenu.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Menu\\MainMenu.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Menu\\MainMenu.cs",
@@ -137,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "StartGameButtonUI.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\StartGameButtonUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\StartGameButtonUI.cs",
@@ -149,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "UIManager.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Controller\\UIManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Controller\\UIManager.cs",
@@ -161,19 +191,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "AICardEffectInsane1.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane1.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane1.cs",
               "ToolTip": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane1.cs",
               "RelativeToolTip": "Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane1.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAIwBUAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAQwJ4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-27T17:49:52.364Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "UIDiscardSelector.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\UI\\UIDiscardSelector.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIDiscardSelector.cs",
@@ -185,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Players.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\Players.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\Players.cs",
@@ -193,12 +223,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Gamemanager\\Players.cs",
               "ViewState": "AgIAAHwAAAAAAAAAAAAAwI8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T17:25:03.042Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-27T17:25:03.042Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Hand.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Gamemanager\\Hand.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Gamemanager\\Hand.cs",
@@ -210,7 +239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "AICardEffectInsane5.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane5.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AI_CardEffect\\AICardEffectInsane5.cs",
@@ -222,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "UIPlayerSelect.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\UI\\UIPlayerSelect.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIPlayerSelect.cs",
@@ -234,7 +263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "UIGuess.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\UI\\UIGuess.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\UIGuess.cs",
@@ -246,7 +275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "CardController.cs",
               "DocumentMoniker": "D:\\Github\\Group-36-COMP218\\Assets\\Scripts\\Controller\\CardController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Controller\\CardController.cs",

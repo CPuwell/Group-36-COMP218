@@ -135,6 +135,11 @@ public class Player : MonoBehaviour
         Debug.Log($"{playerName} is eliminated.");
         isAlive = false;
 
+        if (!isHuman)
+        {
+            UIManager.Instance.ShowEliminationX(this);
+        }
+
         if (isHuman && GameManager.Instance != null && !GameManager.Instance.IsGameEnded())
         {
             Debug.Log("Human player eliminated. Triggering defeat UI.");

@@ -9,34 +9,44 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
-    [Header("Discard Selector UI (弃牌选择)")]
+    [Header("Discard Selector UI")]
     public UIDiscardSelector discardSelectorPanel;
 
-    [Header("General Popup (通用弹窗)")]
+    [Header("General Popup")]
     public GameObject popupPanel;
     public TextMeshProUGUI popupText;
     public Button popupCloseButton;
 
-    [Header("Guess Card UI (猜牌1号效果)")]
+    [Header("Guess Card UI")]
     public UIGuess guessPanel;
 
-    [Header("Player Selection UI (2、3、6号牌用)")]
+    [Header("Player Selection UI")]
     public UIPlayerSelect playerSelectPanel;
 
-    [Header("Card Reveal UI (查看手牌)")]
+    [Header("Card Reveal UI")]
     public UICardReveal cardRevealPanel;
 
-    [Header("Mi-Go Brain Reveal UI (疯狂5号用)")]
+    [Header("Mi-Go Brain Reveal UI")]
     public UIMIGO miGoPanel;
 
     [Header("Victory/Defeat/Draw Panels")]
     public GameObject victoryPanel;
     public GameObject defeatPanel;
     public GameObject drawPanel;
-    public TextMeshProUGUI defeatReasonText; // 仅失败面板需要显示原因
+    public TextMeshProUGUI defeatReasonText; 
 
-    [Header("Log Output (可选)")]
+    [Header("Log Output")]
     public TextMeshProUGUI logTextArea;
+
+    [Header("AI Turn Indicators")]
+    public List<GameObject> aiTurnIndicators;
+
+    [Header("AI Immortal/Protected Indicators")]
+    public List<GameObject> aiImmortalIndicators = new List<GameObject>();
+
+    [Header("Bot Elimination Overlays (Red X)")]
+    public List<GameObject> eliminatedOverlays;
+
 
     private void Awake()
     {
@@ -146,12 +156,12 @@ public class UIManager : MonoBehaviour
     // ========= Common Actions =========
     public void RestartGame()
     {
-        SceneManager.LoadScene("Table"); // 重启游戏场景
+        SceneManager.LoadScene("Table"); 
     }
 
     public void ReturnToMenu()
     {
-        SceneManager.LoadScene("Menu"); // 返回主菜单
+        SceneManager.LoadScene("Menu"); 
     }
 
     // ========= Log Output =========
@@ -178,4 +188,63 @@ public class UIManager : MonoBehaviour
         defeatPanel?.SetActive(false);
         drawPanel?.SetActive(false);
     }
+
+    public void ShowAITurnIndicatorByPlayer(Player currentPlayer)
+    {
+        for (int i = 0; i < aiTurnIndicators.Count; i++)
+        {
+            if (GameManager.Instance.players[i + 1] == currentPlayer)
+            {
+                aiTurnIndicators[i].SetActive(true);
+            }
+            else
+            {
+                aiTurnIndicators[i].SetActive(false);
+            }
+        }
+    }
+
+    public void ClearAITurnIndicators()
+    {
+        foreach (GameObject indicator in aiTurnIndicators)
+        {
+            indicator.SetActive(false);
+        }
+    }
+
+    public void UpdateImmortalIndicators(List<Player> players)
+    {
+
+        foreach (var indicator in aiImmortalIndicators)
+        {
+            indicator.SetActive(false);
+        }
+
+
+        foreach (Player player in players)
+        {
+            if (player.IsHuman()) continue; 
+
+            if ((player.IsProtected() || player.IsImmortal()) && player.IsAlive())
+            {
+                int index = player.PlayerIndex - 1; 
+                if (index >= 0 && index < aiImmortalIndicators.Count)
+                {
+                    aiImmortalIndicators[index].SetActive(true);
+                }
+            }
+        }
+    }
+    public void ShowEliminationX(Player player)
+    {
+        if (player.IsHuman()) return; 
+
+        int index = player.PlayerIndex - 1; 
+        if (index >= 0 && index < eliminatedOverlays.Count)
+        {
+            eliminatedOverlays[index].SetActive(true);
+        }
+    }
+
+
 }

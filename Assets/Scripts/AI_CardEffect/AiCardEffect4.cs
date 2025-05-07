@@ -9,6 +9,8 @@ public class AiCardEffect4 : MonoBehaviour, IMainEffect
         // Set the player as protected
         currentPlayer.SetProtected(true);
 
+        UIManager.Instance.UpdateImmortalIndicators(GameManager.Instance.players);
+
         UIManager.Instance.ShowPopup($"{currentPlayer.playerName} cannot be chosen as part of the effects of other players' cards until the start of their next turn.");
 
         GameManager.Instance.EndTurn();
